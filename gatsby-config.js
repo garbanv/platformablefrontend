@@ -35,7 +35,7 @@ module.exports = {
         apiURL: `https://websiteserver-ds7cf.ondigitalocean.app`,
         // apiURL:`http://localhost:1337`,
         queryLimit: 1000,
-        contentTypes: [`post`, `categories`,`user`],
+        contentTypes: [`post`, `category`,`user`,`tag`],
         singleTypes: [`homepage`,`about`],    
       },
     },
