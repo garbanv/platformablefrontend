@@ -196,28 +196,14 @@ export default function about({data}) {
                       user.users_permissions_users.map((x,ind) =>{
                        console.log(x)
                        return (
-                        //  <AboutTeamComponent
-                        //  key={ind}
-                        // name={x.name}
-                        // lastname={x.lastname}
-                        // bio={x.bio}
-                        // position={x.position}
-                        // img={x.image.childImageSharp.fluid.originalImg}
-                        //  />
+              
 
             <div key={ind} class=" pt-5 rounded overflow-hidden border-b-4 border-russian-violet-dark bg-gray-50 w-1/1">
         <img
-          src={x.image.childImageSharp.fluid.originalImg}
-          alt="People"
+          src={x.image.childImageSharp.fluid.src}
+          alt="Platformable team"
           class="w-full object-contain h-32 sm:h-48 md:h-64 my-0"
-        />
-        <Img 
-        alt="Platformable.com"
-        key={x.ind}
-        tracedSVG={x.image.childImageSharp.fluid.originalImg} 
-        className="w-full object-contain h-32 sm:h-48 md:h-64 my-0"/>
-       
-
+        /> 
         <div class="p-4 md:p-6">
           <h3 class="font-semibold mb-2 text-center text-xl leading-tight sm:leading-normal">
             {`${x.name} ${x.lastname}`}
