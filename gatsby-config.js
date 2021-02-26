@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `websiteserver-ds7cf.ondigitalocean.app`,
+        apiURL: `https://websiteserver-ds7cf.ondigitalocean.app/`,
         queryLimit: 1000,
         contentTypes: [`post`, `categories`,`user`],
         singleTypes: [`homepage`,`about`],    
