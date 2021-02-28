@@ -9,12 +9,12 @@ const Header = ({ siteTitle }) => {
   const [isActive, setActive] = useState(false);
 
   function openNav() {
-    console.log('click')
-    document.getElementById("mySidenav").style.width = "100%";
+
+   document ? document.getElementById("mySidenav").style.width = "100%": null;
   }
   
   function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+    document ? document.getElementById("mySidenav").style.width = "0": null;
   }
 
 
@@ -25,7 +25,7 @@ const handleNav = ()=>{
   navButtons.forEach((boton)=>{
       navButtons.forEach(b => {b.classList.remove('active-top-nav')})
       boton.classList.add('active-top-nav');
-      console.log(boton)
+
   })
 }
 
