@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => {
   }
 
 
-const navButtons = document.querySelectorAll('.top-nav')
+const navButtons = document? document.querySelectorAll('.top-nav'): null;
 
 const handleNav = ()=>{
   
