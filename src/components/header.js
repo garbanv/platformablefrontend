@@ -18,16 +18,7 @@ const Header = ({ siteTitle }) => {
   }
 
 
-const navButtons = document? document.querySelectorAll('.top-nav'): null;
 
-const handleNav = ()=>{
-  
-  navButtons.forEach((boton)=>{
-      navButtons.forEach(b => {b.classList.remove('active-top-nav')})
-      boton.classList.add('active-top-nav');
-
-  })
-}
 
 
   return (
