@@ -210,7 +210,7 @@ export default function about({data}) {
           </h3>
           <p className="text-center text-xs">{x.position}</p>
           <div class="text-sm">
-            <p class="leading-none text-sm">{x.bio}</p>
+            <p class="leading-none text-sm" dangerouslySetInnerHTML={{ __html: x.bio}}></p>
           </div>
         </div>
       </div>
