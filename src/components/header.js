@@ -10,11 +10,11 @@ const Header = ({ siteTitle }) => {
 
   function openNav() {
 
-   document ? document.getElementById("mySidenav").style.width = "100%": null;
+  return  document ? document.getElementById("mySidenav").style.width = "100%": null;
   }
   
   function closeNav() {
-    document ? document.getElementById("mySidenav").style.width = "0": null;
+   return  document ? document.getElementById("mySidenav").style.width = "0": null;
   }
 
 

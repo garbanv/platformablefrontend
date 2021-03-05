@@ -7,6 +7,7 @@
 body {
   font-family: 'Roboto', sans-serif !important;
   color:var(--russian-violet-dark);
+  font-size:13px;
 }
 
 p {
@@ -1186,3 +1187,9 @@ img {
   }
 
 /* REVISAR */
+
+
+
+.bg-trends-report-year-card {
+  background-color:var(--russian-violet-light)
+}

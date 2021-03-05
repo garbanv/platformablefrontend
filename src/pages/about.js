@@ -191,7 +191,7 @@ export default function about({data}) {
 
             
             {/* {console.log(data.strapiAbout)} */}
-            {data.strapiAbout.teamList.map((user,index)=>{
+            {data.strapiAbout.Author.map((user,index)=>{
                     return(
                       user.users_permissions_users.map((x,ind) =>{
                        console.log(x)
@@ -238,7 +238,7 @@ export const query = graphql`
 query MyAbout {
   strapiAbout {
     heroText
-    teamList {
+    Author {
       id
       users_permissions_users {
         name

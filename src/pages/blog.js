@@ -14,11 +14,7 @@ const posts = ({data}) => {
       <h3 className="text-5xl font-black text-center mb-5">
         Our Ideas are worth reading
       </h3>
-      <p className="text-1xl  text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus sem,
-        mollis ultrices lacus sed, egestas imperdiet metus. Nunc vel dignissim
-        leo.
-      </p>
+     
       <div className="all-posts">
         <div className="container mx-auto mt-20 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {/* single post card start here */}

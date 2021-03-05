@@ -33,7 +33,7 @@ export default function products() {
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8 text-center" >
                   <h3 className="text-2xl font-bold">
-                   <Link to="" className="text-center">Open Finance </Link>
+                   <Link to="/open-banking" className="text-center">Open Banking / Open Finance </Link>
                   </h3>
                   <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                 
