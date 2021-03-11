@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import EmbedContainer from "react-oembed-container"
+import SEO from "../components/seo"
 
 
 
@@ -15,14 +16,16 @@ const BlogPost = ({ data }) => {
   return (
     <>
       <Layout>
+        <SEO title={data.strapiPost.title}/>
         <section className="posts-container mx-auto all-blog-content my-5 sm:my-20 px-5">
           <h3 className="text-1xl sm:text-3xl font-black mb-3">
             {data.strapiPost.title}
           </h3>
+      
 
-          <div className="autor flex flex-wrap md:items-center">
-            <div className="autores flex items-center">
-              <div className="autorInfo flex">
+          <div className="autor flex flex-wrap items-start">
+            <div className="autores flex  ">
+              <div className="autorInfo flex items-start">
                 <h2 className="text-sm tracking-tighter text-gray-900">
                   By{" "}
                   {data.strapiPost.users_permissions_users.length === 1 ? (
@@ -35,7 +38,7 @@ const BlogPost = ({ data }) => {
                     data.strapiPost.users_permissions_users.map((x, index) => (
                       <>
                         <Link
-                          to={`/author/${x.id}`}
+                         
                           className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
                         >
                           {x.name} {x.lastname}{" "}
@@ -50,14 +53,15 @@ const BlogPost = ({ data }) => {
                 </h2>
               </div>
             </div>
+            {/* LOAD CATEGORIES */}
             <div className="md:ml-5">
-              <ul className="flex flex-nowrap">
+              <ul className="flex flex-nowrap relative ">
                 {data.strapiPost.categories.map(cat => {
                   return (
                     <Link
                       key={cat.name}
-                      to={cat.name}
-                      className={`bg-russian-violet-dark-${cat.name} py-1 px-2 mr-1 rounded text-white text-xs flex-grow`}
+                      
+                      className={`bg-gray-200 py-1 px-2 mr-1 rounded-lg text-black text-xs flex-grow `}
                     >
                       {cat.name}
                     </Link>
@@ -79,15 +83,11 @@ const BlogPost = ({ data }) => {
               className="mb-10"
             />
 
-            {/* <div
-              key={`body`}
-              id="___gatsby"
-              dangerouslySetInnerHTML={{ __html: data.strapiPost.content }}
-            /> */}
+          
 
             <EmbedContainer markup={data.strapiPost.content}>
               <div
-                dangerouslySetInnerHTML={{ __html: data.strapiPost.content }}
+                dangerouslySetInnerHTML={{ __html: unescape(data.strapiPost.content) }}
               />
             </EmbedContainer>
           </div>

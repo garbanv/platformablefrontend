@@ -2,11 +2,14 @@ import React from "react"
 import Layout from "../components/layout"
 import AboutTeamComponent from '../components/AboutTeamComponent'
 import Img from 'gatsby-image'
+import SEO from "../components/seo"
+import {BiCheckShield} from 'react-icons/Bi'
 
 export default function about({data}) {
 
   return (
     <Layout>
+      <SEO title="About"/>
       <div className="posts-container mx-auto my-10 px-5">
         <section>
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
@@ -179,6 +182,23 @@ export default function about({data}) {
                 ></path>
               </svg>
             </div>
+          </div>
+
+          <div className="py-10">
+            <h3 className="text-2xl md:text-4xl font-black text-center">Key Work Areas</h3>
+            <p className="text-center text-2xl font-black">We focus on the following areas:</p>
+            <ul>
+              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Digital Government</li>
+              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Open Banking</li>
+              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Sustainable Food Systems (Q3 2020)</li>
+              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Public Health (Q4 2020)</li>
+              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Climate Crisis (Q4 2020)</li>
+              
+            </ul>
+
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+
+          </div>
           </div>
         </section>
 

@@ -1,9 +1,25 @@
-import React from "react"
+import React, {useState} from "react"
 import Layout from '../components/layout'
+import {Link, navigate} from 'gatsby'
+import SEO from "../components/seo"
 
-export default function trendsRreport() {
+export default function TrendsReport() {
+
+  const [selectedOption,setSelectedOption]= useState('');
+  
+
+  const handleRedirect = (selectedOption) => {
+    console.log("hola")
+    navigate('/login')
+  }
+
+  if(selectedOption) {
+     handleRedirect(selectedOption) 
+  }
+
   return (
     <Layout>
+      <SEO title="Trends Report"/>
         <section className="trends-report-hero py-10 mt-5 bg-russian-violet-dark ">
       <div className="container mx-auto grid md:grid-cols-2 md:gap-4 grid-cols-1 items-center md:px-0 px-2">
          <div className=" trends-report-hero-left">
@@ -16,15 +32,17 @@ export default function trendsRreport() {
        </div>
       </div>
       </section>
+
+      
       <section>
           <h3 className="text-3xl font-bold text-center my-10">Trends Report by Year and quarter</h3>
       </section>
 
       <section className="container mx-auto mt-5 md:mt-20 grid md:grid-cols-2 md:gap-6 grid-cols-1 md:p-0 px-2">
 
-      <div class="col-1 sm:col-6 bg-trends-report-year-card rounded p-5 mb-4 shadow-lg">
+      <div class="col-1 sm:col-6 bg-trends-report-year-card rounded-xl p-5 mb-4 shadow-lg">
           <h3 className="text-2xl font-bold my-3">Trends Report 2020</h3>
-                <label for="country" class="block text-sm font-medium text-gray-700 font-bold text-white">Q1 / 2020</label>
+                {/* <label for="country" class="block text-sm font-medium text-gray-700 font-bold text-white">Q1 / 2020</label>
                 <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-50 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option>Banks</option>
                   <option>Government</option>
@@ -41,15 +59,16 @@ export default function trendsRreport() {
                   <option>Banks</option>
                   <option>Government</option>
                   <option>Developers</option>
-                </select>
-                <label for="country" class="block text-sm font-medium text-gray-700 my-2 font-bold text-white">Q4 / 2020</label>
-                <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-50 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option>Banks</option>
+                </select> */}
+                <label for="" class="block text-sm font-medium text-gray-700 my-2 font-bold text-white">Q4 / 2020</label>
+                <select id="trendsreport" name="" autocomplete="" class="mt-1 block w-full py-2 px-3 border border-gray-50 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" onChange={(e) => navigate(e.target.value)}>
+                <option>Select an option</option>
+                  <option value="/login" >Banks</option>
                   <option>Government</option>
                   <option>Developers</option>
                 </select>
               </div>
-              <div class="col-1 sm:col-6 bg-trends-report-year-card rounded p-5 mb-4 shadow-lg">
+              {/* <div class="col-1 sm:col-6 bg-trends-report-year-card rounded-xl p-5 mb-4 shadow-lg">
               <h3 className="text-2xl font-bold my-3">Trends Report 2021</h3>
               <label for="country" class="block text-sm font-medium text-gray-700 my-2 font-bold text-white">Q1 / 2021</label>
                 <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-50 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -75,7 +94,7 @@ export default function trendsRreport() {
                   <option>Government</option>
                   <option>Developers</option>
                 </select>
-              </div>
+              </div> */}
       </section>
 
       

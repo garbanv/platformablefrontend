@@ -21,7 +21,7 @@ export default function openBanking() {
          
           
           <div key=""> 
-            <div className="rounded-lg overflow-hidden bg-gray-50">
+            <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
                 <Link to="">
                 <img
@@ -51,7 +51,7 @@ export default function openBanking() {
 
 
           <div key=""> 
-            <div className="rounded-lg overflow-hidden bg-gray-50">
+            <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
                 <Link to="">
                 <img
@@ -74,7 +74,7 @@ export default function openBanking() {
 
 
           <div key=""> 
-            <div className="rounded-lg overflow-hidden bg-gray-50">
+            <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
                 <Link to="">
                 <img
@@ -96,7 +96,7 @@ export default function openBanking() {
           {/* single post card start here */}
           
           <div key=""> 
-            <div className="rounded-lg overflow-hidden bg-gray-50">
+            <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
                 <Link to="">
                 <img
@@ -117,7 +117,7 @@ export default function openBanking() {
           </div>
 
           <div key=""> 
-            <div className="rounded-lg overflow-hidden bg-gray-50">
+            <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
                 <Link to="">
                 <img
@@ -139,7 +139,7 @@ export default function openBanking() {
 
 
           <div key="" > 
-            <div className="rounded-lg overflow-hidden bg-gray-50">
+            <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
                 <Link to="">
                 <img
