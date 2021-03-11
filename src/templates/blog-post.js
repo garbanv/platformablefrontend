@@ -11,7 +11,7 @@ const PostContentComponent = React.lazy(() => import('../components/PostContentC
 const BlogPost = ({ data }) => {
 
   useEffect(() => {
-
+    window.location.load()
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
   }, [data])
@@ -85,15 +85,11 @@ const BlogPost = ({ data }) => {
               className="mb-10"
             />
 
-          <Suspense fallback={<div>Loading...</div>}>
-          <PostContentComponent data={data.strapiPost.content}/>
-          </Suspense>
-            
-            {/* <EmbedContainer markup={data.strapiPost.content}>
+            <EmbedContainer markup={data.strapiPost.content}>
               <div
                 dangerouslySetInnerHTML={{ __html: unescape(data.strapiPost.content) }}
               />
-            </EmbedContainer> */}
+            </EmbedContainer>
 
 
 
