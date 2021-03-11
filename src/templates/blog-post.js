@@ -11,7 +11,7 @@ const PostContentComponent = React.lazy(() => import('../components/PostContentC
 const BlogPost = ({ data }) => {
 
   useEffect(() => {
-    window.location.load()
+
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
   }, [data])

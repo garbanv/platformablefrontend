@@ -1,9 +1,9 @@
 import React from "react"
 import './src/styles/global.css';
 
-export const  onRouteUpdate = () => {
+export const  onPreRouteUpdate = () => {
     console.log("onRouteUpdate")
     // if(window){
-    //     window.location.reload()
+    //     window.location.reload(true)
     // }
   }

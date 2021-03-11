@@ -9,8 +9,8 @@ export default function TrendsReport() {
   
 
   const handleRedirect = (selectedOption) => {
-    console.log("hola")
-    navigate('/login')
+    window.location.href={selectedOption}
+    // navigate('/login')
   }
 
   if(selectedOption) {
@@ -63,9 +63,12 @@ export default function TrendsReport() {
                 <label for="" class="block text-sm font-medium text-gray-700 my-2 font-bold text-white">Q4 / 2020</label>
                 <select id="trendsreport" name="" autocomplete="" class="mt-1 block w-full py-2 px-3 border border-gray-50 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" onChange={(e) => navigate(e.target.value)}>
                 <option>Select an option</option>
-                  <option value="/login" >Banks</option>
-                  <option>Government</option>
-                  <option>Developers</option>
+                  <option value="/blog/q4-2020-open-banking-api-trends-banks" >If you work for Banks</option>
+                  <option value="/blog/q4-2020-open-banking-api-trends-fintech">If you work for Fintechs</option>
+                  <option value="blog/q4-2020-open-banking-api-trends-consumers">If you work for consumers</option>
+                  <option value="/blog/q4-2020-trends-enablers-of-an-open-banking-api-ecosystem">If you work for enablers</option>
+                  <option value="/blog/q4-2020-open-banking-api-trends-meeting-the-needs-of-the-under-served">If you work for under-served</option>
+                 
                 </select>
               </div>
               {/* <div class="col-1 sm:col-6 bg-trends-report-year-card rounded-xl p-5 mb-4 shadow-lg">

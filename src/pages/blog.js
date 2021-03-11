@@ -10,7 +10,7 @@ const posts = ({data}) => {
 
   return(
   <Layout>
-    <section className="container mx-auto all-blog-content my-20">
+    <section className="container mx-auto all-blog-content my-20 px-5">
       <h3 className="text-5xl font-black text-center mb-5">
         Our Ideas are worth reading
       </h3>
@@ -23,19 +23,19 @@ const posts = ({data}) => {
           <div key={post.node.id}> 
             <div className="rounded-lg overflow-hidden">
               <div className="relative overflow-hidden pb-1">
-                <Link to={`/blog/${post.node.slug}`}>
+                <a href={`/blog/${post.node.slug}`}>
                 {/* <img
                   className="absolute h-full w-full object-cover object-center"
                   src="https://platformable.com/content/images/2021/01/mandy-choi-_qZ0us4az20-unsplash.jpg"
                   alt=""
                 /> */}
                 <Img 
-        alt={post.node.title}
-        key={post.node.featured_image.childImageSharp.fluid.src}
-        imgStyle={{ objectFit: 'contain' }}
-        fluid={post.node.featured_image.childImageSharp.fluid} 
-        className="mb-1"/>
-                </Link>
+                alt={post.node.title}
+                key={post.node.featured_image.childImageSharp.fluid.src}
+                imgStyle={{ objectFit: 'contain' }}
+                fluid={post.node.featured_image.childImageSharp.fluid} 
+                className="mb-1"/>
+                </a>
               </div>
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8">
@@ -43,17 +43,14 @@ const posts = ({data}) => {
                    <a href={`/blog/${post.node.slug}`}> {post.node.title}</a>
                   </h3>
                   <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
-                    <p className="text-xs">Writen by&nbsp;</p>
+                    <p className="text-xs">{`Writen by `} </p>
                     {
-                    post.node.users_permissions_users.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" >{post.node.users_permissions_users[0].username}</Link> 
+                    post.node.users_permissions_users.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" >{` ${post.node.users_permissions_users[0].username}`}</Link> 
                     : post.node.users_permissions_users.length === 2 ? authorsData.map((x, index) => <Link to={`/author/${x.id}`}className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">{x.username} {index < authorsData.length -1  ? ' & ' : ''}</Link>)
                     :null
                     }
                   </div>
-                  <p className="leading-7">
-                    High quality notepad mockup in a huge resolution and with
-                    changeable everything.
-                  </p>
+        
                   <div className="mt-10 flex justify-between items-center">
                     <div>
                      
@@ -71,7 +68,7 @@ const posts = ({data}) => {
                       
                     </div>
                     <a
-                      href="https://collect.criggzdesign.com/index.php/resources/mockups/notepad/"
+                      href={`/blog/${post.node.slug}`}
                       className="flex items-center"
                     >
                       <p className="mr-4">Read more</p>

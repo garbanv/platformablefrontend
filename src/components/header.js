@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => {
     <header>
       <div className="lg:hidden  block container mx-auto mobile-nav">
       <div className="flex justify-between px-3 py-2">
-      <div ><img className="block  h-8 w-auto mt-2" src="https://platformable.com/content/images/2020/02/logo-and-business-name-horizontal.png" alt="Workflow"/>       </div>
+      <div ><Link to="/"><img className="block  h-8 w-auto mt-2" src="https://platformable.com/content/images/2020/02/logo-and-business-name-horizontal.png" alt="Workflow"/> </Link>     </div>
         <div onClick={openNav}><span className="block h-8 w-auto" style={{fontSize:30+'px',cursor:'pointer'}}>&#9776;</span></div>
       </div>
 
@@ -44,7 +44,7 @@ const Header = ({ siteTitle }) => {
       <div className="flex-1 flex items-center  sm:items-stretch sm:justify-start ">
        
       <div className="hidden sm:block flex justify-between  sm:py-2">
-      <div><img className="block  h-8 w-auto mt-2" src="https://platformable.com/content/images/2020/02/logo-and-business-name-horizontal.png" alt="Workflow"/></div>
+      <div><Link to="/"><img className="block  h-8 w-auto mt-2" src="https://platformable.com/content/images/2020/02/logo-and-business-name-horizontal.png" alt="Workflow"/> </Link></div>
         <div><span className="block lg:hidden h-8 w-auto" style={{fontSize:30+'px',cursor:'pointer'}}>&#9776;</span></div>
       </div>
 
