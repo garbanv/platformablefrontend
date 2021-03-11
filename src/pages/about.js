@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import AboutTeamComponent from '../components/AboutTeamComponent'
 import Img from 'gatsby-image'
 import SEO from "../components/seo"
-import {BiCheckShield} from 'react-icons/Bi'
+
 
 export default function about({data}) {
 
