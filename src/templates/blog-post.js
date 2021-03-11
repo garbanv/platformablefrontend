@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react"
+import React, { useEffect,useState, Suspense } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -6,7 +6,7 @@ import EmbedContainer from "react-oembed-container"
 import SEO from "../components/seo"
 
 
-
+const PostContentComponent = React.lazy(() => import('../components/PostContentComponent'));
 
 const BlogPost = ({ data }) => {
 
@@ -85,14 +85,15 @@ const BlogPost = ({ data }) => {
               className="mb-10"
             />
 
-          
-    
+          <Suspense fallback={<div>Loading...</div>}>
+          <PostContentComponent data={data.strapiPost.content}/>
+          </Suspense>
             
-            <EmbedContainer markup={data.strapiPost.content}>
+            {/* <EmbedContainer markup={data.strapiPost.content}>
               <div
                 dangerouslySetInnerHTML={{ __html: unescape(data.strapiPost.content) }}
               />
-            </EmbedContainer>
+            </EmbedContainer> */}
 
 
 
