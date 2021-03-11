@@ -9,9 +9,9 @@ import SEO from "../components/seo"
 
 
 const BlogPost = ({ data }) => {
-  const [isMounted,setIsMounted] = useState(false)
+
   useEffect(() => {
-    setIsMounted(true)
+
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
   }, [data])
@@ -86,7 +86,7 @@ const BlogPost = ({ data }) => {
             />
 
           
-          {isMounted ? 
+    
             
             <EmbedContainer markup={data.strapiPost.content}>
               <div
@@ -94,7 +94,7 @@ const BlogPost = ({ data }) => {
               />
             </EmbedContainer>
 
-           : 'Loading...' }
+
 
 
 
