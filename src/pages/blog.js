@@ -23,7 +23,7 @@ const posts = ({data}) => {
           <div key={post.node.id}> 
             <div className="rounded-lg overflow-hidden">
               <div className="relative overflow-hidden pb-1">
-                <a href={`/blog/${post.node.slug}`}>
+                <Link to={`/blog/${post.node.slug}`}>
                 {/* <img
                   className="absolute h-full w-full object-cover object-center"
                   src="https://platformable.com/content/images/2021/01/mandy-choi-_qZ0us4az20-unsplash.jpg"
@@ -35,7 +35,7 @@ const posts = ({data}) => {
         imgStyle={{ objectFit: 'contain' }}
         fluid={post.node.featured_image.childImageSharp.fluid} 
         className="mb-1"/>
-                </a>
+                </Link>
               </div>
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8">

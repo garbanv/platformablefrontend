@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect,useState } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -9,7 +9,9 @@ import SEO from "../components/seo"
 
 
 const BlogPost = ({ data }) => {
+  const [isMounted,setIsMounted] = useState(false)
   useEffect(() => {
+    setIsMounted(true)
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
   }, [data])
@@ -84,12 +86,18 @@ const BlogPost = ({ data }) => {
             />
 
           
-
+          {isMounted ? 
+            
             <EmbedContainer markup={data.strapiPost.content}>
               <div
                 dangerouslySetInnerHTML={{ __html: unescape(data.strapiPost.content) }}
               />
             </EmbedContainer>
+
+           : 'Loading...' }
+
+
+
           </div>
 
           {/* end of all posts */}
