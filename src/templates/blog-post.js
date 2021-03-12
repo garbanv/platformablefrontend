@@ -28,7 +28,7 @@ const BlogPost = ({ data }) => {
     if (typeof window !== `undefined`) {
       getScripts()
     }
-    window.load()
+
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
   }, [data])
