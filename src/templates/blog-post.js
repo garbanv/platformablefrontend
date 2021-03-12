@@ -31,7 +31,7 @@ const BlogPost = ({ data }) => {
   
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
-  }, [data, window])
+  }, [data])
   return (
     <>
       <Layout>
