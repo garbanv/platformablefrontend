@@ -25,10 +25,13 @@ const BlogPost = ({ data }) => {
 
 
   useEffect(() => {
-    getScripts()
+    if (typeof window !== `undefined`) {
+      getScripts()
+    }
+  
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
-  }, [data])
+  }, [data, window])
   return (
     <>
       <Layout>
