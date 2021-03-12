@@ -4,11 +4,14 @@ import Layout from '../components/layout'
 export default function Dashboard() {
 
     const [loggedUser,setLoggedUser] = useState('')
-    console.log(window.localStorage.getItem("user"))
+
     useEffect(()=> {
-        setLoggedUser(window.localStorage.getItem("user"))
+        if (typeof window !== `undefined`) {
+            setLoggedUser(window.localStorage.getItem("user"))
+          }
+
     })
-    console.log(loggedUser.username)
+
 
     return (
         <Layout>
