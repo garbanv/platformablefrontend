@@ -37,7 +37,6 @@ const BlogPost = ({ data }) => {
       <Layout>
         <Helmet>
           {scripts ? scripts.map((script)=> {
-            script.setAttribute("async", "async");
             return script
           }): null}
         </Helmet>
