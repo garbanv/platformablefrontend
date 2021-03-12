@@ -34,6 +34,8 @@ const Header = ({ siteTitle }) => {
         <Link to="/about">About</Link>
         <Link to="products">Product Streams</Link>
         <Link to="/blog">Blog</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/sign-up">Sign Up</Link>
      
       </div>
       </div>
@@ -53,10 +55,12 @@ const Header = ({ siteTitle }) => {
       <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
       <div className="hidden sm:block sm:ml-6">
           <div className="flex space-x-4">
-            <Link to="/" className="top-nav text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav" >Home</Link>
-            <Link to="/about" className="top-nav text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">About</Link>
-            <Link to="/products" className=" top-nav text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Products Stream</Link>
-            <Link to="/blog" className="top-nav text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Blog</Link>
+            <Link to="/" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav" >Home</Link>
+            <Link to="/about" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">About</Link>
+            <Link to="/products" className=" top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Products Stream</Link>
+            <Link to="/blog" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Blog</Link>
+            <Link to="/login" className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-yellow-500" activeClassName="active-top-nav">Login</Link>
+            <Link to="/sign-up" className="top-nav text-white btn-bg-russian-violet-dark  hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Sign Up</Link>
           </div>
         </div>
       </div>

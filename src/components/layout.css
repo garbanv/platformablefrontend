@@ -10,6 +10,12 @@ body {
   font-size:18px;
 }
 
+
+.posts-content ul {
+  list-style-type: disc !important;
+  margin-left:50px;
+}
+
 h1,
 h2,
 h3,
@@ -652,7 +658,7 @@ MEDIA QUERIES */
      ////////////////////////////////////////////////////////////////////////// */
 
      .center {
-      display: block;
+      display: block !important ;
       margin-left: auto;
       margin-right: auto;
     }
@@ -3802,6 +3808,12 @@ MEDIA QUERIES */
       float: right;
   }
   
+  /* header btn */
+
+  .btn-bg-russian-violet-dark {
+    background-color:var(--red-orange-dark);
+    color:white;
+  }
   
   
   /*Card Styling*/

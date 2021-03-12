@@ -23,7 +23,7 @@ const posts = ({data}) => {
           <div key={post.node.id}> 
             <div className="rounded-lg overflow-hidden">
               <div className="relative overflow-hidden pb-1">
-                <a href={`/blog/${post.node.slug}`}>
+                <Link to={`/blog/${post.node.slug}`}>
                 {/* <img
                   className="absolute h-full w-full object-cover object-center"
                   src="https://platformable.com/content/images/2021/01/mandy-choi-_qZ0us4az20-unsplash.jpg"
@@ -35,15 +35,15 @@ const posts = ({data}) => {
                 imgStyle={{ objectFit: 'contain' }}
                 fluid={post.node.featured_image.childImageSharp.fluid} 
                 className="mb-1"/>
-                </a>
+                </Link>
               </div>
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8">
-                  <h3 className="text-2xl font-bold">
-                   <a href={`/blog/${post.node.slug}`}> {post.node.title}</a>
+                  <h3 className="text-lg font-bold">
+                   <Link to={`/blog/${post.node.slug}`}> {post.node.title}</Link>
                   </h3>
                   <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
-                    <p className="text-xs">{`Writen by `} </p>
+                    <p className="text-xs mr-1">{`Writen by `} </p>
                     {
                     post.node.users_permissions_users.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" >{` ${post.node.users_permissions_users[0].username}`}</Link> 
                     : post.node.users_permissions_users.length === 2 ? authorsData.map((x, index) => <Link to={`/author/${x.id}`}className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">{x.username} {index < authorsData.length -1  ? ' & ' : ''}</Link>)
@@ -71,7 +71,7 @@ const posts = ({data}) => {
                       href={`/blog/${post.node.slug}`}
                       className="flex items-center"
                     >
-                      <p className="mr-4">Read more</p>
+                      <p className="mr-4 text-lg">Read more</p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="14.125"

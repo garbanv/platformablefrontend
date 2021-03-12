@@ -10,11 +10,11 @@ export default function products() {
     return (
         <Layout>
             <section id="product-streams">
-        <div className="container mx-auto">
+        <div className="container mx-auto ">
             <h3 className="text-5xl font-black text-center mb-5 mt-20">Product Streams</h3>
         </div>
 
-        <div className="all-posts">
+        <div className="all-posts mx-5">
         <div className="container mx-auto mt-20 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-2">
           {/* single post card start here */}
          

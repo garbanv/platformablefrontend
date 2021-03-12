@@ -1,30 +1,38 @@
-import React,{useState} from "react"
-import Layout from "../components/layout"
+import React, { useState } from "react"
 import "../components/layout.css"
-import Loader from '../components/Loader'
+import { Link,navigate } from "gatsby"
+import Loader from "../components/Loader"
+import axios from 'axios';
 
 export default function Login() {
   const [login, setLogin] = useState({
-      identifier:'',
-      password:''
+    identifier: "",
+    password: "",
   })
 
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleLogin = () => {
-   setLoading(true)    // Request API.
-// axios
-// .post('http://localhost:1337/auth/local', {...login})
-// .then(response => {
-//   // Handle success.
-//   console.log('Well done!');
-//   console.log('User profile', response.data.user);
-//   console.log('User token', response.data.jwt);
-// })
-// .catch(error => {
-//   // Handle error.
-//   console.log('An error occurred:', error.response);
-// });
+    setLoading(true) // Request API.
+    axios
+    .post('https://websiteserver-ds7cf.ondigitalocean.app/auth/local', {...login})
+    .then(response => {
+      // Handle success.
+      console.log('Well done!');
+      console.log('User profile', response.data.user);
+      console.log('User token', response.data.jwt);
+      if (typeof window !== `undefined`) {
+        // code that references a browser global
+        localStorage.setItem("user",response.data.user.username)
+        localStorage.setItem("jwt",response.data.jwt)
+        navigate("/dashboard")
+      }
+
+    })
+    .catch(error => {
+      // Handle error.
+      console.log('An error occurred:', error.response);
+    });
   }
 
   return (
@@ -39,7 +47,7 @@ export default function Login() {
           <div className="mb-4">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
-              for="username"
+              htmlFor="username"
             >
               Username
             </label>
@@ -48,14 +56,13 @@ export default function Login() {
               id="username"
               type="text"
               placeholder="Username"
-              onChange={(e)=>setLogin({...login,identifier:e.target.value})}
+              onChange={e => setLogin({ ...login, identifier: e.target.value })}
             />
           </div>
           <div className="mb-6">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
-              for="password"
-
+              htmlFor="password"
             >
               Password
             </label>
@@ -64,9 +71,9 @@ export default function Login() {
               id="password"
               type="password"
               placeholder="******************"
-              onChange={(e)=>setLogin({...login,password:e.target.value})}
+              onChange={e => setLogin({ ...login, password: e.target.value })}
             />
-            <p className="text-red text-xs italic">Please choose a password.</p>
+            {/* <p className="text-red text-xs italic">Please choose a password.</p> */}
           </div>
           <div className="flex items-center justify-between">
             <button
@@ -74,16 +81,21 @@ export default function Login() {
               type="button"
               onClick={handleLogin}
             >
-
-             {loading ? <Loader text="Sign In"/>  : "Sign In"} 
+              {loading ? <Loader text="Sign In" /> : "Sign In"}
             </button>
 
-            <a
+            <Link
+              to="/sign-up"
               className="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
               href="#"
             >
-              Forgot Password?
-            </a>
+              Create Account
+            </Link>
+          </div>
+          <div className="flex justify-center">
+            <Link to="/" className="text-center text-sm my-5">
+              www.platformable.com
+            </Link>
           </div>
         </div>
       </div>

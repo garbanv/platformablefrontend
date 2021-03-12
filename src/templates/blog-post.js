@@ -4,20 +4,39 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import EmbedContainer from "react-oembed-container"
 import SEO from "../components/seo"
+import { Helmet } from "react-helmet"
 
 
 const PostContentComponent = React.lazy(() => import('../components/PostContentComponent'));
 
 const BlogPost = ({ data }) => {
 
-  useEffect(() => {
+  const [scripts,setScripts] = useState([])
 
+  function getScripts () {
+ // get all script tags from content
+ const re = /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/g
+ const results = setScripts(data.strapiPost.content.match(re))
+ 
+ return results
+  }
+ 
+  console.log(scripts)
+
+
+  useEffect(() => {
+    getScripts()
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
   }, [data])
   return (
     <>
       <Layout>
+        <Helmet>
+          {scripts ? scripts.map((script)=> {
+            return (script)
+          }): null}
+        </Helmet>
         <SEO title={data.strapiPost.title}/>
         <section className="posts-container mx-auto all-blog-content my-5 sm:my-20 px-5">
           <h3 className="text-1xl sm:text-3xl font-black mb-3">
@@ -76,7 +95,7 @@ const BlogPost = ({ data }) => {
             Updated at {new Date(data.strapiPost.updated_at).toDateString()}
           </span>
 
-          <div className="posts-content">
+          <div className="posts-content py-10">
             <Img
               alt={data.strapiPost.title}
               key={data.strapiPost.featured_image.childImageSharp.fluid.src}
