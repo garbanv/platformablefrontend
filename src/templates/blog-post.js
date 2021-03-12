@@ -26,7 +26,7 @@ const BlogPost = ({ data }) => {
 
   useEffect(() => {
     if (typeof window !== `undefined`) {
-      getScripts()
+      document.onload = getScripts()
     }
 
     window.instgrm.Embeds.process()
@@ -37,7 +37,8 @@ const BlogPost = ({ data }) => {
       <Layout>
         <Helmet>
           {scripts ? scripts.map((script)=> {
-            return (script)
+            script.setAttribute("async", "async");
+            return script
           }): null}
         </Helmet>
         <SEO title={data.strapiPost.title}/>
