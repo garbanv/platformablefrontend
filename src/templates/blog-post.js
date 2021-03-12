@@ -21,7 +21,7 @@ const BlogPost = ({ data }) => {
  return results
   }
  
-  console.log(scripts)
+  console.log('scripts', scripts)
 
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const BlogPost = ({ data }) => {
 
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
-  }, [data,scripts])
+  }, [data])
   return (
     <>
       <Layout>
