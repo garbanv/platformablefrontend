@@ -26,7 +26,7 @@ const BlogPost = ({ data }) => {
 
   useEffect(() => {
     getScripts()
-  forceUpdate()
+ 
 
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
