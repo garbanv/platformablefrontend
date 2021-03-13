@@ -30,13 +30,13 @@ const BlogPost = ({ data }) => {
 
     window.instgrm.Embeds.process()
     window.twttr.widgets.load()
-  }, [data, scripts])
+  }, [data])
   return (
     <>
       <Layout>
         <Helmet>
           {scripts ? scripts.map((script)=> {
-            return script
+           return document.body.appendChild(script)   
           }): null}
         </Helmet>
         <SEO title={data.strapiPost.title}/>
