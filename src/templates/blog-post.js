@@ -36,7 +36,7 @@ const BlogPost = ({ data }) => {
       <Layout>
         <Helmet>
           {scripts ? scripts.map((script)=> {
-           script.setAttribute('defer', 'defer')
+          script.addEventListener('load')
            return script  
           }): null}
         </Helmet>
