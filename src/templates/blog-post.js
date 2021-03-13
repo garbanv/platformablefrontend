@@ -36,7 +36,8 @@ const BlogPost = ({ data }) => {
       <Layout>
         <Helmet>
           {scripts ? scripts.map((script)=> {
-           return document.body.appendChild(script)   
+           script.setAttribute('defer', 'defer')
+           return script  
           }): null}
         </Helmet>
         <SEO title={data.strapiPost.title}/>
