@@ -28,15 +28,14 @@ const BlogPost = ({ data }) => {
     getScripts()
  
 
-    window.instgrm.Embeds.process()
-    window.twttr.widgets.load()
+    // window.instgrm.Embeds.process()
+    // window.twttr.widgets.load()
   }, [data])
   return (
     <>
       <Layout>
         <Helmet>
           {scripts ? scripts.map((script)=> {
-          script.addEventListener('load')
            return script  
           }): null}
         </Helmet>
