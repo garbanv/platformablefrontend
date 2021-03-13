@@ -1,4 +1,4 @@
-import React, { useEffect,useState, Suspense } from "react"
+import React, { useEffect,useState, useRef } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -12,6 +12,7 @@ const PostContentComponent = React.lazy(() => import('../components/PostContentC
 const BlogPost = ({ data }) => {
 
   const [scripts,setScripts] = useState([])
+  const [update,setUpdate]=useState(false);
 
   function getScripts () {
  // get all script tags from content
@@ -23,11 +24,16 @@ const BlogPost = ({ data }) => {
  
   console.log('scripts', scripts)
 
-
+  const isInitialMount = useRef(true);
   useEffect(() => {
     getScripts()
  
-
+    if (isInitialMount.current) {
+      setUpdate(true)
+      isInitialMount.current = false;
+    } else {
+      console.log("hey not initial mount")
+    }
     // window.instgrm.Embeds.process()
     // window.twttr.widgets.load()
   }, [data])

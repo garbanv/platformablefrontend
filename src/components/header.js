@@ -30,7 +30,7 @@ const Header = ({ siteTitle }) => {
       </div>
 
       <div id="mySidenav" class="sidenav block lg:hidden">
-        <a  class="closebtn" onClick={closeNav}>&times;</a>
+        <a  className="closebtn" onClick={closeNav}>&times;</a>
         <Link to="/about">About</Link>
         <Link to="products">Product Streams</Link>
         <Link to="/blog">Blog</Link>
