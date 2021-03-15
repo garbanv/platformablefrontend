@@ -57,8 +57,8 @@ const posts = ({data}) => {
                    
                       {post.node.categories.map(cat=>{
                         return (
-                        <div >
-                        <Link key={post.node.id} to={cat.name} className={`bg-russian-violet-dark-${cat.name} py-1 px-2 rounded text-white text-xs`}>
+                        <div key={post.node.id}>
+                        <Link  to={cat.name} className={`bg-russian-violet-dark-${cat.name} py-1 px-2 rounded text-white text-xs`}>
                           {cat.name}
                       </Link>
                       </div>

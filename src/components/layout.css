@@ -272,6 +272,10 @@ svg {
   }
 }
 
+.img-thumbnail {
+  width:150px;
+  }
+
 /* HOMEPAGE */
  
 a {

@@ -9,8 +9,8 @@ export default function TrendsReport() {
   
 
   const handleRedirect = (selectedOption) => {
-    window.location.assign(`${selectedOption}`)
-    // navigate('/login')
+
+    navigate((`${selectedOption}`))
   }
 
   if(selectedOption) {

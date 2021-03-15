@@ -22,13 +22,15 @@ const BlogPost = ({ data }) => {
  return results
   }
  
-  console.log('scripts', scripts)
+  // console.log('scripts', scripts)
 
   const isInitialMount = useRef(true);
   useEffect(() => {
-    getScripts()
+    
  
     if (isInitialMount.current) {
+      console.log("initial")
+      getScripts()
       setUpdate(true)
       isInitialMount.current = false;
     } else {
@@ -41,6 +43,8 @@ const BlogPost = ({ data }) => {
     <>
       <Layout>
         <Helmet>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha256-t9UJPrESBeG2ojKTIcFLPGF7nHi2vEc7f5A2KpH/UBU=" crossorigin="anonymous"></script>
+
           {scripts ? scripts.map((script)=> {
            return script  
           }): null}
