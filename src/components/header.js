@@ -1,12 +1,16 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React, { useState,useContext } from "react"
+
+import UserStateContext from '../context/UserStateContext'
 
 const Header = ({ siteTitle }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isBurguerActive, setIsBurguerActive] = useState(false)
   const [isProductsMenuActive, setItsProductsMenuActive] = useState(false)
   const [isActive, setActive] = useState(false);
+
+  const [userState,setUserState] = useContext(UserStateContext)
 
   function openNav() {
 
@@ -36,6 +40,7 @@ const Header = ({ siteTitle }) => {
         <Link to="/blog">Blog</Link>
         <Link to="/login">Login</Link>
         <Link to="/sign-up">Sign Up</Link>
+        <Link>{userState?userState.name:'null'}</Link>
      
       </div>
       </div>
@@ -61,6 +66,7 @@ const Header = ({ siteTitle }) => {
             <Link to="/blog" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Blog</Link>
             <Link to="/login" className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-yellow-500" activeClassName="active-top-nav">Login</Link>
             <Link to="/sign-up" className="top-nav text-white btn-bg-russian-violet-dark  hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Sign Up</Link>
+            <Link>{userState?userState.name:'null'}</Link>
           </div>
         </div>
       </div>

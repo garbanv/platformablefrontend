@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { useState,useContext } from "react"
 import "../components/layout.css"
 import { Link,navigate } from "gatsby"
 import Loader from "../components/Loader"
 import axios from 'axios';
+import {UserStateContext} from '../context/UserStateContext'
 
 export default function Login() {
   const [login, setLogin] = useState({
@@ -11,6 +12,8 @@ export default function Login() {
   })
 
   const [loading, setLoading] = useState(false)
+
+  const [userState,setUserState]=useContext(UserStateContext)
 
   const handleLogin = () => {
     setLoading(true) // Request API.
@@ -25,7 +28,9 @@ export default function Login() {
         // code that references a browser global
         localStorage.setItem("user",response.data.user.username)
         localStorage.setItem("jwt",response.data.jwt)
+          setUserState({...userState,name:response.data.user.name})
         navigate("/dashboard")
+      
       }
 
     })

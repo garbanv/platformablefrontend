@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import {UserStateContext} from '../context/UserStateContext'
 
 import Header from "./header"
 import "./layout.css"
@@ -24,15 +25,17 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <UserStateContext.Consumer>
+      {user => (<>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      
-        <main>{children}</main>
-        <footer>
-        <h3 className="font-black text-center mb-5 py-5">Helping your users co-create the value they need</h3>
-        </footer>
- 
-    </>
+      <main>{children}</main>
+      <footer>
+        <h3 className="font-black text-center mb-5 py-5">
+          Helping your users co-create the value they need
+        </h3>
+      </footer>
+      </>)}
+    </UserStateContext.Consumer>
   )
 }
 

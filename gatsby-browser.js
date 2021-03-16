@@ -1,9 +1,9 @@
 import React from "react"
 import './src/styles/global.css';
 
-export const  onPreRouteUpdate = () => {
-    console.log("onRouteUpdate")
-    // if(window){
-    //     window.location.reload(true)
-    // }
-  }
+
+import { UserStateProvider } from "./src/context/UserStateContext"
+
+export const wrapRootElement = ({ element }) => (
+  <UserStateProvider>{element}</UserStateProvider>
+)
