@@ -4,6 +4,7 @@ import "../components/layout.css"
 import Loader from "../components/Loader"
 import { Link, navigate } from "gatsby"
 import axios from 'axios'
+import SEO from '../components/seo'
 
 export default function SignUp() {
   const [register, setRegister] = useState({
@@ -34,6 +35,8 @@ export default function SignUp() {
   }
 
   return (
+    <>
+    <SEO title="Login"/>
     <div className="container mx-auto ">
       <div className="grid md:grid-cols-6 md:gap-4 grid-cols-1 md:gap-2 px-5 justify-center items-center h-screen  ">
         <div className="col-start-3 col-span-2 bg-gray-100 rounded-xl  px-10 py-10">
@@ -141,5 +144,6 @@ export default function SignUp() {
         </div>
       </div>
     </div>
+    </>
   )
 }

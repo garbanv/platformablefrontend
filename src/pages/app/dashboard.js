@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext } from "react"
 import {Link} from 'gatsby'
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import Img from 'gatsby-image'
 import { loadStripe } from "@stripe/stripe-js"
 import {BsPeopleCircle} from '@react-icons/all-files/Bs/BsPeopleCircle'
 import {GrStatusGood} from '@react-icons/all-files/Gr/GrStatusGood'
 import {BsShieldShaded} from '@react-icons/all-files/Bs/BsShieldShaded'
 
-import UserContext from "../context/UserContext"
+import UserContext from "../../context/UserContext"
 
 // LOAD STRIPE CLIENT SIDE, this way wont be able to modify, edit, just client side checkout
 let stripePromise

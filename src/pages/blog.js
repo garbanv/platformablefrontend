@@ -2,14 +2,15 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
-
+import SEO from '../components/seo'
 
 const posts = ({data}) => {
 
-  const authorsData = data.allStrapiPost.edges[0].node.users_permissions_users;
+  const authorsData = data.allStrapiPost.edges[0].node.user;
 
   return(
   <Layout>
+    <SEO title="Blog"/>
     <section className="container mx-auto all-blog-content my-20 px-5">
       <h3 className="text-5xl font-black text-center mb-5">
         Our Ideas are worth reading
@@ -45,11 +46,13 @@ const posts = ({data}) => {
                   <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                     <p className="text-xs mr-1">{`Writen by `} </p>
                     {
-                    post.node.users_permissions_users.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" >{` ${post.node.users_permissions_users[0].username}`}</Link> 
-                    : post.node.users_permissions_users.length === 2 ? authorsData.map((x, index) => <Link to={`/author/${x.id}`}className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">{x.username} {index < authorsData.length -1  ? ' & ' : ''}</Link>)
+                    post.node.user.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" >{` ${post.node.user[0].username}`}</Link> 
+                    : post.node.user.length === 2 ? authorsData.map((x, index) => <Link to={`/author/${x.id}`}className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">{x.username} {index < authorsData.length -1  ? ' & ' : ''}</Link>)
                     :null
                     }
                   </div>
+                  <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum justo nunc, pellentesque eget auctor sed, condimentum ut magna. Donec sit amet sollicitudin ligula. Vestibulum tempus tortor non felis dignissim, quis euismod diam faucibus. Vivamus ullamcorper massa a odio dignissim venenatis</p>
+
         
                   <div className="mt-10 flex justify-between items-center">
                     <div>
@@ -67,7 +70,7 @@ const posts = ({data}) => {
                         
                       
                     </div>
-                    <a
+                    <Link
                       href={`/blog/${post.node.slug}`}
                       className="flex items-center"
                     >
@@ -88,7 +91,7 @@ const posts = ({data}) => {
                           ></path>
                         </g>
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -129,7 +132,7 @@ query BlogPosts {
         }
         title
         updated_at
-        users_permissions_users {
+        user {
           id
           username
         }
@@ -138,5 +141,7 @@ query BlogPosts {
   }
 }
 `
+
+
 
 

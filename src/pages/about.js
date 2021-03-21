@@ -211,9 +211,9 @@ export default function about({data}) {
 
             
             {/* {console.log(data.strapiAbout)} */}
-            {data.strapiAbout.Author.map((user,index)=>{
+            {data.strapiAbout.Author.map((userauthor,index)=>{
                     return(
-                      user.users_permissions_users.map((x,ind) =>{
+                      userauthor.user.map((x,ind) =>{
                        console.log(x)
                        return (
               
@@ -260,7 +260,7 @@ query MyAbout {
     heroText
     Author {
       id
-      users_permissions_users {
+      user {
         name
         lastname
         position

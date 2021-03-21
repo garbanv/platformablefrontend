@@ -16,7 +16,6 @@ module.exports = {
         onLoad: `() => Sentry.init({dsn:"${process.env.SENTRY_DSN}"})`,
       },
     },
-    `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -84,7 +83,14 @@ module.exports = {
         ],
       },
     },
-    
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Product','Sku','Subscription', 'Price', 'Customer'],
+        secretKey: 'sk_test_51IVzE6Gte9n2W4Jh46D22VTerG8Vr7Ko236oe5wEOk2ekE8AWMhjKtV37rO1co1QHauoeFfAjwOu2wbDdFoXVRtI00H4EHtpxC',
+        downloadFiles: true,
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

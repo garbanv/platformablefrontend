@@ -3933,3 +3933,11 @@ MEDIA QUERIES */
     margin-bottom:50px;
     text-align:center;
     }
+
+    /* DASHBOARD */
+
+    .dashboard-profile-card svg{
+   
+        font-size:50px;
+     
+    }

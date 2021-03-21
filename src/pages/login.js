@@ -1,10 +1,15 @@
-import React, { useState } from "react"
+import React, { useState,useContext } from "react"
 import "../components/layout.css"
 import { Link,navigate } from "gatsby"
 import Loader from "../components/Loader"
 import axios from 'axios';
+import UserContext from '../context/UserContext'
+import SEO from '../components/seo'
 
 export default function Login() {
+  const [user,setUser]= useContext(UserContext);
+
+
   const [login, setLogin] = useState({
     identifier: "",
     password: "",
@@ -25,7 +30,8 @@ export default function Login() {
         // code that references a browser global
         localStorage.setItem("user",response.data.user.username)
         localStorage.setItem("jwt",response.data.jwt)
-        navigate("/dashboard")
+        setUser({...user,name:response.data.user.name,isLoggedIn:true})
+        navigate("/app/dashboard")
       }
 
     })
@@ -36,6 +42,8 @@ export default function Login() {
   }
 
   return (
+    <>
+    <SEO title="Login"/>
     <div className="container mx-auto ">
       <div className="grid md:grid-cols-6 md:gap-4 grid-cols-1 md:gap-2 px-5 justify-center items-center h-screen  ">
         <div className="col-start-3 col-span-2 bg-gray-50 rounded-xl  px-10 py-10">
@@ -49,6 +57,7 @@ export default function Login() {
               className="block text-grey-darker text-sm font-bold mb-2"
               htmlFor="username"
             >
+   
               Username
             </label>
             <input
@@ -100,5 +109,6 @@ export default function Login() {
         </div>
       </div>
     </div>
+    </>
   )
 }

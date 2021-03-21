@@ -61,14 +61,14 @@ const BlogPost = ({ data }) => {
               <div className="autorInfo flex items-start">
                 <h2 className="text-sm tracking-tighter text-gray-900">
                   By{" "}
-                  {data.strapiPost.users_permissions_users.length === 1 ? (
+                  {data.strapiPost.user.length === 1 ? (
                     <>
                       <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">
-                        {data.strapiPost.users_permissions_users[0].username}
+                        {data.strapiPost.user[0].username}
                       </Link>{" "}
                     </>
-                  ) : data.strapiPost.users_permissions_users.length === 2 ? (
-                    data.strapiPost.users_permissions_users.map((x, index) => (
+                  ) : data.strapiPost.user.length === 2 ? (
+                    data.strapiPost.user.map((x, index) => (
                       <>
                         <Link
                          
@@ -76,7 +76,7 @@ const BlogPost = ({ data }) => {
                         >
                           {x.name} {x.lastname}{" "}
                           {index <
-                          data.strapiPost.users_permissions_users.length - 1
+                          data.strapiPost.user.length - 1
                             ? " &"
                             : ""}
                         </Link>
@@ -139,9 +139,9 @@ const BlogPost = ({ data }) => {
 
         <section className="posts-container mx-auto">
           <div
-            className={`grid grid-cols-1 sm:grid-cols-${data.strapiPost.users_permissions_users.length} md:grid-cols-${data.strapiPost.users_permissions_users.length} xl:grid-cols-${data.strapiPost.users_permissions_users.length} gap-4 my-5`}
+            className={`grid grid-cols-1 sm:grid-cols-${data.strapiPost.user.length} md:grid-cols-${data.strapiPost.user.length} xl:grid-cols-${data.strapiPost.user.length} gap-4 my-5`}
           >
-            {data.strapiPost.users_permissions_users.map((user, index) => {
+            {data.strapiPost.user.map((user, index) => {
               return (
                 <div
                   key={index}
@@ -190,7 +190,7 @@ export const query = graphql`
       content
       id
       title
-      users_permissions_users {
+      user {
         id
         name
         lastname
