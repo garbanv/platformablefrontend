@@ -71,7 +71,7 @@ const posts = ({data}) => {
                       
                     </div>
                     <Link
-                      href={`/blog/${post.node.slug}`}
+                      to={`/blog/${post.node.slug}`}
                       className="flex items-center"
                     >
                       <p className="mr-4 text-lg">Read more</p>
