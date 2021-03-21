@@ -4,9 +4,9 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Img from 'gatsby-image'
 import { loadStripe } from "@stripe/stripe-js"
-import {BsPeopleCircle} from '@react-icons/all-files/Bs/BsPeopleCircle'
-import {GrStatusGood} from '@react-icons/all-files/Gr/GrStatusGood'
-import {BsShieldShaded} from '@react-icons/all-files/Bs/BsShieldShaded'
+// import {BsPeopleCircle} from '@react-icons/all-files/Bs/BsPeopleCircle'
+// import {GrStatusGood} from '@react-icons/all-files/Gr/GrStatusGood'
+// import {BsShieldShaded} from '@react-icons/all-files/Bs/BsShieldShaded'
 
 import UserContext from "../../context/UserContext"
 
@@ -57,7 +57,7 @@ export default function Dashboard({ data }) {
 
           <div className="dashboard-profile-card bg-gray-50 rounded-lg flex flex-wrap shadow-sm">
             <div className="dashboard-profile-card-img pl-10 py-10 pr-5">
-              <BsPeopleCircle className=""/>
+              {/* <BsPeopleCircle className=""/> */}
             </div>
             <div className="dashboard-profile-card-text p-10">
               <h3 className="font-black text-primary">Hi! {user.name}</h3>
@@ -66,7 +66,7 @@ export default function Dashboard({ data }) {
           </div>
           <div className="dashboard-profile-card bg-gray-50 rounded-lg shadow-sm flex flex-wrap">
             <div className="dashboard-profile-card-img pl-10 py-10 pr-5">
-              <GrStatusGood className="text-gray-300"/>
+              {/* <GrStatusGood className="text-gray-300"/> */}
          
             </div>
             <div className="dashboard-profile-card-text p-10">
@@ -76,7 +76,7 @@ export default function Dashboard({ data }) {
           </div>
           <div className="dashboard-profile-card bg-gray-50 rounded-lg shadow-sm flex flex-wrap">
             <div className="dashboard-profile-card-img pl-10 py-10 pr-5">
-              <BsPeopleCircle className=""/>
+              {/* <BsPeopleCircle className=""/> */}
             </div>
             <div className="dashboard-profile-card-text p-10">
               <h3 className="font-black text-primary">Add a Beneficiary</h3>
