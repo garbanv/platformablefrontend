@@ -53,7 +53,7 @@ export default function openBanking() {
           <div key=""> 
             <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
-                <Link to="">
+                <Link to="/blog">
                 <img
                   className="absolute h-full w-full object-contain object-center"
                   src={BlogAsServiceImg}
@@ -64,7 +64,7 @@ export default function openBanking() {
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8 text-center" >
                   <h3 className="text-2xl font-bold">
-                   <Link to="" className="text-center">Blogs and articles</Link>
+                   <Link to="/blog" className="text-center">Blogs and articles</Link>
                   </h3>
 
                 </div>
@@ -98,7 +98,7 @@ export default function openBanking() {
           <div key=""> 
             <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
-                <Link to="">
+                <Link to="/landings/training">
                 <img
                   className="absolute h-full w-full object-contain object-center"
                   src={PlatformMindsetImg}
@@ -109,7 +109,7 @@ export default function openBanking() {
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8 text-center" >
                   <h3 className="text-2xl font-bold">
-                   <Link to="" className="text-center">Platform mindset training for banks</Link>
+                   <Link to="/landings/training" className="text-center">Platform mindset training for banks</Link>
                   </h3>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function openBanking() {
           <div key=""> 
             <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
-                <Link to="">
+                <Link to="/trends-report">
                 <img
                   className="absolute h-full w-full object-contain object-center"
                   src={QuarterlyImg}

@@ -63,6 +63,8 @@ const Header = ({ siteTitle }) => {
             <Link to="/about" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">About</Link>
             <Link to="/products" className=" top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Products Stream</Link>
             <Link to="/blog" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Blog</Link>
+            <Link to="/landings/training" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Training</Link>
+
             {user && user.isLoggedIn  ? (<Link to="/dashboard" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Dashboard</Link>): ''}
             <Link to="/login" className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-yellow-500" activeClassName="active-top-nav">{user.isLoggedIn? 'Logout' : 'Login'}</Link>
             <Link to="/sign-up" className="top-nav text-white btn-bg-russian-violet-dark  hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Sign Up</Link>
