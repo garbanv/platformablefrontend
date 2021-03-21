@@ -4,7 +4,7 @@ import React, { useState,useContext } from "react"
 import UserContext from '../context/UserContext'
 
 const Header = ({ siteTitle }) => {
-  const [user,setUser]= useContext(UserContext);
+  const [user,setUser]= useContext(UserContext || false);
   const [isOpen, setIsOpen] = useState(false)
   const [isBurguerActive, setIsBurguerActive] = useState(false)
   const [isProductsMenuActive, setItsProductsMenuActive] = useState(false)
