@@ -205,13 +205,13 @@ export default function about({data}) {
 
       <section className="content">
         <div className="posts-container mx-auto my-10 px-5">
-      { data.strapiAbout.content && data.strapiAbout.content  ? 
+      { data.strapiAbout.content && 
         <EmbedContainer markup={data.strapiAbout.content}>
               <div
                 dangerouslySetInnerHTML={{ __html: unescape(data.strapiAbout.content) }}
               />
             </EmbedContainer>
-      : '' }  
+      }  
         </div>
       </section>
       {/*end of container */}

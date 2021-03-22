@@ -47,3 +47,13 @@ exports.createPages = ({ actions, graphql }) => {
   // Query for articles nodes to use in creating pages.
   return getPosts;
 };
+
+exports.sourceNodes = ({actions})=> {
+  const {createTypes} = actions;
+  const typeDefs = `
+  type StrapiAbout implements Node {
+    content: String
+  }`
+
+  createTypes(typeDefs);
+}
