@@ -24,19 +24,18 @@ const posts = ({data}) => {
           <div key={post.node.id}> 
             <div className="rounded-lg overflow-hidden">
               <div className="relative overflow-hidden pb-1">
-                <Link to={`/blog/${post.node.slug}`}>
-                {/* <img
-                  className="absolute h-full w-full object-cover object-center"
-                  src="https://platformable.com/content/images/2021/01/mandy-choi-_qZ0us4az20-unsplash.jpg"
-                  alt=""
-                /> */}
-                <Img 
-                alt={post.node.title}
-                key={post.node.featured_image.childImageSharp.fluid.src}
-                imgStyle={{ objectFit: 'contain' }}
-                fluid={post.node.featured_image.childImageSharp.fluid} 
-                className="mb-1"/>
-                </Link>
+                {/* Check if post has image, if we dont do the check netlify wont build */}
+              {post.node.featured_image && post.node.featured_image ? 
+              <Link to={`/blog/${post.node.slug}`}>
+              <Img 
+              alt={post.node.title}
+              key={post.node.featured_image.childImageSharp.fluid.src}
+              imgStyle={{ objectFit: 'contain' }}
+              fluid={post.node.featured_image.childImageSharp.fluid} 
+              className="mb-1"/>
+              </Link>
+              : ''}
+                
               </div>
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8">

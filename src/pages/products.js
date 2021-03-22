@@ -22,7 +22,7 @@ export default function products() {
           <div key=""> 
             <div className="rounded-lg overflow-hidden">
               <div className="relative overflow-hidden pb-60">
-                <Link to="">
+                <Link to="/open-banking">
                 <img
                   className="absolute h-full w-full object-cover object-center"
                   src={obImg}

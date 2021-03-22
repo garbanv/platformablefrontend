@@ -108,13 +108,16 @@ const BlogPost = ({ data }) => {
           </span>
 
           <div className="posts-content py-10">
+            {data.strapiPost.featured_image && data.strapiPost.featured_image ? 
             <Img
-              alt={data.strapiPost.title}
-              key={data.strapiPost.featured_image.childImageSharp.fluid.src}
-              imgStyle={{ objectFit: "contain" }}
-              fluid={data.strapiPost.featured_image.childImageSharp.fluid}
-              className="mb-10"
-            />
+            alt={data.strapiPost.title}
+            key={data.strapiPost.featured_image.childImageSharp.fluid.src}
+            imgStyle={{ objectFit: "contain" }}
+            fluid={data.strapiPost.featured_image.childImageSharp.fluid}
+            className="mb-10"
+          />
+            : ''}
+            
 
             <EmbedContainer markup={data.strapiPost.content}>
               <div

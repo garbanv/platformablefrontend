@@ -47,7 +47,7 @@ export default function Dashboard({ data }) {
       <div className="container mx-auto">
        
         {/* SECTION profile */}
-        <section className="dashboard-profile my-10 ">
+        <section className="dashboard-profile my-10 px-5">
           <h6 className=" py-5 text-gray-300">Dashboard</h6>
 
         <div className="dashboard-profile-cards grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -83,7 +83,7 @@ export default function Dashboard({ data }) {
         </div>
         </section>
 
-        <section>
+        <section className="px-5">
         <h6 className=" py-5 text-gray-300">Select or change subscription Pack</h6>
         <div className="plans-group flex flex-wrap flex-col md:flex-row justify-evenly text-center text-sm my-5">
           {data.allStripePrice.edges.map(plan => {
@@ -143,14 +143,18 @@ export default function Dashboard({ data }) {
           <div key={post.node.id}> 
             <div className="rounded-lg overflow-hidden">
               <div className="relative overflow-hidden pb-1">
-                <Link to={`/blog/${post.node.slug}`}>
-                <Img 
-                alt={post.node.title}
-                key={post.node.featured_image.childImageSharp.fluid.src}
-                imgStyle={{ objectFit: 'contain' }}
-                fluid={post.node.featured_image.childImageSharp.fluid} 
-                className="mb-1"/>
-                </Link>
+               
+                  {post.node.featured_image && post.node.featured_image ? 
+                   <Link to={`/blog/${post.node.slug}`}>
+                  <Img 
+                  alt={post.node.title}
+                  key={post.node.featured_image.childImageSharp.fluid.src}
+                  imgStyle={{ objectFit: 'contain' }}
+                  fluid={post.node.featured_image.childImageSharp.fluid} 
+                  className="mb-1"/>
+                  </Link>
+                  :""}
+               
               </div>
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8">
