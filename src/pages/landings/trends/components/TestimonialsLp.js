@@ -4,8 +4,8 @@ const TestimonialsLp = props => {
   return (
     <section className="bg-secondary my-0 mx-auto">
       <div className="text-center p-8">
-        <h2 className="text-white">
-          What our colleagues say about the program:
+        <h2 className="text-white font-black">
+        What has been said about our previous reports
         </h2>
         <blockquote className="italic p-2">
           <p>
@@ -15,7 +15,7 @@ const TestimonialsLp = props => {
           </p>
         </blockquote>
         <p className="uppercase">
-          <span className="font-bold">Author Name</span>, Position
+          <span className="font-black">Author Name</span>, Position
         </p>
       </div>
     </section>

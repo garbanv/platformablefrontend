@@ -109,7 +109,8 @@ export default function openBanking() {
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8 text-center" >
                   <h3 className="text-2xl font-bold">
-                   <Link to="/landings/training" className="text-center">Platform mindset training for banks</Link>
+                   <Link to="/landings/training"
+                    className="text-center">Platform mindset training for banks</Link>
                   </h3>
                 </div>
               </div>
@@ -119,7 +120,7 @@ export default function openBanking() {
           <div key=""> 
             <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
-                <Link to="/trends-report">
+                <Link to="/landings/trends">
                 <img
                   className="absolute h-full w-full object-contain object-center"
                   src={QuarterlyImg}
@@ -130,7 +131,7 @@ export default function openBanking() {
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8 text-center" >
                   <h3 className="text-2xl font-bold">
-                   <Link to="/trends-report" className="text-center">Quarterly Trends report</Link>
+                   <Link to="/landings/trends" className="text-center">Quarterly Trends report</Link>
                   </h3>
                 </div>
               </div>

@@ -5,83 +5,111 @@
 }
 
 
-  /*CALL TO ACTION COMPONENT*/
-  .bg-card {
- background-color:#fafafa;
+
+@layer base {
+
+  
+
+  
+
+  button {
+    border: 0;
+    outline: 0;
   }
-.bg-primary {
-  background-color: var(--color-primary);
-}
-  .bg-secondary {
-    background-color: var(--color-bg-featured-label);
+
+  @media only screen and (max-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  @media only screen and (min-width: 1300px) {
+    html {
+      font-size: 20px;
+    }
+  }
+
+  /*box model*/
+  /*background*/
+  /*layout*/
+  /*type*/
+  /*other,  in alphabetical order*/
+ 
+
+  /*CALL TO ACTION COMPONENT*/
+  #cta {
+    text-align: center;
+    margin: 4% auto;
   }
 
   button:focus {
     outline: none;
   }
 
-  .btn--purple {
-    background: #9C9CD5;
+  /*gridDISPLAY COMPONENT*/
+  section#gridDisplay {
+    /*box model*/
+    margin: 8% auto;
+    padding: 0 10%;
+    /*layout*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .btn--pink {
-    background: rgb(233, 197, 183);
-    background: linear-gradient(90deg, rgba(233, 197, 183, 1) 0%, rgba(245, 224, 198, 1) 49%, rgba(224, 168, 145, 1) 100%);
+
+  @media only screen and (max-width: 768px) {
+    section#gridDisplay {
+      flex-direction: column;
+    }
   }
 
-  .btn--silver {
-    background: rgb(204, 209, 211);
-    background: linear-gradient(90deg, rgba(204, 209, 211, 1) 0%, rgba(239, 234, 228, 1) 31%, rgba(206, 213, 226, 1) 100%);
+  /*VIDEO COMPONENT*/
+  .video-background {
+    background: url("../assets/animated_map/map.gif") no-repeat center;
+    background-size: cover;
   }
 
-  .btn--gold {
-    background: rgb(213, 195, 123);
-    background: linear-gradient(90deg, rgba(213, 195, 123, 1) 0%, rgba(248, 228, 203, 1) 51%, rgba(222, 210, 155, 1) 100%);
-    ;
+  /*PROPS*/
+  .doNotDisplay {
+    display: none;
   }
 
-  /*PRODUCT CARDS COMPONENT*/
+  .gridDisplayOrder {
+    flex-direction: row-reverse;
+  }
+
+  .flexDisplay {
+    /*box model*/
+    padding: 0 8%;
+    /*layout*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .flexDisplay {
+      flex-direction: column;
+    }
+  }
+
+  /*PRODUCT COMPONENT*/
+  .product-photo {
+    background-size: 100% 100%;
+  }
+
   .product-photo-1 {
-    background: url("../assets/cards_understand_the_open_banking _platform_economy.svg") no-repeat center;
+    background: url("../assets/Self_Pace.svg") no-repeat center;
   }
 
   .product-photo-2 {
-    background: url("../assets/cards_see_where_opportunities _are_emerging.svg") no-repeat center;
+    background: url("../assets/Workshop_Oriented.svg") no-repeat center;
   }
 
   .product-photo-3 {
-    background: url("../assets/cards_understand_the_open_banking _platform_economy.svg") no-repeat center;
+    background: url("../assets/Modules.svg") no-repeat center;
   }
-
-  /*TEAM COMPONENT*/
-  .team-section {
-    border: 1px solid #CCCCCC;
-  }
-
-  .team-section p {
-    color: #404040;
-  }
-
-  .team-section span {
-    color: #ccc;
-  }
-
-  /*SUBSCRIPTION COMPONENT*/
-  .subscription-section ul {
-    text-align: left;
-  }
-
-  .border-bottom {
-    border-bottom: 1px solid #1B014C40;
-
-  }
-
-  .plans-price {
-    padding-top: 1.5rem;
-    border-top: 1px solid #1B014C40;
-  }
-
-
 
   /*TESTIMONIALS COMPONENTS*/
   blockquote:before {
@@ -108,17 +136,17 @@
     color: #ccc;
   }
 
-  /* iframe {
-
+  iframe {
+    /*box model*/
     margin: 5% auto;
     width: 80vw;
     height: 40vh;
     overflow: hidden;
-  } */
+  }
 
   *:focus {
     outline: none;
     outline: 0;
   }
-
+}
 

@@ -1,9 +1,9 @@
 import React from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
-const ButtonLp = ({ label }) => (
+const ButtonLp = ({ label, className }) => (
   <AnchorLink to="/#submitMailerlite">
-    <button className="uppercase bg-primary text-white my-5 mx-0 py-2 px-10 rounded-full hover:bg-secondary hover:text-primary cursor-pointer" type="submit">
+    <button className={className} type="submit">
       {label}
     </button>
   </AnchorLink>

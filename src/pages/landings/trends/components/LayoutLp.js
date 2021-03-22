@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
+
 
 import HeaderLp from "./HeaderLp"
 import FooterLp from "./FooterLp"
@@ -12,17 +12,15 @@ const LayoutLp = ({ children }) => {
 
   return (
     <>
-      <HeaderLp siteTitle="" />
-      <div className="w-screen overflow-x-hidden my-0 mx-auto font-noto-sans">
+      <HeaderLp siteTitle="Platformable" />
+      <div className="w-auto overflow-x-hidden my-0 mx-0">
         <main className="my-25 mx-auto">{children}</main>
-        <FooterLp siteTitle="" />
+        <FooterLp siteTitle="Platformable" />
       </div>
     </>
   )
 }
 
-LayoutLp.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+
 
 export default LayoutLp

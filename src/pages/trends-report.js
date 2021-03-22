@@ -2,6 +2,12 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import { Link, navigate } from "gatsby"
 import SEO from "../components/seo"
+import AnalystImg from '../images/Analyst-as-a-service.png'
+import BlogAsServiceImg from '../images/Blogs and articles.png'
+import OpenEcosystemImg from '../images/Open ecosystem mapping.png'
+import PlatformMindsetImg from '../images/Platform mindset training for banks.png'
+import QuarterlyImg from '../images/Quarterly Trends report.png'
+import StateOfMarketImg from '../images/State of the Market reports.png'
 
 export default function TrendsReport() {
   const [selectedOption, setSelectedOption] = useState("")
@@ -18,7 +24,7 @@ export default function TrendsReport() {
     <>
       <Layout>
         <SEO title="Trends Report" />
-        <section className="trends-report-hero py-10 mt-5 bg-russian-violet-dark px-5">
+        {/* <section className="trends-report-hero py-10 mt-5 bg-russian-violet-dark px-5">
           <div className="container mx-auto grid md:grid-cols-2 md:gap-4 grid-cols-1 items-center md:px-0 px-2">
             <div className=" trends-report-hero-left">
               <h2 className="text-3xl font-bold text-white mb-2">
@@ -35,6 +41,13 @@ export default function TrendsReport() {
                 width="350px"
                 height="250px"
               ></iframe>
+              <a
+                        className="pull bg-russian-violet-dark"
+                        href="https://trends.platformable.com/open-banking"
+                      >
+                        <small>Click Here to subscribe</small>
+                      </a>
+              
             </div>
             <div className="trends-report-hero-right">
               <img
@@ -44,7 +57,7 @@ export default function TrendsReport() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* <section>
           <h3 className="text-3xl font-bold text-center my-10">
@@ -52,7 +65,29 @@ export default function TrendsReport() {
           </h3>
         </section> */}
 
-        <section id="q4TrendsCards">
+
+<section id="q4Hero" class="q4Hero">
+    <div class="homepage-container mx-auto px-5">
+      <div class="q4HeroContainer">
+        <div class="q4HeroLeft">
+          <div>
+   
+            <h3>Trends Report</h3>
+    
+    
+            <div> 
+            <a href="https://trends.platformable.com/open-banking" class="trendsCardLink-russian-violet-light" target="_blank">Click here to Subscribe</a>
+            </div>
+          </div>
+        </div>
+        <div class="q4HeroRight">
+          <img src="https://platformable.com/content/images/size/w1600/2021/01/OpenBanking-Q4.png" alt=""/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+        {/* <section id="q4TrendsCards">
           <div className="container mx-auto ">
             <div className="my-5">
               <h3 className="text-center font-black">Key takeaways from Q4 2020</h3>
@@ -160,9 +195,9 @@ export default function TrendsReport() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section id="q4TrendsCards">
+        {/* <section id="q4TrendsCards">
           <div class="container mx-auto">
             <div class="card__wrap--outer">
               <div class="card__wrap--inner">
@@ -265,7 +300,126 @@ export default function TrendsReport() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+
+
+
+<section id="product-streams">
+        <div className="container mx-auto">
+            <h3 className="text-3xl font-black text-center mb-5 mt-20">2020</h3>
+        </div>
+
+        <div className="all-posts">
+        <div className="container mx-auto mt-20 grid grid-cols-1 gap-8 md:grid-cols-4">
+          {/* single post card start here */}
+         
+          
+          <div key=""> 
+            <div className="rounded-xl overflow-hidden bg-gray-50">
+              <div className="relative overflow-hidden pb-60">
+                <Link to="">
+                <img
+                  className="absolute h-full w-full object-contain object-center"
+                  src={AnalystImg}
+                  alt=""
+                />
+                </Link>
+              </div>
+              <div className="relative bg-gray-50">
+                <div className="py-10 px-8 text-center" >
+                  <h3 className="text-2xl font-bold">
+                   <Link to="" className="text-center">Q1</Link>
+                  </h3>
+                  <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
+                
+                  </div>
+                  {/* <p className="leading-7">
+                    High quality notepad mockup in a huge resolution and with
+                    changeable everything.
+                  </p> */}
+                  
+                </div>
+              </div>
+            </div>
+          </div> 
+
+
+          <div key=""> 
+            <div className="rounded-xl overflow-hidden bg-gray-50">
+              <div className="relative overflow-hidden pb-60">
+                <Link to="/blog">
+                <img
+                  className="absolute h-full w-full object-contain object-center"
+                  src={BlogAsServiceImg}
+                  alt=""
+                />
+                </Link>
+              </div>
+              <div className="relative bg-gray-50">
+                <div className="py-10 px-8 text-center" >
+                  <h3 className="text-2xl font-bold">
+                   <Link to="/blog" className="text-center">Q2</Link>
+                  </h3>
+
+                </div>
+              </div>
+            </div>
+          </div> 
+
+
+          <div key=""> 
+            <div className="rounded-xl overflow-hidden bg-gray-50">
+              <div className="relative overflow-hidden pb-60">
+                <Link to="">
+                <img
+                  className="absolute h-full w-full object-contain object-center"
+                  src={OpenEcosystemImg}
+                  alt=""
+                />
+                </Link>
+              </div>
+              <div className="relative bg-gray-50">
+                <div className="py-10 px-8 text-center" >
+                  <h3 className="text-2xl font-bold">
+                   <Link to="" className="text-center">Q3</Link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div> 
+          {/* single post card start here */}
+          
+          <div key=""> 
+            <div className="rounded-xl overflow-hidden bg-gray-50">
+              <div className="relative overflow-hidden pb-60">
+                <Link to="/landings/training">
+                <img
+                  className="absolute h-full w-full object-contain object-center"
+                  src={PlatformMindsetImg}
+                  alt=""
+                />
+                </Link>
+              </div>
+              <div className="relative bg-gray-50">
+                <div className="py-10 px-8 text-center" >
+                  <h3 className="text-2xl font-bold">
+                   <Link to="/landings/training"
+                    className="text-center">Q4</Link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+         
+   
+
+        </div>
+      </div>
+
+            </section>
       </Layout>
     </>
   )

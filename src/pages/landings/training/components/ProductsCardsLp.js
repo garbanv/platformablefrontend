@@ -1,53 +1,53 @@
 import React from "react"
 
-const ProductsCardsLp = () => {
+const ProductsCardsLp = props => {
   return (
-    <section className="w-screen my-16 mx-auto py-8 ">
-      <div className="product-group my-0 md:mx-16 mx-2 py-0 px-3 flex md:flex-row flex-col justify-evenly items-center">
+    <section className="w-screen my-4 mx-auto py-8">
+      <div className="product-group my-0 md:mx-16 mx-2 py-0 px-3 md:flex  justify-evenly items-center">
         <div
-          className="product--item md:w-1/3 w-9/12 mb-12 md:mb-2 md:mx-2 p-6 rounded-3xl bg-card
+          className="product--item md:w-1/3 w-full mb-12 md:mb-2 md:mx-2 p-6 rounded bg-card
                     flex flex-col justify-center items-center 
                     cursor-pointer shadow transition-shadow hover:shadow-hover"
         >
-          <div className="w-40 h-32 product-photo-1"></div>
+          <div className="w-40 h-40 product-photo-1"></div>
           <div>
-            <h4 className="m-5 text-center">
-              Understand the open banking platform economy
-            </h4>
+            <h3 className="m-5 text-center">Self-paced</h3>
+            <p>
+              Work through each module as you wish, using online video content,
+              templates, and tutorials
+            </p>
           </div>
         </div>
 
         <div
-          className="product--item md:w-1/3 w-9/12 mb-12 md:mb-2 md:mx-2 p-6 rounded-3xl bg-card
-          flex flex-col justify-center items-center 
-          cursor-pointer shadow transition-shadow hover:shadow-hover"
-        >
-          <div className="w-40 h-32 product-photo-2"></div>
-          <div>
-            <h4 className="m-5 text-center">
-              See where opportunities are emerging 
-            </h4>
-          </div>
-        </div>
-
-        <div
-          className="product--item md:w-1/3 w-9/12 mb-12 md:mb-2 md:mx-2 p-6 rounded-3xl bg-card
+          className="product--item md:w-1/3 w-full mb-12 md:mb-20  md:mx-2 p-6 rounded bg-card
                     flex flex-col justify-center items-center 
                     cursor-pointer shadow transition-shadow hover:shadow-hover"
         >
-          <div className="w-40 h-32 product-photo-3 block"></div>
+          <div className="w-40 h-40 product-photo-2"></div>
           <div>
-            <h4 className="m-5 text-center">
-              Benchmark your activities against industry leaders
-            </h4>
+            <h3 className="m-5 text-center">Workshop-oriented</h3>
+            <p>
+              Book an inhouse series of workshops for your team or select a
+              module for a one-off professional development session
+            </p>
           </div>
         </div>
-      </div>
 
-      <div className="my-12 mx-auto text-center md:w-6/12 w-9/12 px-2">
-        <p className="leading-6 text-2xl font-black">
-          Let us help you and your team evolve towards a platform mindset.
-        </p>
+        <div
+          className="product--item md:w-1/3 w-full mb-12 md:mb-2 md:mx-2 p-6 rounded bg-card
+                    flex flex-col justify-center items-center 
+                    cursor-pointer shadow transition-shadow hover:shadow-hover"
+        >
+          <div className="w-40 h-40 product-photo-3 block"></div>
+          <div>
+            <h3 className="m-5 text-center">Subject-based</h3>
+            <p>
+              Choose just the modules you need and receive them as self-paced
+              modules, inhouse workshops, or via 1:1 mentoring
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )

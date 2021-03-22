@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import AboutTeamComponent from '../components/AboutTeamComponent'
 import Img from 'gatsby-image'
 import SEO from "../components/seo"
-
+import EmbedContainer from "react-oembed-container"
 
 export default function about({data}) {
 
@@ -15,9 +15,9 @@ export default function about({data}) {
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
             <div>
               <h3 className="text-2xl md:text-4xl font-black mt-5 md:mt-10 md:mt-32 mb-5 md:mb-20">
-                We build platforms and ecosystems that allow users to
-                participate and co-create
-                {data.strapiAbout.heroTitle}
+                {/* We build platforms and ecosystems that allow users to
+                participate and co-create */}
+                {data.strapiAbout.heroText}
               </h3>
             </div>
 
@@ -185,15 +185,12 @@ export default function about({data}) {
           </div>
 
           <div className="py-10">
-            <h3 className="text-2xl md:text-4xl font-black text-center">Key Work Areas</h3>
-            <p className="text-center text-2xl font-black">We focus on the following areas:</p>
+            <h3 className="text-2xl md:text-4xl font-black text-center">{data.strapiAbout.key_work_title && data.strapiAbout.key_work_title ? data.strapiAbout.key_work_title : '' }</h3>
+            <p className="text-center text-2xl font-black">{data.strapiAbout.key_work_subtitle ? data.strapiAbout.key_work_subtitle : ''}</p>
             <ul>
-              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Digital Government</li>
-              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Open Banking</li>
-              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Sustainable Food Systems (Q3 2020)</li>
-              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Public Health (Q4 2020)</li>
-              <li className="text-center text-2xl "><span className="text-2xl font-black">{`> `}</span>Climate Crisis (Q4 2020)</li>
-              
+              {data.strapiAbout.key_work_areas_items ? data.strapiAbout.key_work_areas_items.map(item=> {
+                         return  <li className="text-center text-2xl " key={item.id}><span className="text-2xl font-black">{`> `}</span>{item.key_item}</li>
+              }) : ''}
             </ul>
 
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
@@ -204,6 +201,19 @@ export default function about({data}) {
 
         
       </div>
+
+
+      <section className="content">
+        <div className="posts-container mx-auto my-10 px-5">
+      { data.strapiAbout.content && data.strapiAbout.content  ? 
+        <EmbedContainer markup={data.strapiAbout.content}>
+              <div
+                dangerouslySetInnerHTML={{ __html: unescape(data.strapiAbout.content) }}
+              />
+            </EmbedContainer>
+      : '' }  
+        </div>
+      </section>
       {/*end of container */}
       <section className="our-team bg-gray-50 py-10">
       <h3 className="text-5xl font-black text-center mb-5 mt-20">Platformable's Team</h3>
@@ -214,7 +224,6 @@ export default function about({data}) {
             {data.strapiAbout.Author.map((userauthor,index)=>{
                     return(
                       userauthor.user.map((x,ind) =>{
-                       console.log(x)
                        return (
               
 
@@ -275,6 +284,13 @@ query MyAbout {
       }
     }
     teamTitle
+    key_work_areas_items {
+      key_item
+      id
+    }
+    key_work_subtitle
+    key_work_title
+    content
   }
 }
 `
