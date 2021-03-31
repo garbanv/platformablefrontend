@@ -32,7 +32,7 @@ const Header = ({ siteTitle }) => {
         <div onClick={openNav}><span className="block h-8 w-auto" style={{fontSize:30+'px',cursor:'pointer'}}>&#9776;</span></div>
       </div>
 
-      <div id="mySidenav" class="sidenav block lg:hidden">
+      <div id="mySidenav" className="sidenav block lg:hidden">
         <a  className="closebtn" onClick={closeNav}>&times;</a>
         <Link to="/about">About</Link>
         <Link to="/products">Product Streams</Link>

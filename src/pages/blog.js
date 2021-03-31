@@ -45,8 +45,8 @@ const posts = ({data}) => {
                   <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                     <p className="text-xs mr-1">{`Writen by `} </p>
                     {
-                    post.node.user.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" >{` ${post.node.user[0].username}`}</Link> 
-                    : post.node.user.length === 2 ? authorsData.map((x, index) => <Link to={`/author/${x.id}`}className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">{x.username} {index < authorsData.length -1  ? ' & ' : ''}</Link>)
+                    post.node.user.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" to='/'>{` ${post.node.user[0].username}`}</Link> 
+                    : post.node.user.length === 2 ? authorsData.map((x, index) => <Link to={'/'} className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">{x.username} {index < authorsData.length -1  ? ' & ' : ''}</Link>)
                     :null
                     }
                   </div>

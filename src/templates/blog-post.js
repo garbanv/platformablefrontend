@@ -1,18 +1,53 @@
-import React, { useEffect,useState, useRef } from "react"
+import React, { useEffect,useState, useRef,useContext, Suspense } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import EmbedContainer from "react-oembed-container"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
+import BlogPostAlertMessage from '../components/BlogPostAlertMessage'
+
+import UserContext from '../context/UserContext'
 
 
 const PostContentComponent = React.lazy(() => import('../components/PostContentComponent'));
 
 const BlogPost = ({ data }) => {
-
+  const [user,setUser] = useContext(UserContext)
   const [scripts,setScripts] = useState([])
   const [update,setUpdate]=useState(false);
+  
+  console.log('subscription: ',data.strapiPost.membership)
+
+const getMembership = (subscription, isLoggedIn)=>{
+ if(subscription==="free") {
+   return (
+    <Suspense fallback={<div>Loading...</div>}>
+    <PostContentComponent data={data.strapiPost.content} />
+    </Suspense>
+   )
+ } else if (subscription==="free_login" && !user.isLoggedIn) {
+  return (<BlogPostAlertMessage message="Hi, this is a login-only blog post. Become a member to get unlimited access and discover more of ours services."/>)
+ } else if (subscription==="free_login" && user.isLoggedIn){
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+    <PostContentComponent data={data.strapiPost.content} />
+    </Suspense>
+   )
+ } else if (subscription==="paid" && !user.isLoggedIn) {
+  return (<BlogPostAlertMessage message="Hi, this is a member-only blog post. Become a member to get unlimited access and discover more of ours services."/>)
+ } else if (subscription==="paid" && user.isLoggedIn && user.membership==="free"){
+  return (<BlogPostAlertMessage message="Hi, this is a member-only blog post. Become a member to get unlimited access and discover more of ours services."/>)
+ }
+ else if (subscription==="paid" && user.isLoggedIn && user.membership==="paid") {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+    <PostContentComponent data={data.strapiPost.content} />
+    </Suspense>
+   )
+ }
+}
+
 
   function getScripts () {
  // get all script tags from content
@@ -27,7 +62,8 @@ const BlogPost = ({ data }) => {
   const isInitialMount = useRef(true);
   useEffect(() => {
     
- 
+   
+
     if (isInitialMount.current) {
       console.log("initial")
       getScripts()
@@ -43,8 +79,6 @@ const BlogPost = ({ data }) => {
     <>
       <Layout>
         <Helmet>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha256-t9UJPrESBeG2ojKTIcFLPGF7nHi2vEc7f5A2KpH/UBU=" crossorigin="anonymous"></script>
-
           {scripts ? scripts.map((script)=> {
            return script  
           }): null}
@@ -55,7 +89,6 @@ const BlogPost = ({ data }) => {
             {data.strapiPost.title}
           </h3>
       
-
           <div className="autor flex flex-wrap items-start">
             <div className="autores flex  ">
               <div className="autorInfo flex items-start">
@@ -118,12 +151,15 @@ const BlogPost = ({ data }) => {
           />
             : ''}
             
-
-            <EmbedContainer markup={data.strapiPost.content}>
+              {getMembership(data.strapiPost.membership,user.isLoggedIn)}
+         
+            {/* <EmbedContainer markup={data.strapiPost.content}>
               <div
                 dangerouslySetInnerHTML={{ __html: unescape(data.strapiPost.content) }}
               />
-            </EmbedContainer>
+            </EmbedContainer> */}
+
+
 
 
 
@@ -190,6 +226,7 @@ export const query = graphql`
       categories {
         name
       }
+      membership
       content
       id
       title

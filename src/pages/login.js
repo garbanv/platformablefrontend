@@ -6,9 +6,12 @@ import axios from 'axios';
 import UserContext from '../context/UserContext'
 import SEO from '../components/seo'
 
-export default function Login() {
+export default function Login({data,location}) {
+ 
   const [user,setUser]= useContext(UserContext);
 
+  // To know if is coming from a post or a page that require login
+  const comingFromPreviousUrl = location.state.previousPost;
 
   const [login, setLogin] = useState({
     identifier: "",
@@ -23,15 +26,16 @@ export default function Login() {
     .post('https://websiteserver-ds7cf.ondigitalocean.app/auth/local', {...login})
     .then(response => {
       // Handle success.
-      console.log('Well done!');
-      console.log('User profile', response.data.user);
-      console.log('User token', response.data.jwt);
       if (typeof window !== `undefined`) {
         // code that references a browser global
-        localStorage.setItem("user",response.data.user.username)
+        console.log('response', response.data)
+     
+        localStorage.setItem("user",response.data.user)
         localStorage.setItem("jwt",response.data.jwt)
-        setUser({...user,name:response.data.user.name,isLoggedIn:true})
-        navigate("/app/dashboard")
+        localStorage.setItem("isLoggedIn",true)
+        setUser({...user,name:response.data.user.name,isLoggedIn:true,email:response.data.user.email})
+        isActiveMember(response.data.user.email) 
+        
       }
 
     })
@@ -40,6 +44,28 @@ export default function Login() {
       console.log('An error occurred:', error.response);
     });
   }
+
+  // CHECK IF CONNECTED USER IS A PAID MEMBER
+  const isActiveMember = (costumerEmail)=> {
+   const existingUser =  data.allStripeSubscription.nodes.find(element => element.customer.email === costumerEmail);
+ 
+   if(existingUser) {
+    setUser({...user,membership:'paid',
+    stripeId:existingUser.customer.id,
+    isStripeActive:true,
+    stripeStartDay:existingUser.current_period_start,
+    stripeEndDay:existingUser.current_period_end
+   }) 
+
+  
+  
+   return comingFromPreviousUrl ? navigate(-1) : navigate("/app/dashboard");
+   
+   }else {return comingFromPreviousUrl ? navigate(-1) : navigate("/app/dashboard");
+  }
+  } 
+
+
 
   return (
     <>
@@ -112,3 +138,19 @@ export default function Login() {
     </>
   )
 }
+
+
+export const blogQuery = graphql`
+query clientMemberInfo {
+  allStripeSubscription {
+    nodes {
+      customer {
+        email
+        id
+      }
+      current_period_end
+      current_period_start
+    }
+  }
+}
+`

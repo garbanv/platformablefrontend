@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react"
 import {Link} from 'gatsby'
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Img from 'gatsby-image'
 import { loadStripe } from "@stripe/stripe-js"
+import { useStaticQuery, graphql } from "gatsby"
 
-import UserContext from "../../context/UserContext"
+import UserContext from "../context/UserContext"
 
 // LOAD STRIPE CLIENT SIDE, this way wont be able to modify, edit, just client side checkout
 let stripePromise
@@ -17,14 +18,115 @@ const getStripe = () => {
   }
   return stripePromise
 }
+// END STRIPE CALL
 
-export default function Dashboard({ data }) {
+export default function Dashboard() {
   const [user, setUser] = useContext(UserContext)
   const [selectedPlan, setSelectedPlan] = useState("")
 
+
+  const data = useStaticQuery(graphql`
+  {
+    allStripePrice(sort: {fields: id, order: ASC}) {
+      edges {
+        node {
+          product {
+            id
+            description
+            name
+          }
+          recurring {
+            interval
+            interval_count
+          }
+          unit_amount
+          unit_amount_decimal
+          id
+          currency
+          active
+          billing_scheme
+        }
+      }
+    }
+    allStrapiPost(limit: 3, sort: {fields: slug, order: ASC}) {
+      edges {
+        node {
+          categories {
+            name
+          }
+          id
+          slug
+          is_featured
+          tags {
+            name
+          }
+          featured_image {
+            childImageSharp {
+              fluid  {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          title
+          updated_at
+          user {
+            id
+            username
+          }
+        }
+      }
+    }
+    allStripeSubscription {
+        edges {
+          node {
+            customer {
+              id
+              email
+              balance
+            }
+            status
+            id
+            start_date
+            current_period_end
+            current_period_start
+          }
+        }
+        totalCount
+      }
+  }
+  `)
+
+
   const authorsData = data.allStrapiPost.edges[0].node.user;
+  const connectedUserEmail=user.email;
+
+console.log(user.stripeStartDay)
+// useEffect(()=>{
+//   const getConnectedUserInfo =  (email)=>{
+//     const result = data.allStripeSubscription.edges.find(registerUser=>registerUser.node.customer.email === connectedUserEmail);
+//         if(result)
+//         {
+//         setUser({...user,
+//         isStripeActive:true,
+//         stripeId:result.node.customer.id,
+//         stripeStartDay:result.node.start_date,
+//         stripeEndDay:result.node.current_period_end});
+//       } else {return null}
+
+//         // console.log(`result: ${JSON.stringify(result)}`)
+//         console.log(`result: ${JSON.stringify(result.node.customer.start_date)}`)
+     
+//     return result
+//   }
+
+//   getConnectedUserInfo(connectedUserEmail);
+
+// },[])
+
 
   const redirectToCheckout = async plan => {
+
+
     // setLoading(true)
     const stripe = await getStripe()
     const { error } = await stripe.redirectToCheckout({
@@ -48,7 +150,7 @@ export default function Dashboard({ data }) {
        
         {/* SECTION profile */}
         <section className="dashboard-profile my-10 px-5">
-          <h6 className=" py-5 text-gray-300">Dashboard</h6>
+          <h6 className=" py-5 text-gray-300">Dashboard </h6>
 
         <div className="dashboard-profile-cards grid grid-cols-1 md:grid-cols-3 gap-4">
 
@@ -57,7 +159,8 @@ export default function Dashboard({ data }) {
           
             </div>
             <div className="dashboard-profile-card-text p-10">
-              <h3 className="font-black text-primary">Hi! {user.name}</h3>
+              <h5 className="font-black text-primary">Hi! {user.name}</h5>
+              <p className="text-sm">Your Stripe id: {user.stripeId}</p>
               <Link to="/" className="text-sm text-white bg-yellow-300 px-5 py-1 text-center rounded">Edit Profile</Link>
             </div>
           </div>
@@ -67,8 +170,8 @@ export default function Dashboard({ data }) {
          
             </div>
             <div className="dashboard-profile-card-text p-10">
-              <h3 className="font-black text-primary">No Active Plan yet!</h3>
-              <Link to="/" className="text-sm text-white bg-yellow-300 px-5 py-1 text-center rounded">See plans</Link>
+              <h5 className="font-black text-primary">{ user.isStripeActive ? 'Your Plan is Active' : 'No Active Plan yet!'}</h5>
+             {!user.isStripeActive ? <Link to="/" className="text-sm text-white bg-yellow-300 px-5 py-1 text-center rounded">Change Plan</Link> : <Link to="/" className="text-sm text-white bg-yellow-300 px-5 py-1 text-center rounded">See plans</Link>} 
             </div>
           </div>
           <div className="dashboard-profile-card bg-gray-50 rounded-lg shadow-sm flex flex-wrap">
@@ -76,8 +179,8 @@ export default function Dashboard({ data }) {
  
             </div>
             <div className="dashboard-profile-card-text p-10">
-              <h3 className="font-black text-primary">Add a Beneficiary</h3>
-              <Link to="/" className="text-sm text-white bg-yellow-300 px-5 py-1 text-center rounded">Add up to 10!</Link>
+              <h5 className="font-black text-primary">Current period Start: {user.stripeStartDay}</h5>
+              <h5 className="font-black text-primary">Current period End: {user.stripeEndDay}</h5>
             </div>
           </div>
         </div>
@@ -88,10 +191,10 @@ export default function Dashboard({ data }) {
         <div className="plans-group flex flex-wrap flex-col md:flex-row justify-evenly text-center text-sm my-5">
           {data.allStripePrice.edges.map(plan => {
             return (
-              <>
+              <React.Fragment key={plan.node.product.id}>
                 <div
                   className="plans-item lg:w-1/5 md:w-2/5 w-4/6 px-3 md:px-0 bg-gray-100 shadow-lg rounded-3xl sm:mx-1 md:mx-0 my-4 relative mx-auto"
-                  key={plan.node.product.id}
+                  
                 >
                   <img
                     src=""
@@ -99,13 +202,13 @@ export default function Dashboard({ data }) {
                     className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
                   />
                   <div className="h-10 border-bottom">
-                    <h3 className="text-primary mt-8 font-black">
+                    <h5 className="text-primary mt-8 font-black">
                       {" "}
                       {plan.node.product.name}
-                    </h3>
+                    </h5>
                   </div>
                   <div className="plans-price ">
-                    <p className="font-bold">
+                    <div className="font-bold">
                       <h2 className="text-primary font-black text-3xl leading-tight">
                         {(plan.node.unit_amount / 100).toFixed(2)}€
                       </h2>
@@ -113,7 +216,7 @@ export default function Dashboard({ data }) {
                         {" "}
                         /month{" "}
                       </span>
-                    </p>
+                    </div>
                     <button
                       label="Subscribe"
                       className="btn bg-russian-violet-dark font-bold text-white my-5 mx-0 py-2 px-10 rounded-full hover:bg-primary hover:text-white  cursor-pointer "
@@ -123,7 +226,7 @@ export default function Dashboard({ data }) {
                     </button>
                   </div>
                 </div>
-              </>
+              </React.Fragment>
             )
           })}
         </div>
@@ -158,9 +261,9 @@ export default function Dashboard({ data }) {
               </div>
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8">
-                  <h3 className="text-lg font-bold">
+                  <h5 className="text-lg font-bold">
                    <Link to={`/blog/${post.node.slug}`}> {post.node.title}</Link>
-                  </h3>
+                  </h5>
                   {/* WRITEN BY */}
                   <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                     <p className="text-xs mr-1">{`Writen by `} </p>
@@ -227,57 +330,4 @@ export default function Dashboard({ data }) {
   )
 }
 
-// GRAPHQL QUERY TO FETCH PRODUCT PLANS AND POSTS
-export const query = graphql`
-  {
-    allStripePrice(sort: {fields: id, order: ASC}) {
-      edges {
-        node {
-          product {
-            id
-            description
-            name
-          }
-          recurring {
-            interval
-            interval_count
-          }
-          unit_amount
-          unit_amount_decimal
-          id
-          currency
-          active
-          billing_scheme
-        }
-      }
-    }
-    allStrapiPost(limit: 3, sort: {fields: slug, order: ASC}) {
-      edges {
-        node {
-          categories {
-            name
-          }
-          id
-          slug
-          is_featured
-          tags {
-            name
-          }
-          featured_image {
-            childImageSharp {
-              fluid  {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          title
-          updated_at
-          user {
-            id
-            username
-          }
-        }
-      }
-    }
-  }
-`
+

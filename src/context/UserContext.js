@@ -6,10 +6,16 @@ const UserContext = createContext();
  function UserContextProvider(props) {
     const [user,setUser] = useState({
         isLoggedIn:false,
+        userId:'',
         name:'',
         username:'',
         lastname:'',
-        membership:''
+        membership:'free',
+        email:'',
+        stripeId:'',
+        isStripeActive:false,
+        stripeStartDay:'',
+        stripeEndDay:''
     })
     return (
         <UserContext.Provider value={[user,setUser]}>
