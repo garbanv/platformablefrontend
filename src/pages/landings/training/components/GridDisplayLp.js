@@ -1,5 +1,6 @@
 import React from "react"
 import ButtonLp from "./ButtonLp"
+import {Link} from 'gatsby'
 
 const GridDisplayLp = ({
   title,
@@ -22,7 +23,7 @@ const GridDisplayLp = ({
         </div>
 
         <div className={doNotDisplay}>
-          <ButtonLp label={label} />
+          <ButtonLp label={label}/>
         </div>
       </div>
 

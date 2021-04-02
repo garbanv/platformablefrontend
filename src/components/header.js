@@ -61,12 +61,13 @@ const handleLogOut = ()=> {
         <div><span className="block lg:hidden h-8 w-auto" style={{fontSize:30+'px',cursor:'pointer'}}>&#9776;</span></div>
       </div>
 
-        
+      
       </div>
       <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
       <div className="hidden sm:block sm:ml-6">
           <div className="flex space-x-4">
-            <Link to="/" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav" >Home</Link>
+       
+            <Link to="/home" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav" >Home</Link>
             <Link to="/about" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">About</Link>
             <Link to="/products" className=" top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Products Stream</Link>
             <Link to="/blog" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Blog</Link>

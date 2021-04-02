@@ -5,7 +5,7 @@ import UserContext from '../context/UserContext'
 
 
 import Dashboard from '../components/clientDashboard'
-import Profile from './app/profile/[strapiId]'
+import Profile from './app/profile/{strapiUser.strapiId}'
 import PrivateRoute from '../components/PrivateRoute'
 
 import Login from "./login"

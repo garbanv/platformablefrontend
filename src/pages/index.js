@@ -1,250 +1,258 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import {Link, graphql} from 'gatsby'
+import Img from "gatsby-image"
+/*shared-components*/
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import GridDisplay from "../components/shared-components/GridDisplay"
+import Form from "../components/shared-components/Form"
+/*specific-components*/
+import PositionedSection from '../components/home-components/PositionedSection';
+import PostsCards from "../components/home-components/PostsCards"
+// import ProductStreamsCards from './../components/home-components/ProductStreamsCards';
+import HowWeDoItCards from '../components/home-components/HowWeDoItCards';
+import WorkWithCards from '../components/home-components/WorkWithCards';
 
-const IndexPage = () => (
+/*assets*/
+import sectionOneImg from "../assets/home/hero_squares.png"
+import sectionTwoImg from "../assets/home/quarterly_trends.png"
+import sectionSixImg from '../assets/home/we_publish_analysis.png'
+
+const IndexPage = ({data}) => {
+  const authorsData = data.allStrapiPost.edges[0].node.user
+return(
   <Layout>
-
-  
     <SEO title="Home" />
-    <div className="">
 
+    <GridDisplay
+      gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
+      gridContentClass="md:w-2/5"
+      title="We work with industry groups,
+      governments, consultants and
+      non-profits to encourage:"
+      paragraphOne="> Platform business models"
+      paragraphTwo="> Open ecosystems where everyone can participate."
+      doNotDisplayAnchor="hidden"
+      url="/about"
+      type="button"
+      label={"Learn more about us"}
+      btnClass="outlinedBtn text-primary font-bold border-2 my-5 mx-0 py-2 px-10 rounded-full hover:bg-secondary cursor-pointer"
+      imgContentClass=""
+      imgClass="object-cointain w-96 h-94"
+      backImgSrc={sectionOneImg}
+      alt="Hero"
+    ></GridDisplay>
 
+    <GridDisplay
+      gridDisplayClass="bg-lightBlue flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
+      gridContentClass="md:w-2/5"
+      firstParagraph="Get access to our recently released"
+      title="Quarterly Trend Reports
+        Q1 2021"
+      doNotDisplayAnchor="hidden"
+      url={"https://platformable.com/q4-2020-trends-report/"}
+      type="button"
+      label={"More info on our reports"}
+      btnClass="bg-secondary text-primary font-bold my-5 mx-0 py-2 px-10 rounded-full hover:bg-secondary cursor-pointer"
+      imgContentClass=""
+      imgClass="object-cointain w-96 h-94"
+      backImgSrc={sectionTwoImg}
+      alt="Hero"
+    ></GridDisplay>
 
-<section id="homepageHero" className="homepageHero">
-    <div className="homepage-container container mx-auto flex items-center">
-        <div className="homepage-heroLeft">
-            <h3>We work with industry groups, governments, consultants, and
-            non-profits to encourage:</h3>
-            <div className="heroLeftContent">
-                <i className="fas fa-angle-right"></i>
-                <p>Platform business models</p>
+    {/* <PostsCards/> */}
+    <h3 className="text-center font-black">Latest Posts </h3>
+    {/* POSTS */}
+    <section className="container mx-auto all-blog-content my-20 px-5">
+          <div className="flex">
+
+            {/* <BsShieldShaded/> */}
+          </div>
+          <div className="all-posts">
+            <div className="container mx-auto mt-5 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+              {/* single post card start here */}
+              {data.allStrapiPost.edges.map(post => {
+                return (
+                  <div key={post.node.id}>
+                    <div className="rounded-lg overflow-hidden">
+                      <div className="relative overflow-hidden pb-1">
+                        {post.node.featured_image &&
+                        post.node.featured_image ? (
+                          <Link to={`/blog/${post.node.slug}`}>
+                            <Img
+                              alt={post.node.title}
+                              key={
+                                post.node.featured_image.childImageSharp.fluid
+                                  .src
+                              }
+                              imgStyle={{ objectFit: "contain" }}
+                              fluid={
+                                post.node.featured_image.childImageSharp.fluid
+                              }
+                              className="mb-1"
+                            />
+                          </Link>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                      <div className="relative bg-gray-50">
+                        <div className="py-10 px-8">
+                          <h5 className="text-lg font-bold">
+                            <Link to={`/blog/${post.node.slug}`}>
+                              {" "}
+                              {post.node.title}
+                            </Link>
+                          </h5>
+                          {/* WRITEN BY */}
+                          <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
+                            <p className="text-xs mr-1">{`Writen by `} </p>
+                            {post.node.user.length === 1 ? (
+                              <Link
+                                className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
+                                to={"/"}
+                              >{` ${post.node.user[0].username}`}</Link>
+                            ) : post.node.user.length === 2 ? (
+                              authorsData.map((x, index) => (
+                                <Link
+                                  to={`/author/${x.id}`}
+                                  className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
+                                >
+                                  {x.username}{" "}
+                                  {index < authorsData.length - 1 ? " & " : ""}
+                                </Link>
+                              ))
+                            ) : null}
+                          </div>
+                          <p className="text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Vestibulum justo nunc, pellentesque eget.
+                          </p>
+
+                          <div className="mt-10 flex justify-between items-center">
+                            <div>
+                              {/* CATEGORIE TAG */}
+                              {post.node.categories.map(cat => {
+                                return (
+                                  <div key={post.node.id}>
+                                    <Link
+                                      to={cat.name}
+                                      className={`bg-russian-violet-dark-${cat.name} py-1 px-2 rounded text-white text-xs`}
+                                    >
+                                      {cat.name}
+                                    </Link>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                            <Link
+                              to={"/"}
+                              href={`/blog/${post.node.slug}`}
+                              className="flex items-center"
+                            >
+                              <p className="mr-4 text-lg">Read more</p>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="14.125"
+                                height="13.358"
+                                viewBox="0 0 14.125 13.358"
+                              >
+                                <g transform="translate(-3 -3.293)">
+                                  <path
+                                    id="Path_7"
+                                    data-name="Path 7"
+                                    d="M14.189,10.739H3V9.2H14.189L9.361,4.378l1.085-1.085,6.679,6.679-6.679,6.679L9.361,15.566Z"
+                                    fill="#1d1d1d"
+                                    fillRule="evenodd"
+                                  ></path>
+                                </g>
+                              </svg>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+                {
+                  /* single post card start here */
+                }
+              })}
             </div>
-            <div className="heroLeftContent">
-                <i className="fas fa-angle-right"></i>
-                <p>Open ecosystems where everyone can participate.</p>
-            </div>
-            <button className="cta-contact-us"><a href="https://platformable.com/about-platformable/">Learn more!</a></button>
-        </div>
-        <div className="homepage-heroRight">
-            <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Online_collaboration_re_bkpm.svg"
-                alt="plaformable"/>
-        </div>
-    </div>
-</section>
+          </div>{" "}
+          {/* end of all posts */}
+        </section>
+
+    <PositionedSection/>
+
+    <HowWeDoItCards/>
+
+    <WorkWithCards/>
+
+    <GridDisplay
+      gridDisplayClass="bg-purple flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
+      gridContentClass="md:w-2/5"
+      title="We publish analysis
+      and insights"
+      paragraphOne="We share data on the growth of platforms
+      and ecosystems and track how value
+      is being generated."
+      doNotDisplayAnchor="hidden"
+      doNotDisplay="hidden" 
+
+      imgContentClass="lg:w-2/5"
+      imgClass="object-cointain w-96 h-94"
+      backImgSrc={sectionSixImg}
+      alt="Hero"
+    ></GridDisplay>
+
+    <Form
+      formClass="text-center my-6 mx-auto"
+      titleClass="text-sm"
+      title="Keep up with what's happening in the platform business model world."
+      iframeId=""
+      iframeSrc={"https://landing.mailerlite.com/webforms/landing/b9q0r6"}
+      paragraph="We won't email more than once a month."
+      paragraphClass="mb-12"
+    />
 
 
-
-<section id="business-models-advantages" className="business-models-advantages">
-    <h3 className="center">Platform approaches have two big advantages</h3>
-    <div className="homepage-container container mx-auto">
-
-        <div className="business-models-advantages-left">
-            <p>Platforms open up the value previously locked in data and capabilities.
-            </p>
-        </div>
-        <div className="business-models-advantages-center">
-            <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/completed_tasks_vs6q.svg"
-                alt=""/>
-        </div>
-        <div className="business-models-advantages-right">
-            <p>Platforms enable digital ecosystems where everyone can participate and co-create.</p>
-        </div>
-    </div>
-</section>
-
-<section id="whatwedo-left" className="whatwedo-left">
-    <div className="homepage-container container mx-auto flex items-center">
-        <div className="whatwedo-left-content red-orange">
-            <div className="whatwedo-tag">What we do</div>
-            <h3>At Platformable we:</h3>
-            <div className="whatwedo-content-numbers">
-                <div>
-                    <h4>Build tools</h4>
-                    <p>To foster platforms and open ecosystems</p>
-                </div>
-                <div>
-                    <h4>Measure value</h4>
-                    <p>Generated from platforms and ecosystems</p>
-                </div>
-            </div>
-
-            <div className="whatwedo-content-numbers">
-                <div>
-                    <h4>Share best practices</h4>
-                    <p>By describing what has worked for others</p>
-                </div>
-                <div>
-                    <h4>Connect Partners</h4>
-                    <p>To work and learn from each other</p>
-                </div>
-            </div>
-
-
-        </div>
-        <div className="whatwedo-right-content">
-            <img src="https://platformable.com/assets/img/whatwedoImg1.png" alt="platformable"/>
-        </div>
-    </div>
-
-</section>
-
-
-<section id="whatwedo-center" className="whatwedo-center">
-    <div className="homepage-container container mx-auto">
-        <div className="whatwedo-right-content">
-            <img src="https://platformable.com/assets/img/whatwedoImg2.png" alt="platformable"/>
-        </div>
-        <div className="whatwedo-left-content ">
-            <div className="whatwedo-tag">Key areas</div>
-            <h3>We measure the growth of digital open ecosystems in:</h3>
-            <div className="whatwedo-content-numbers">
-                <div>
-                    <h4>Open Finance</h4>
-             
-                    <img src="https://platformable.com/assets/img/OpenFinanceImg.png"/>
-                </div>
-                <div>
-                    <h4>Digital Goverment</h4>
-                
-                    <img src="https://platformable.com/assets/img/governmentImg.png"/>
-                </div>
-            </div>
-
-            <div className="whatwedo-content-numbers">
-                <div>
-                    <h4>Public health</h4>
-             
-                    <img src="https://platformable.com/assets/img/publicHealthImg.png"/>
-                </div>
-                <div>
-                    <h4>Circular/low-carbon economy</h4>
-                
-                    <img src="https://platformable.com/assets/img/energyImg.png"/>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<section id="whatwedo-left" className="whatwedo-left">
-    <div className="homepage-container container mx-auto flex items-center">
-        <div className="whatwedo-left-content home-services">
-            <div className="whatwedo-tag">Our clients</div>
-            <h3>We work with:</h3>
-            <p>We create tools and analysis that can help you:</p>
-            <div className="whatwedo-content-numbers">
-                <div>
-                    <h4 className="text-sm">Governments</h4>
-                    <p>Governments need to collaborate openly with increasingly complex networks of partners and stakeholders.</p>
-                </div>
-                <div>
-                    <h4 className="text-sm">Regulators</h4>
-                    <p>Regulatory authorities need to ensure that platforms are creating equitable opportunities for all.</p>
-                </div>
-            </div>
-
-            <div className="whatwedo-content-numbers">
-                <div>
-                    <h4 className="text-sm">Industry networks</h4>
-                    <p>Associations need to offer tools and training that can encourage their members to move to platform models.</p>
-                </div>
-                <div>
-                    <h4 className="text-sm">API providers and consultants</h4>
-                    <p>Ecosystem service providers and consultants need to draw on best practices and latest evidence to communicate their value.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div className="whatwedo-right-content">
-            <img src="https://platformable.com/assets/img/servicesImg.png" alt="platformable"/>
-        </div>
-    </div>
-</section>
-
-<section id="analysis" className="analysis">
-    <div className="homepage-container container mx-auto flex items-center">
-        <div className="analysis-left-content">
-            <div>
-                <h3>We publish analysis and insights</h3>
-                <p className="mb-5">We share data on the growth of platforms and ecosystems and track how
-                    value is being generated.
-                </p>
-           
-            </div>
-        </div>
-        <div className="analysis-right-content">
-            <img src="https://platformable.com/assets/img/analysisImg.png" alt="platformable"/>
-        </div>
-    </div>
-</section>
-
-<section id="product-area" className="product-area">
-    <div className="homepage-container container mx-auto">
-        <div className="text-center">
-            <h3 className="center">Find out more about our product areas</h3>
-        </div>
-        <div className="products-area">
-            <a href="https://platformable.com/open-banking/">
-                <div className="product1">
-                  <div>
-                <img src="https://platformable.com/assets/img/OpenFinanceImg.png"/>
-                </div>
-                <div>
-                <h4>Open Banking & Open Finance</h4>
-                </div>
-               </div>
-            </a>
-            <a href="https://platformable.com/digital-government/">
-            <div className="product2">
-              <div>
-                <img src="https://platformable.com/assets/img/governmentImg.png"/>
-                </div>
-                <div>
-                <h4>Digital Government</h4>
-                </div>
-            </div>
-            </a>
-            <a href="https://platformable.com/public-health/">
-            <div className="product3">
-            <div>
-                <img src="https://platformable.com/assets/img/publicHealthImg.png"/></div>
-                <div><h4>Public Health</h4></div>
-            </div>
-            </a>
-        </div>
-    </div>
-
-</section>
-
-
-{/* <section id="blog-posts" className="blog-posts" style="margin:30px 0;">
-    <div className="homepage-container">
-        <div className="text-center">
-            <h3 className="center" style="margin-bottom:20px;">Latest Posts</h3>
-        </div>
-
-        <div id="loop" className="section-loop wrap{{#is "home"}} no-featured{{/is}}">
-            <div className="items-wrap flex">
-                {{#get "posts"}}
-                {{#foreach posts limit="3"}}
-                {{>loop_item}}
-                {{/foreach}}
-                {{/get}}
-            </div>
-        </div>
-
-
-    </div>
-</section> */}
-
-    </div>
   </Layout>
 )
+            }
 
 export default IndexPage
+
+
+export const blogQuery = graphql`
+query HomepagePosts {
+  allStrapiPost(limit: 3, sort: { fields: slug, order: ASC })  {
+    edges {
+      node {
+        categories {
+          name
+        }
+        id
+        slug
+        is_featured
+        tags {
+          name
+        }
+        featured_image {
+          childImageSharp {
+            fluid  {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        title
+        updated_at
+        user {
+          id
+          username
+        }
+      }
+    }
+  }
+}
+`

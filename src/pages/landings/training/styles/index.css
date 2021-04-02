@@ -130,13 +130,13 @@
     color: #ccc;
   }
 
-  iframe {
-    /*box model*/
+  /* iframe {
+
     margin: 5% auto;
     width: 80vw;
     height: 40vh;
     overflow: hidden;
-  }
+  } */
 
   *:focus {
     outline: none;

@@ -12,7 +12,7 @@ export default function Test() {
 
     return (
         <div>
-            {post.title}
+          Test Page
             
         </div>
     )
