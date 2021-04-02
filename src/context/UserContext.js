@@ -10,7 +10,7 @@ const UserContext = createContext();
         name:'',
         username:'',
         lastname:'',
-        membership:'free',
+        membership:'',
         email:'',
         stripeId:'',
         isStripeActive:false,

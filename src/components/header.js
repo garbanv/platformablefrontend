@@ -21,7 +21,12 @@ const Header = ({ siteTitle }) => {
 
 
 
-
+const handleLogOut = ()=> {
+  setUser('')
+  if(typeof window !== `undefined`) {
+    localStorage.clear();
+  }
+}
 
   return (
     <header>
@@ -37,7 +42,9 @@ const Header = ({ siteTitle }) => {
         <Link to="/about">About</Link>
         <Link to="/products">Product Streams</Link>
         <Link to="/blog">Blog</Link>
-        <Link to="/login">Login</Link>
+        {user.isLoggedIn ? '' : <Link to="/login">Login</Link>}
+        {user.isLoggedIn ? <Link to="/app/dashboard">Dashboard</Link> :''}
+        {user.isLoggedIn ? <span onClick={handleLogOut} className="cursor-pointer">Logout</span> : ''}
         <Link to="/sign-up">Sign Up</Link>
      
       </div>
@@ -64,7 +71,8 @@ const Header = ({ siteTitle }) => {
             <Link to="/products" className=" top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Products Stream</Link>
             <Link to="/blog" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Blog</Link>
             {user && user.isLoggedIn  ? (<Link to="/app/dashboard" className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Dashboard</Link>): ''}
-            <Link to="/login" className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-yellow-500" activeClassName="active-top-nav">{user.isLoggedIn? 'Logout' : 'Login'}</Link>
+            {user.isLoggedIn  ? '' : <Link to="/login" className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-yellow-500" activeClassName="active-top-nav">Login</Link> }
+            {user && user.isLoggedIn  ? (<span className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-yellow-500 cursor-pointer" activeClassName="active-top-nav" onClick={handleLogOut}>Logout</span>) : ''}
             <Link to="/sign-up" className="top-nav text-white btn-bg-russian-violet-dark  hover:text-white px-3 py-2 rounded-md text-sm font-medium" activeClassName="active-top-nav">Sign Up</Link>
           </div>
         </div>

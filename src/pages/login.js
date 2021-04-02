@@ -5,10 +5,12 @@ import Loader from "../components/Loader"
 import axios from 'axios';
 import UserContext from '../context/UserContext'
 import SEO from '../components/seo'
+import LoginSignErrorMessage from "../components/LoginSignErrorMessage";
 
 export default function Login({data,location}) {
  
   const [user,setUser]= useContext(UserContext);
+  const [errorMsg,setErrorMsg]=useState(false)
 
   // To know if is coming from a post or a page that require login
   const comingFromPreviousUrl = location.state.previousPost;
@@ -22,47 +24,88 @@ export default function Login({data,location}) {
 
   const handleLogin = () => {
     setLoading(true) // Request API.
+    if(login.identifier==="" || login.password===""){
+      setErrorMsg(true)
+      setLoading(false)
+      return null
+    }
     axios
     .post('https://websiteserver-ds7cf.ondigitalocean.app/auth/local', {...login})
     .then(response => {
       // Handle success.
       if (typeof window !== `undefined`) {
         // code that references a browser global
-        console.log('response', response.data)
-     
-        localStorage.setItem("user",response.data.user)
-        localStorage.setItem("jwt",response.data.jwt)
+        console.log(response.data.user)
         localStorage.setItem("isLoggedIn",true)
-        setUser({...user,name:response.data.user.name,isLoggedIn:true,email:response.data.user.email})
-        isActiveMember(response.data.user.email) 
+        // setUser({...user,
+        //   name:response.data.user.name,
+        //   isLoggedIn:true,
+        //   email:response.data.user.email,
+        //   membership:'free'})
+
+          setUser(prevState => {
+            return {
+            ...prevState,
+            username:response.data.user.username,
+            lastname:response.data.user.lastname,
+            name:response.data.user.name,
+          isLoggedIn:true,
+          email:response.data.user.email,
+          membership:'free',
+          userId:response.data.user.id
+          }
+          })
+  
+          isActiveMember(response.data.user.email)
         
       }
 
     })
     .catch(error => {
       // Handle error.
+      setLoading(false)
+      setErrorMsg(true)
+
       console.log('An error occurred:', error.response);
     });
   }
 
   // CHECK IF CONNECTED USER IS A PAID MEMBER
   const isActiveMember = (costumerEmail)=> {
-   const existingUser =  data.allStripeSubscription.nodes.find(element => element.customer.email === costumerEmail);
- 
-   if(existingUser) {
-    setUser({...user,membership:'paid',
-    stripeId:existingUser.customer.id,
-    isStripeActive:true,
-    stripeStartDay:existingUser.current_period_start,
-    stripeEndDay:existingUser.current_period_end
-   }) 
+    const existingUser =  data.allStripeSubscription.nodes.find(element => element.customer.email === costumerEmail);
 
+      if(existingUser) {
+      //  setUser({...user,membership:'paid',
+      //  isLoggedIn:true,
+      //  stripeId:existingUser.customer.id,
+      //  isStripeActive:true,
+      //  stripeStartDay:existingUser.current_period_start,
+      //  stripeEndDay:existingUser.current_period_end
+      // } 
+      // ) 
+      setUser(prevState => {
+        return {
+        ...prevState,
+        stripeId:existingUser.customer.id,
+        isStripeActive:true,
+        stripeStartDay:existingUser.current_period_start,
+        stripeEndDay:existingUser.current_period_end,
+        membership:'paid'
+      }
+      })
+      setTimeout(()=>{
+        localStorage.setItem("user",user)
+        return comingFromPreviousUrl ? navigate(-1) : navigate("/app/dashboard");
+      },3000)
+      
+      
+      }else {
+        setTimeout(()=>{
+          localStorage.setItem("user",user)
+          return comingFromPreviousUrl ? navigate(-1) : navigate("/app/dashboard");
+        },3000)
+     }
   
-  
-   return comingFromPreviousUrl ? navigate(-1) : navigate("/app/dashboard");
-   
-   }else {return comingFromPreviousUrl ? navigate(-1) : navigate("/app/dashboard");
-  }
   } 
 
 
@@ -110,7 +153,9 @@ export default function Login({data,location}) {
             />
             {/* <p className="text-red text-xs italic">Please choose a password.</p> */}
           </div>
+          {errorMsg ? <LoginSignErrorMessage message="Username or Password are incorrect"/> : null }
           <div className="flex items-center justify-between">
+            
             <button
               className="bg-russian-violet-dark text-white  hover:russian-violet-light font-bold py-2 px-4 rounded"
               type="button"

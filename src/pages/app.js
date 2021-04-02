@@ -5,6 +5,7 @@ import UserContext from '../context/UserContext'
 
 
 import Dashboard from '../components/clientDashboard'
+import Profile from './app/profile/[strapiId]'
 import PrivateRoute from '../components/PrivateRoute'
 
 import Login from "./login"
@@ -19,6 +20,7 @@ const App = () => {
     <SEO title="App"/>
       <Router basepath="/app">
       <PrivateRoute path="/dashboard" component={Dashboard} />
+      <PrivateRoute path="/profile/:strapiId" component={Profile} />
         <Login path="/login" />
         <Default path="/" />
       </Router>

@@ -1,56 +1,72 @@
-import React, { useState } from "react"
-import Layout from "../components/layout"
-import "../components/layout.css"
-import Loader from "../components/Loader"
-import { Link, navigate } from "gatsby"
+import React,{useContext,useState} from 'react'
+import {useStaticQuery, graphql,Link,navigate} from 'gatsby'
+import Layout from '../../../components/layout'
+import SEO from '../../../components/seo'
+import UserContext from '../../../context/UserContext'
+import Loader from '../../../components/Loader'
+import LoginSignErrorMessage from '../../../components/LoginSignErrorMessage'
 import axios from 'axios'
-import SEO from '../components/seo'
-import LoginSignErrorMessage from "../components/LoginSignErrorMessage"
 
-export default function SignUp() {
-  const [register, setRegister] = useState({
-    username:"",
-    name: "",
-    lastname:"",
-    email:"",
-    password: "",
-  })
-  const [errorMsg,setErrorMsg]=useState(false)
+ function StrapiUser() {
+   
+  const [user,setUser]=useContext(UserContext)
+    const data = useStaticQuery(graphql`
+    query strapiUser($strapiId: Int) {
+        strapiUser(strapiId: {eq: $strapiId}) {
+          email
+          id
+          lastname
+          name
+          username
+          strapiId
+        }
+      }
+    `)
 
-  const [loading, setLoading] = useState(false)
-
-  const handleSignUp = () => {
-    setLoading(true) // Request API.
-    if( register.username==="" || register.name=== "" || register.lastname==="" || register.email==="" || register.password=== "") {
-      setLoading(false) // Request API.
-      setErrorMsg(true)
-      return null
-    }
-    axios
-    .post('https://websiteserver-ds7cf.ondigitalocean.app/auth/local/register', {...register})
-    .then(response => {
-      // Handle success.
-      console.log('Well done!');
-      console.log('User profile', response.data.user);
-      console.log('User token', response.data.jwt);
-      navigate("/registration-success")
+    const [register, setRegister] = useState({
+      username:"",
+      name: "",
+      lastname:"",
+      email:"",
+      password: "",
     })
-    .catch(error => {
-      // Handle error.
-      console.log('An error occurred:', error.response);
-    });
-  }
-
-  return (
-    <>
-    <SEO title="Login"/>
+    const [errorMsg,setErrorMsg]=useState(false)
+  
+    const [loading, setLoading] = useState(false)
+  
+    const handleSignUp = () => {
+      setLoading(true) // Request API.
+      if( register.username==="" || register.name=== "" || register.lastname==="" || register.email==="" || register.password=== "") {
+        setLoading(false) // Request API.
+        setErrorMsg(true)
+        return null
+      }
+      console.log('updating')
+      setLoading(true)
+      // axios
+      // .post('https://websiteserver-ds7cf.ondigitalocean.app/auth/local/register', {...register})
+      // .then(response => {
+      //   // Handle success.
+      //   console.log('Well done!');
+      //   console.log('User profile', response.data.user);
+      //   console.log('User token', response.data.jwt);
+      //   navigate("/registration-success")
+      // })
+      // .catch(error => {
+      //   // Handle error.
+      //   console.log('An error occurred:', error.response);
+      // });
+    }
+    return (
+        <Layout>
+            <SEO title="Profile"></SEO>
     <div className="container mx-auto ">
       <div className="grid md:grid-cols-6 md:gap-4 grid-cols-1 md:gap-2 px-5 justify-center items-center h-screen  ">
         <div className="col-start-3 col-span-2 bg-gray-100 rounded-xl  px-10 py-10">
-          <img
-            src="https://platformable.com/content/images/2020/02/logo-and-business-name-horizontal.png"
-            className="my-5"
-          />
+          <h3 className="font-black text-lg">Edit Profile</h3>
+          <p>{data.strapiUser.name}</p>
+          <p>id: {data.strapiUser.id}</p>
+          <p>strapiId: {data.strapiUser.strapiId}</p>
           <div className="mb-4">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
@@ -64,6 +80,7 @@ export default function SignUp() {
               type="text"
               placeholder="username"
               onChange={e => setRegister({ ...register, username: e.target.value })}
+              value={user.username}
             />
           </div>
 
@@ -80,6 +97,7 @@ export default function SignUp() {
               type="text"
               placeholder="name"
               onChange={e => setRegister({ ...register, name: e.target.value })}
+              value={user.name}
             />
           </div>
           <div className="mb-4">
@@ -95,6 +113,7 @@ export default function SignUp() {
               type="text"
               placeholder="lastname"
               onChange={e => setRegister({ ...register, lastname: e.target.value })}
+              value={user.lastname}
             />
           </div>
           <div className="mb-4">
@@ -110,6 +129,7 @@ export default function SignUp() {
               type="email"
               placeholder="Email"
               onChange={e => setRegister({ ...register, email: e.target.value })}
+              value={user.email}
             />
           </div>
           <div className="mb-6">
@@ -135,23 +155,31 @@ export default function SignUp() {
               type="button"
               onClick={handleSignUp}
             >
-              {loading ? <Loader text="Sign Up" /> : "Sign Up"}
+              {loading ? <Loader text="Saving" /> : "Save"}
             </button>
-            <Link
-              className="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker"
-              to="/login"
-            >
-              Already have an account?
-            </Link>
+           
           </div>
-          <div className="flex justify-center">
-            <Link to="/" className="text-center text-sm my-5">
-              www.platformable.com
-            </Link>
-          </div>
+     
         </div>
       </div>
     </div>
-    </>
-  )
+    
+        </Layout>
+        
+    )
 }
+
+export default StrapiUser
+
+// export const strapiIdQuery = graphql`
+// query strapiUser($strapiId: Int) {
+//   strapiUser(strapiId: {eq: $strapiId}) {
+//     email
+//     id
+//     lastname
+//     name
+//     username
+//     strapiId
+//   }
+// }
+// `

@@ -100,7 +100,6 @@ export default function Dashboard() {
   const authorsData = data.allStrapiPost.edges[0].node.user;
   const connectedUserEmail=user.email;
 
-console.log(user.stripeStartDay)
 // useEffect(()=>{
 //   const getConnectedUserInfo =  (email)=>{
 //     const result = data.allStripeSubscription.edges.find(registerUser=>registerUser.node.customer.email === connectedUserEmail);
@@ -161,7 +160,7 @@ console.log(user.stripeStartDay)
             <div className="dashboard-profile-card-text p-10">
               <h5 className="font-black text-primary">Hi! {user.name}</h5>
               <p className="text-sm">Your Stripe id: {user.stripeId}</p>
-              <Link to="/" className="text-sm text-white bg-yellow-300 px-5 py-1 text-center rounded">Edit Profile</Link>
+              <Link to={`/app/profile/1`} className="text-sm text-white bg-yellow-300 px-5 py-1 text-center rounded">Edit Profile</Link>
             </div>
           </div>
           <div className="dashboard-profile-card bg-gray-50 rounded-lg shadow-sm flex flex-wrap">
@@ -268,7 +267,7 @@ console.log(user.stripeStartDay)
                   <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                     <p className="text-xs mr-1">{`Writen by `} </p>
                     {
-                    post.node.user.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" >{` ${post.node.user[0].username}`}</Link> 
+                    post.node.user.length === 1 ? <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1" to={'/'}>{` ${post.node.user[0].username}`}</Link> 
                     : post.node.user.length === 2 ? authorsData.map((x, index) => <Link to={`/author/${x.id}`}className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">{x.username} {index < authorsData.length -1  ? ' & ' : ''}</Link>)
                     :null
                     }
@@ -292,6 +291,7 @@ console.log(user.stripeStartDay)
                       
                     </div>
                     <Link
+                    to={'/'}
                       href={`/blog/${post.node.slug}`}
                       className="flex items-center"
                     >

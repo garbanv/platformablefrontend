@@ -16,8 +16,21 @@ const BlogPost = ({ data }) => {
   const [user,setUser] = useContext(UserContext)
   const [scripts,setScripts] = useState([])
   const [update,setUpdate]=useState(false);
+
+  const [local,setLocal]=useState(localStorage.getItem("user"))
   
-  console.log('subscription: ',data.strapiPost.membership)
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if(typeof window !==`undefined`) {
+      if (loggedInUser) {
+        console.log(loggedInUser)
+        setUser(prevUser => ({ ...prevUser,loggedInUser }))} else {
+        console.log('not logged')
+      }
+    }
+  
+    
+  }, []);
 
 const getMembership = (subscription, isLoggedIn)=>{
  if(subscription==="free") {
@@ -65,7 +78,7 @@ const getMembership = (subscription, isLoggedIn)=>{
    
 
     if (isInitialMount.current) {
-      console.log("initial")
+
       getScripts()
       setUpdate(true)
       isInitialMount.current = false;
@@ -75,6 +88,8 @@ const getMembership = (subscription, isLoggedIn)=>{
     // window.instgrm.Embeds.process()
     // window.twttr.widgets.load()
   }, [data])
+
+
   return (
     <>
       <Layout>
