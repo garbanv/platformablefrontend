@@ -22,7 +22,6 @@ const Link = ({
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
         {...other}
-        onClick={()=>alert("internal")}
       >
         {children}
       </GatsbyLink>
