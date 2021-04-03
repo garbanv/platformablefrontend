@@ -14,11 +14,10 @@ export default function Login({data,location}) {
 
   // To know if is coming from a post or a page that require login
   
-  if(typeof window !==`undefined`) {
-     const comingFromPreviousUrl = location.state.previousPost;
-  } else {
-    return false
-  }
+     const comingFromPreviousUrl = location?location.state.previousPost : false;
+
+
+
   
 
   const [login, setLogin] = useState({
