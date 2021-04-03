@@ -16,7 +16,6 @@ export default function Login({data,location}) {
   
   if(typeof window !==`undefined`) {
      const comingFromPreviousUrl = location.state.previousPost;
-     return comingFromPreviousUrl;
   } else {
     return false
   }
