@@ -13,9 +13,9 @@ export default function Login({data,location}) {
   const [errorMsg,setErrorMsg]=useState(false)
 
   // To know if is coming from a post or a page that require login
-
+  const comingFromPreviousUrl;
   if(typeof window !== "undefined") {
-      const comingFromPreviousUrl = location.state.previousPost;
+       comingFromPreviousUrl = location.state.previousPost;
     } 
 
 
@@ -103,7 +103,7 @@ export default function Login({data,location}) {
       setTimeout(()=>{
         localStorage.setItem("user",user)
         return comingFromPreviousUrl ? navigate(-1) : navigate("/app/dashboard");
-      },3000)
+      },1500)
       
       
       }else {
