@@ -60,7 +60,7 @@ const Header = ({ siteTitle }) => {
           <Link to="/about">About</Link>
           <Link to="/products">Product Streams</Link>
           <Link to="/blog">Blog</Link>
-          {user.isLoggedIn ? "" : <Link to="/login" state={{previousPost:true}} >Login</Link>}
+          {user.isLoggedIn ? "" : <Link to="/login" state={{previousPost:false}} >Login</Link>}
           {user.isLoggedIn ? <Link to="/app/dashboard">Dashboard</Link> : ""}
           {user.isLoggedIn ? (
             <span onClick={handleLogOut} className="cursor-pointer">
