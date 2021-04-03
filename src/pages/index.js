@@ -19,7 +19,7 @@ import sectionTwoImg from "../assets/home/quarterly_trends.png"
 import sectionSixImg from '../assets/home/we_publish_analysis.png'
 
 const IndexPage = ({data}) => {
-  const authorsData = data.allStrapiPost.edges[0].node.user
+  const authorsData = data?data.allStrapiPost.edges[0].node.user :null
 return(
   <Layout>
     <SEO title="Home" />
@@ -71,7 +71,7 @@ return(
           <div className="all-posts">
             <div className="container mx-auto mt-5 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
               {/* single post card start here */}
-              {data.allStrapiPost.edges.map(post => {
+              {data?data.allStrapiPost.edges.map(post => {
                 return (
                   <div key={post.node.id}>
                     <div className="rounded-lg overflow-hidden">
@@ -177,7 +177,7 @@ return(
                 {
                   /* single post card start here */
                 }
-              })}
+              }):null}
             </div>
           </div>{" "}
           {/* end of all posts */}

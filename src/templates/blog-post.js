@@ -1,4 +1,4 @@
-import React, { useEffect,useState, useRef,useContext, Suspense } from "react"
+import React, { useEffect,useState, useRef,useContext } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -6,24 +6,23 @@ import EmbedContainer from "react-oembed-container"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import BlogPostAlertMessage from '../components/BlogPostAlertMessage'
-
+import PostContentComponent from '../components/PostContentComponent'
 import UserContext from '../context/UserContext'
 
 
-const PostContentComponent = React.lazy(() => import('../components/PostContentComponent'));
+
 
 const BlogPost = ({ data }) => {
   const [user,setUser] = useContext(UserContext)
   const [scripts,setScripts] = useState([])
   const [update,setUpdate]=useState(false);
 
-  const [local,setLocal]=useState(localStorage.getItem("user"))
   
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     if(typeof window !==`undefined`) {
       if (loggedInUser) {
-        console.log(loggedInUser)
+      
         setUser(prevUser => ({ ...prevUser,loggedInUser }))} else {
         console.log('not logged')
       }
@@ -35,17 +34,17 @@ const BlogPost = ({ data }) => {
 const getMembership = (subscription, isLoggedIn)=>{
  if(subscription==="free") {
    return (
-    <Suspense fallback={<div>Loading...</div>}>
+    
     <PostContentComponent data={data.strapiPost.content} />
-    </Suspense>
+
    )
  } else if (subscription==="free_login" && !user.isLoggedIn) {
   return (<BlogPostAlertMessage message="Hi, this is a login-only blog post. Become a member to get unlimited access and discover more of ours services."/>)
  } else if (subscription==="free_login" && user.isLoggedIn){
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+
     <PostContentComponent data={data.strapiPost.content} />
-    </Suspense>
+
    )
  } else if (subscription==="paid" && !user.isLoggedIn) {
   return (<BlogPostAlertMessage message="Hi, this is a member-only blog post. Become a member to get unlimited access and discover more of ours services."/>)
@@ -54,9 +53,9 @@ const getMembership = (subscription, isLoggedIn)=>{
  }
  else if (subscription==="paid" && user.isLoggedIn && user.membership==="paid") {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+
     <PostContentComponent data={data.strapiPost.content} />
-    </Suspense>
+  
    )
  }
 }
@@ -236,7 +235,7 @@ const getMembership = (subscription, isLoggedIn)=>{
 export default BlogPost
 
 export const query = graphql`
-  query MyPost($slug: String!) {
+  query MyPost($slug: String) {
     strapiPost(slug: { eq: $slug }) {
       categories {
         name

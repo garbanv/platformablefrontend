@@ -52,8 +52,13 @@ exports.sourceNodes = ({actions})=> {
   const {createTypes} = actions;
   const typeDefs = `
   type StrapiAbout implements Node {
-    content: String
-  }`
+    content: String 
+  }
+
+  type StrapiPost implements Node {
+    slug: String
+  } 
+  `
 
   createTypes(typeDefs);
 }
