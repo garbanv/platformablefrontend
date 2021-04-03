@@ -13,7 +13,7 @@ export default function Login({data,location}) {
   const [errorMsg,setErrorMsg]=useState(false)
 
   // To know if is coming from a post or a page that require login
-    if(location) {
+    if(typeof location.state !== `undefined`) {
       const comingFromPreviousUrl = location.state.previousPost;
     } else {
       const comingFromPreviousUrl = false;
