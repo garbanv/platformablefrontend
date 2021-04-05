@@ -35,7 +35,7 @@ const GridDisplay = ({
 
         <div>
           <p className={firstParagraphClass}>{firstParagraph}</p>
-          <h3 className="font-black text-3xl mb-5">
+          <h3 className="font-black text-xl mb-5">
             {title}&nbsp;
             <span className="text-2xl bg-secondary">{span}</span>
           </h3>

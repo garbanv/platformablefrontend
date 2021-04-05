@@ -11,25 +11,25 @@ const HowWeDoItCards = () => {
       src: buildImg,
       title:
         "Building Tools",
-      paragraph: "To foster platforms and open ecosystems",
+      paragraph: "To build platforms and ecosystems",
     },
     {
       src: measureImg,
       title:
-        "Measuring value",
-      paragraph: "Generated from platforms and ecosystems",
+        "Measuring Value",
+      paragraph: "To identify gaps and opportunities in open ecosystems",
     },
     {
       src: bestPracticesImg,
       title:
-        "Sharing best practices",
-      paragraph: "By describing what has worked for others",
+        "Sharing Best Practices",
+      paragraph: "To learn from what works",
     },
     {
       src: connectImg,
       title:
         "Connecting Partners",
-      paragraph: "To work and learn from each other",
+      paragraph: "Collaborate effectively",
     },
   ]
   return (

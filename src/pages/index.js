@@ -27,9 +27,7 @@ return(
     <GridDisplay
       gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
       gridContentClass="md:w-2/5"
-      title="We work with industry groups,
-      governments, consultants and
-      non-profits to encourage:"
+      title="We support open ecosystems that build economic opportunities, solve complex problems, and enable everyone to participate and co-create their own value"
       paragraphOne="> Platform business models"
       paragraphTwo="> Open ecosystems where everyone can participate."
       doNotDisplayAnchor="hidden"
@@ -46,11 +44,11 @@ return(
     <GridDisplay
       gridDisplayClass="bg-lightBlue flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
       gridContentClass="md:w-2/5"
-      firstParagraph="Get access to our recently released"
-      title="Quarterly Trend Reports
-        Q1 2021"
+      firstParagraph="Download our latest release"
+      title={`Open Banking/Open Finance Quarterly Trend Reports
+        ` + `\nQ1 2021`}
       doNotDisplayAnchor="hidden"
-      url={"https://platformable.com/q4-2020-trends-report/"}
+      url={"/landings/trends"}
       type="button"
       label={"More info on our reports"}
       btnClass="bg-secondary text-primary font-bold my-5 mx-0 py-2 px-10 rounded-full hover:bg-secondary cursor-pointer"
@@ -97,7 +95,7 @@ return(
                         )}
                       </div>
                       <div className="relative bg-gray-50">
-                        <div className="py-10 px-8">
+                        <div className="py-1 px-8">
                           <h5 className="text-lg font-bold">
                             <Link to={`/blog/${post.node.slug}`}>
                               {" "}
@@ -124,51 +122,9 @@ return(
                               ))
                             ) : null}
                           </div>
-                          <p className="text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Vestibulum justo nunc, pellentesque eget.
-                          </p>
+        
 
-                          <div className="mt-10 flex justify-between items-center">
-                            <div>
-                              {/* CATEGORIE TAG */}
-                              {post.node.categories.map(cat => {
-                                return (
-                                  <div key={post.node.id}>
-                                    <Link
-                                      to={cat.name}
-                                      className={`bg-russian-violet-dark-${cat.name} py-1 px-2 rounded text-white text-xs`}
-                                    >
-                                      {cat.name}
-                                    </Link>
-                                  </div>
-                                )
-                              })}
-                            </div>
-                            <Link
-                              to={"/"}
-                              href={`/blog/${post.node.slug}`}
-                              className="flex items-center"
-                            >
-                              <p className="mr-4 text-lg">Read more</p>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="14.125"
-                                height="13.358"
-                                viewBox="0 0 14.125 13.358"
-                              >
-                                <g transform="translate(-3 -3.293)">
-                                  <path
-                                    id="Path_7"
-                                    data-name="Path 7"
-                                    d="M14.189,10.739H3V9.2H14.189L9.361,4.378l1.085-1.085,6.679,6.679-6.679,6.679L9.361,15.566Z"
-                                    fill="#1d1d1d"
-                                    fillRule="evenodd"
-                                  ></path>
-                                </g>
-                              </svg>
-                            </Link>
-                          </div>
+                      
                         </div>
                       </div>
                     </div>
@@ -194,9 +150,7 @@ return(
       gridContentClass="md:w-2/5"
       title="We publish analysis
       and insights"
-      paragraphOne="We share data on the growth of platforms
-      and ecosystems and track how value
-      is being generated."
+      paragraphOne="We share data on the growth of open ecosystems, and track how value is being generated and distributed"
       doNotDisplayAnchor="hidden"
       doNotDisplay="hidden" 
 
@@ -209,10 +163,10 @@ return(
     <Form
       formClass="text-center my-6 mx-auto"
       titleClass="text-sm"
-      title="Keep up with what's happening in the platform business model world."
+      title="The future is open"
       iframeId=""
       iframeSrc={"https://landing.mailerlite.com/webforms/landing/b9q0r6"}
-      paragraph="We won't email more than once a month."
+      paragraph="We share monthly updates on the move to open ecosystems"
       paragraphClass="mb-12"
     />
 

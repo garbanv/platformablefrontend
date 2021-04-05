@@ -27,14 +27,14 @@ const OpenEcosystemSection = () => {
     {
       src: openSustainabilityImg,
       title:
-        "Open sustainability",
+        "Open Sustainability",
     },
   ]
   return (
     <section className="bg-card px-8 py-2 rounded-2xl md:mx-12 mx-4 lg:absolute -bottom-3/4 inset-x-0 ">
       <img src={sectionImg} alt="we measure the growth" className=" h-72 mx-auto"/>
       <h3 className="my-4 mx-auto text-center font-black text-3xl">We measure the growth of digital open ecosystems</h3>
-      <p className="text-center">In 4 main product areas</p>
+      <p className="text-center">Across 4 sectors</p>
       <div className="my-0 md:mx-16 mx-2 py-0 px-3 flex flex-wrap flex-col sm:flex-row justify-evenly">
         {images.map((img, i) => (
           <div
@@ -44,7 +44,7 @@ const OpenEcosystemSection = () => {
             <img src={img.src} alt={img.title} className="w-30 h-30 mx-auto shadow rounded-full p-3 cursor-pointer transition-shadow hover:shadow-hover" />
 
             <div>
-              <h6 className="my-5 text-center mx-auto font-black">{img.title}</h6>
+              <h4 className="my-5 text-center mx-auto font-black">{img.title}</h4>
             </div>
           </div>
         ))}

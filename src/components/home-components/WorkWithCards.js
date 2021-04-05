@@ -11,25 +11,25 @@ const WorkWithCards = () => {
       src: govImg,
       title:
         "Governments",
-      paragraph: "that need to collaborate openly with increasingly complex networks of partners and stakeholders",
+      paragraph: "Use API strategies to encourage collaboration and solve complex problems",
     },
     {
       src: regulatoryImg,
       title:
         "Regulatory authorities",
-      paragraph: "needing to ensure that platforms are creating equitable opportunities for all.",
+      paragraph: "Measure the impact of open ecosystems and track how inequalities are reduced",
     },
     {
       src: industryImg,
       title:
         "Industry networks",
-      paragraph: "and associations needing offer tools and training that can encourage their members to move to platform models.",
+      paragraph: "Use tools and training to support members to become effective platforms",
     },
     {
       src: apiProvImg,
       title:
         "API providers and consultants",
-      paragraph: "who need to draw on best practices and latest evidence to communicate their value.",
+      paragraph: "Communicate the value of APIs to build more business",
     },
   ]
   return (

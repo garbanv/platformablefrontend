@@ -21,7 +21,9 @@ function StrapiUser({ data }) {
   //     }
   //   }
   // `)
-
+if(data) {
+  console.log('data', data)
+}
   const [register, setRegister] = useState({
     username: "",
     name: "",
