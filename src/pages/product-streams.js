@@ -1,7 +1,7 @@
 import React from "react"
 import data from "../data/product-stream/data.json"
 /*shared-components*/
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import GridDisplay from "../components/shared-components/GridDisplay"
 /*specific-components*/
