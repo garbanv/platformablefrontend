@@ -12,7 +12,8 @@ const OpenEcosystemSection = () => {
     {
       src: openBankingImg,
       title:
-        "Open Banking/Open Finance",
+        `Open Banking / 
+        Open Finance`,
     },
     {
       src: openGovImg,

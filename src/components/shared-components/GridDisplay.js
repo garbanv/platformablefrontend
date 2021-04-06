@@ -26,7 +26,8 @@ const GridDisplay = ({
   imgContentClass,
   imgClass,
   backImgSrc,
-  alt
+  alt,
+  quarter
 }) => {
   return (
     <section className={gridDisplayClass}>
@@ -36,7 +37,9 @@ const GridDisplay = ({
         <div>
           <p className={firstParagraphClass}>{firstParagraph}</p>
           <h3 className="font-black text-xl mb-5">
-            {title}&nbsp;
+            {title}
+            <br></br>
+            {quarter? quarter: ""}
             <span className="text-2xl bg-secondary">{span}</span>
           </h3>
           <p className={paragraphOneClass}>{paragraphOne}</p>

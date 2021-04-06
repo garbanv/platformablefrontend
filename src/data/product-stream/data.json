@@ -1,0 +1,194 @@
+{
+  "products": {
+    "elements": [
+      {
+        "title": "Open Banking/\nOpen Finance",
+        "img": "/product-streams/open_banking-open_finance.svg",
+        "paragraph": "Short description of the field lorem ipsum dolor",
+        "color": "#FBDACE40",
+        "anchorLink": "/open-banking"
+      },
+      {
+        "title": "Open\nGovernment",
+        "img": "/product-streams/open_government.svg",
+        "paragraph": "Short description of the field lorem ipsum dolor",
+        "color": "#D8C1FB40",
+        "anchorLink": "/open-government"
+      },
+      {
+        "title": "Open\nHealth",
+        "img": "/product-streams/open_health.svg",
+        "paragraph": "Short description of the field lorem ipsum dolor",
+        "color": "#87ACFC40",
+        "anchorLink": "/open-health"
+      },
+      {
+        "title": "Open\nSustainability",
+        "img": "/product-streams/open_sustainability.svg",
+        "paragraph": "Coming soon",
+        "color": "#C7F3E540",
+        "anchorLink": "/open-sustainability"
+      }
+    ]
+  },
+  "OpenBanking": {
+    "elements": [
+      {
+        "img": "/product-streams/analyst-as-a-service.svg",
+        "title": "Analyst as a\n service",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#FBDACE40"
+      },
+      {
+        "img": "/product-streams/blogs_and_articles.svg",
+        "title": "Blogs and \nArticles",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#FBDACE40"
+      },
+      {
+        "img": "/product-streams/open_ecosystem_mapping.svg",
+        "title": "Open Ecosystem\nMapping",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#FBDACE40"
+      },
+      {
+        "img": "/product-streams/platform_mindset_training_for_banks.svg",
+        "title": "Platform Mindset Training\nfor Banks",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#FBDACE40"
+      },
+      {
+        "img": "/product-streams/quarterly_trends_report.svg",
+        "title": "Quarterly Trends\nReport",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#FBDACE40"
+      },
+      {
+        "img": "/product-streams/state_of_the_market_reports.svg",
+        "title": "State of the Market\nReports",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#FBDACE40"
+      }
+    ]
+  },
+  "OpenGovernement": {
+    "elements": [
+      {
+        "img": "/product-streams/analyst-as-a-service.svg",
+        "title": "Analyst as a\n service",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#D8C1FB40"
+      },
+      {
+        "img": "/product-streams/blogs_and_articles.svg",
+        "title": "Blogs and \nArticles",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#D8C1FB40"
+      },
+      {
+        "img": "/product-streams/open_ecosystem_mapping.svg",
+        "title": "Open Ecosystem\nMapping",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#D8C1FB40"
+      },
+      {
+        "img": "/product-streams/platform_mindset_training_for_banks.svg",
+        "title": "Platform Mindset Training\nfor Banks",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#D8C1FB40"
+      },
+      {
+        "img": "/product-streams/quarterly_trends_report.svg",
+        "title": "Quarterly Trends\nReport",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#D8C1FB40"
+      },
+      {
+        "img": "/product-streams/state_of_the_market_reports.svg",
+        "title": "State of the Market\nReports",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#D8C1FB40"
+      }
+    ]
+  },
+  "OpenHealth": {
+    "elements": [
+      {
+        "img": "/product-streams/analyst-as-a-service.svg",
+        "title": "Analyst as a\n service",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#87ACFC40"
+      },
+      {
+        "img": "/product-streams/blogs_and_articles.svg",
+        "title": "Blogs and \nArticles",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#87ACFC40"
+      },
+      {
+        "img": "/product-streams/open_ecosystem_mapping.svg",
+        "title": "Open Ecosystem\nMapping",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#87ACFC40"
+      },
+      {
+        "img": "/product-streams/platform_mindset_training_for_banks.svg",
+        "title": "Platform Mindset Training\nfor Banks",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#87ACFC40"
+      },
+      {
+        "img": "/product-streams/quarterly_trends_report.svg",
+        "title": "Quarterly Trends\nReport",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#87ACFC40"
+      },
+      {
+        "img": "/product-streams/state_of_the_market_reports.svg",
+        "title": "State of the Market\nReports",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#87ACFC40"
+      }
+    ]
+  },
+  "OpenSustainability": {
+    "elements": [
+      {
+        "img": "/product-streams/analyst-as-a-service.svg",
+        "title": "Analyst as a\n service",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#C7F3E540"
+      },
+      {
+        "img": "/product-streams/blogs_and_articles.svg",
+        "title": "Blogs and \nArticles",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#C7F3E540"
+      },
+      {
+        "img": "/product-streams/open_ecosystem_mapping.svg",
+        "title": "Open Ecosystem\nMapping",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#C7F3E540"
+      },
+      {
+        "img": "/product-streams/platform_mindset_training_for_banks.svg",
+        "title": "Platform Mindset Training\nfor Banks",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#C7F3E540"
+      },
+      {
+        "img": "/product-streams/quarterly_trends_report.svg",
+        "title": "Quarterly Trends\nReport",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#C7F3E540"
+      },
+      {
+        "img": "/product-streams/state_of_the_market_reports.svg",
+        "title": "State of the Market\nReports",
+        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "color": "#C7F3E540"
+      }
+    ]
+  }
+}

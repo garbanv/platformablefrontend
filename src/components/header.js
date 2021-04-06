@@ -58,7 +58,7 @@ const Header = ({ siteTitle }) => {
             &times;
           </a>
           <Link to="/about">About</Link>
-          <Link to="/products">Product Streams</Link>
+          <Link to="/products">Sectors</Link>
           <Link to="/blog">Blog</Link>
           {user.isLoggedIn ? "" : <Link to="/login" state={{previousPost:false}} >Login</Link>}
           {user.isLoggedIn ? <Link to="/app/dashboard">Dashboard</Link> : ""}
@@ -115,12 +115,19 @@ const Header = ({ siteTitle }) => {
                   >
                     About
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/products"
                     className=" top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName="active-top-nav"
                   >
-                    Products Stream
+                    Products
+                  </Link> */}
+                  <Link
+                    to="/product-streams"
+                    className=" top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    activeClassName="active-top-nav"
+                  >
+                    Sectors
                   </Link>
                   <Link
                     to="/blog"
@@ -145,7 +152,7 @@ const Header = ({ siteTitle }) => {
                   ) : (
                     <Link
                       to="/login"
-                      className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-yellow-500"
+                      className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-russian-violet-dark"
                       activeClassName="active-top-nav"
                       state={{previousPost:false}} 
                     >
@@ -154,7 +161,7 @@ const Header = ({ siteTitle }) => {
                   )}
                   {user && user.isLoggedIn ? (
                     <span
-                      className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-yellow-500 cursor-pointer"
+                      className=" top-nav text-white  hover:text-white px-3 py-2 rounded-md text-sm font-medium bg-russian-violet-dark cursor-pointer"
                       activeClassName="active-top-nav"
                       onClick={handleLogOut}
                     >
@@ -165,7 +172,7 @@ const Header = ({ siteTitle }) => {
                   )}
                   <Link
                     to="/sign-up"
-                    className="top-nav text-white btn-bg-russian-violet-dark  hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="top-nav text-white bg-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName="active-top-nav"
                   >
                     Sign Up

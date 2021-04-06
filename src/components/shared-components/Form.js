@@ -12,7 +12,7 @@ const Form = ({
 }) => {
   return (
     <section className={formClass} id={formID}>
-      <h2 className={titleClass}>{title}</h2>
+      <h2 className="text-2xl font-black">{title}</h2>
 
       <iframe 
         id={iframeId}
@@ -24,7 +24,7 @@ const Form = ({
         margin='0'
       ></iframe>
 
-      <p className={paragraphClass}>{paragraph}</p>
+      <p className="italic">{paragraph}</p>
     </section>
   )
 }

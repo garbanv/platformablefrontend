@@ -28,8 +28,8 @@ return(
       gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
       gridContentClass="md:w-2/5"
       title="We support open ecosystems that build economic opportunities, solve complex problems, and enable everyone to participate and co-create their own value"
-      paragraphOne="> Platform business models"
-      paragraphTwo="> Open ecosystems where everyone can participate."
+      paragraphOne=""
+      paragraphTwo=""
       doNotDisplayAnchor="hidden"
       url="/about"
       type="button"
@@ -41,12 +41,13 @@ return(
       alt="Hero"
     ></GridDisplay>
 
+    <section className="bg-gray-100 py-5">
     <GridDisplay
       gridDisplayClass="bg-lightBlue flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
       gridContentClass="md:w-2/5"
       firstParagraph="Download our latest release"
-      title={`Open Banking/Open Finance Quarterly Trend Reports
-        ` + `\nQ1 2021`}
+      title={`Open Banking/Open Finance Quarterly Trend Reports`}
+      quarter="Q1 2021"
       doNotDisplayAnchor="hidden"
       url={"/landings/trends"}
       type="button"
@@ -57,9 +58,9 @@ return(
       backImgSrc={sectionTwoImg}
       alt="Hero"
     ></GridDisplay>
-
+   </section>
     {/* <PostsCards/> */}
-    <h3 className="text-center font-black">Latest Posts </h3>
+    <h3 className="text-center font-black mt-5">Latest Posts </h3>
     {/* POSTS */}
     <section className="container mx-auto all-blog-content my-20 px-5">
           <div className="flex">

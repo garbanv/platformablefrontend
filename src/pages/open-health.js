@@ -19,31 +19,36 @@ import openHealthImg from "../assets/product-streams/open_health.svg"
 import openSustainImg from "../assets/product-streams/open_sustainability.svg"
 
 
-export default function openBanking() {
+export default function openHealth() {
     return (
         <Layout>
-           <div id="openBanking">
-      
+            <div id="openHealth">
+
         <GridDisplay
-          gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center "
+          gridDisplayClass="flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center "
           gridContentClass="md:w-2/5"
-          title={`Open Banking / 
-            Open Finance`}
-          titleClass="my-5 text-orange"
+          title="Open Health"
+          titleClass="my-5 text-blue"
           paragraphOne="Text is same as the short description from the product
         stream page, to briefly introduce the concept of OB/OF."
           doNotDisplayLink="hidden"
           doNotDisplayAnchor="hidden"
           imgContentClass=""
           imgClass="object-cointain w-96 h-94"
-          backImgSrc={openBankImg}
+          backImgSrc={openHealthImg}
           alt="Hero"
         ></GridDisplay>
         <ProductStreamsCards
-          data={data["OpenBanking"]}
-          className="my-0 md:mx-8 mx-2 py-0 px-8 flex flex-wrap flex-col sm:flex-row justify-evenly items-center"
+          data={data["OpenHealth"]}
+          className="my-0 md:mx-8 mx-2 py-0 px-12 flex flex-wrap flex-col sm:flex-row justify-evenly items-center"
         />
       </div>
+    
         </Layout>
     )
 }
+
+
+
+
+
