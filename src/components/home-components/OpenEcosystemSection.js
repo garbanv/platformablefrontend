@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'gatsby'
 /*assets*/
 import sectionImg from '../../assets/home/we_measure_the_growth.png'
 import openBankingImg from "../../assets/home/open_banking.png"
@@ -14,16 +15,19 @@ const OpenEcosystemSection = () => {
       title:
         `Open Banking / 
         Open Finance`,
+        url:"/open-banking"
     },
     {
       src: openGovImg,
       title:
         "Open Government",
+        url:"/open-government"
     },
     {
       src: openHealthImg,
       title:
         "Open Health",
+        url:"/open-health"
     },
     {
       src: openSustainabilityImg,
@@ -41,12 +45,13 @@ const OpenEcosystemSection = () => {
           <div
             key={i}
             className="md:w-32 w-full my-6 p-4 mx-0"
-          >
+          ><Link to={img.url}>
             <img src={img.src} alt={img.title} className="w-30 h-30 mx-auto shadow rounded-full p-3 cursor-pointer transition-shadow hover:shadow-hover" />
 
             <div>
-              <h4 className="my-5 text-center mx-auto font-black">{img.title}</h4>
+              <h6 className="my-5 text-center mx-auto font-black">{img.title}</h6>
             </div>
+            </Link>
           </div>
         ))}
       </div>
