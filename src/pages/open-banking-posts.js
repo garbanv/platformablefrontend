@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import Layout from "../components/layout"
 import SEO from '../components/seo'
 
-const posts = ({data}) => {
+const OpenBankingPosts = ({data}) => {
 
   const authorsData = data.allStrapiPost.edges[0].node.user;
 
@@ -13,7 +13,7 @@ const posts = ({data}) => {
     <SEO title="Blog"/>
     <section className="container mx-auto all-blog-content my-20 px-5">
       <h3 className="text-3xl font-black text-center mb-5">
-        Open ecosystem
+        Open Banking / Finance Posts & Articles
       </h3>
      
       <div className="all-posts">
@@ -106,38 +106,38 @@ const posts = ({data}) => {
   </Layout>
 )}
 
-export default posts
+export default OpenBankingPosts
 
 export const blogQuery = graphql`
-query BlogPosts {
-  allStrapiPost {
-    edges {
-      node {
-        categories {
-          name
-        }
-        id
-        slug
-        is_featured
-        tags {
-          name
-        }
-        featured_image {
-          childImageSharp {
-            fluid  {
-              ...GatsbyImageSharpFluid
+query OpenBankingBlogPosts {
+    allStrapiPost(filter: {categories: {elemMatch: {name: {eq: "Open Banking/Open Finance"}}}}) {
+        edges {
+          node {
+            categories {
+              name
+            }
+            id
+            slug
+            is_featured
+            tags {
+              name
+            }
+            featured_image {
+              childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            title
+            updated_at
+            user {
+              id
+              username
             }
           }
         }
-        title
-        updated_at
-        user {
-          id
-          username
-        }
       }
-    }
-  }
 }
 `
 

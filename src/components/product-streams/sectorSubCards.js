@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from 'gatsby'
 import CallToAction from './../shared-components/CallToAction';
 
-const ProductStreamsCards = ({ data, className }) => {
+const SectorSubCards = ({ data, className }) => {
   return (
     <section className="cards-section my-4 mx-auto py-8">
       <div className="border-b border-primary border-opacity-25 w-2/3 mx-auto mb-8"></div>
@@ -12,11 +12,12 @@ const ProductStreamsCards = ({ data, className }) => {
           <div
             key={i}
             className="md:w-56 max-w-xs mt-4 md:mb-2 mb-12 mx-2 p-6 rounded-3xl bg-card
-              flex flex-col justify-center items-center"
+              flex flex-col justify-center items-center 
+            "
             style={{ backgroundColor: el.color }}
           >
             <div className="text-center">
-            <Link to={el.anchorLink}>
+            <Link to={el.url}>
               <img
                 src={el.img}
                 alt={el.title}
@@ -29,7 +30,6 @@ const ProductStreamsCards = ({ data, className }) => {
                   {el.paragraph}
                 </p>
               </div>
-              
             </Link>
             </div>
           </div>
@@ -51,4 +51,4 @@ const ProductStreamsCards = ({ data, className }) => {
   )
 }
 
-export default ProductStreamsCards
+export default SectorSubCards

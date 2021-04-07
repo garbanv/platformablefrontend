@@ -4,6 +4,7 @@ import data from "../data/product-stream/data.json"
 import GridDisplay from "../components/shared-components/GridDisplay"
 /*specific-components*/
 import ProductStreamsCards from "./../components/product-streams/ProductStreamsCards"
+import SectorSubCards from "./../components/product-streams/sectorSubCards"
 import AnalystImg from '../images/Analyst-as-a-service.png'
 import BlogAsServiceImg from '../images/Blogs and articles.png'
 import OpenEcosystemImg from '../images/Open ecosystem mapping.png'
@@ -28,8 +29,7 @@ export default function openGovernment() {
           gridContentClass="md:w-2/5"
           title="Open Government"
           titleClass="my-5 text-purple"
-          paragraphOne="Text is same as the short description from the product
-        stream page, to briefly introduce the concept of OB/OF."
+          paragraphOne="Optimising digital government, unlocking data access, and ensuring greater participation."
           doNotDisplayLink="hidden"
           doNotDisplayAnchor="hidden"
           imgContentClass=""
@@ -37,7 +37,7 @@ export default function openGovernment() {
           backImgSrc={openGovImg}
           alt="Hero"
         ></GridDisplay>
-        <ProductStreamsCards
+        <SectorSubCards
           data={data["OpenGovernement"]}
           className="my-0 md:mx-8 mx-2 py-0 px-12 flex flex-wrap flex-col sm:flex-row justify-evenly items-center"
         />

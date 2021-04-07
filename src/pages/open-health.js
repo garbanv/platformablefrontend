@@ -29,8 +29,7 @@ export default function openHealth() {
           gridContentClass="md:w-2/5"
           title="Open Health"
           titleClass="my-5 text-blue"
-          paragraphOne="Text is same as the short description from the product
-        stream page, to briefly introduce the concept of OB/OF."
+          paragraphOne="Supporting community-based data governance and tracking health tech growth."
           doNotDisplayLink="hidden"
           doNotDisplayAnchor="hidden"
           imgContentClass=""

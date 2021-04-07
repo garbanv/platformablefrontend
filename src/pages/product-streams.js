@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import GridDisplay from "../components/shared-components/GridDisplay"
 /*specific-components*/
 import ProductStreamsCards from "./../components/product-streams/ProductStreamsCards"
+
 /*assets*/
 import sectionHeroImg from "../assets/product-streams/home_hero.svg"
 import openBankImg from "../assets/product-streams/open_banking-open_finance.svg"
@@ -19,15 +20,14 @@ const ProductStreams = props => {
 
   return (
     <Layout>
-      <SEO title="Product Streams" />
+      <SEO title="Sectors" />
 
       <GridDisplay
         gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center "
         gridContentClass="md:w-2/5"
-        title="Product Streams"
+        title="Sectors"
         titleClass="my-5"
-        paragraphOne="Select your area of interest and see how we can
-      help your users co-create the value they need."
+        paragraphOne="We track the growth and power of the open ecosystems that are essential to solve today’s most complex challenges."
         doNotDisplayLink="hidden"
         doNotDisplayAnchor="hidden"
         imgContentClass=""

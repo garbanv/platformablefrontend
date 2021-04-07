@@ -28,8 +28,7 @@ export default function openSustainability() {
     gridContentClass="md:w-2/5"
     title="Open Sustainability"
     titleClass="my-5 text-lightGreen"
-    paragraphOne="Text is same as the short description from the product
-  stream page, to briefly introduce the concept of OB/OF."
+    paragraphOne="Monitoring the move to a circular economy and tracking renewable energy opportunities."
     doNotDisplayLink="hidden"
     doNotDisplayAnchor="hidden"
     imgContentClass=""
