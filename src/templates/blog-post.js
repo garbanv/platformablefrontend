@@ -24,7 +24,7 @@ const BlogPost = ({ data }) => {
   
 
   useEffect(() => {
-    const  postCategory = data.strapiPost ? data.strapiPost.categories[0].name : " ";
+    
     const loggedInUser = localStorage.getItem("user");
     if(typeof window !==`undefined`) {
       if (loggedInUser) {
