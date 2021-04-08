@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import EmbedContainer from "react-oembed-container"
+import { InlineWidget } from "react-calendly";
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import BlogPostAlertMessage from '../components/BlogPostAlertMessage'
@@ -16,8 +17,12 @@ const BlogPost = ({ data }) => {
   const [user,setUser] = useContext(UserContext)
   const [scripts,setScripts] = useState([])
   const [update,setUpdate]=useState(false);
+  const [category,setCategory]=useState('');
 
-  
+
+
+  const  postCategory = data.strapiPost ? data.strapiPost.categories[0].name : " ";
+
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     if(typeof window !==`undefined`) {
@@ -27,9 +32,17 @@ const BlogPost = ({ data }) => {
         console.log('not logged')
       }
     }
+
+    const checkIfCategoryNameIncludesSymbol = (string)=>{
+      const myStringReplaced = string.replace(/[/ " "]/g, '-');
+      setCategory(myStringReplaced)
+    }
+
+    checkIfCategoryNameIncludesSymbol(postCategory)
+ 
   
     
-  }, []);
+  }, [category]);
 
 const getMembership = (subscription, isLoggedIn)=>{
  if(subscription==="free") {
@@ -141,8 +154,9 @@ const getMembership = (subscription, isLoggedIn)=>{
                     <Link
                       key={cat.name}
                       
-                      className={`bg-gray-200 py-1 px-2 mr-1 rounded-lg text-black text-xs flex-grow `}
+                      className={`bg-${cat.name} py-1 px-2 mr-1 rounded-lg text-black text-xs flex-grow `}
                     >
+                      
                       {cat.name}
                     </Link>
                   )
@@ -150,45 +164,43 @@ const getMembership = (subscription, isLoggedIn)=>{
               </ul>
             </div>
           </div>
-          <span className="text-gray-600 mr-3 text-xs">
+          <span className="text-gray-600 mr-3 text-sm">
             Updated at {new Date(data.strapiPost.updated_at).toDateString()}
           </span>
 
           <div className="posts-content py-10">
             {data.strapiPost.featured_image && data.strapiPost.featured_image ? 
-            <Img
+            <div className="post-featured-img  max-w-md flex justify-center center container">
+              {/* <img src={data.strapiPost.featured_image.childImageSharp.fixed.src} className="text-center mb-5 center"/> */}
+              <div style={{ width: '100%' }}>
+              {/* <img src={data.strapiPost.featured_image.childImageSharp.fluid.src} className="text-center mb-5 center"/> */}
+              <Img
             alt={data.strapiPost.title}
             key={data.strapiPost.featured_image.childImageSharp.fluid.src}
             imgStyle={{ objectFit: "contain" }}
             fluid={data.strapiPost.featured_image.childImageSharp.fluid}
             className="mb-10"
           />
+          
+          </div>
+          </div>
             : ''}
             
               {getMembership(data.strapiPost.membership,user.isLoggedIn)}
          
-            {/* <EmbedContainer markup={data.strapiPost.content}>
-              <div
-                dangerouslySetInnerHTML={{ __html: unescape(data.strapiPost.content) }}
-              />
-            </EmbedContainer> */}
-
-
-
-
-
-
-
+              {data.strapiPost.calendly ? <section className="posts-container mx-auto calendly">
+             <InlineWidget url="https://calendly.com/platformable" />
+             </section> : ''}
           </div>
 
           {/* end of all posts */}
 
           {/* AUTHOR CARD */}
 
-          <h3 className="text-2xl font-black text-center my-10">
-            Read More posts by this Author{" "}
-          </h3>
         </section>
+
+    
+        
 
         <section className="posts-container mx-auto">
           <div
@@ -266,6 +278,7 @@ export const query = graphql`
           }
         }
       }
+      calendly
     }
   }
 `

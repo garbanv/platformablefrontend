@@ -42,7 +42,7 @@ const WorkWithCards = () => {
             key={i}
             className="md:w-52 w-96 max-w-md mt-4 mb-12 md:mb-2 mx-2 p-6 rounded-3xl bg-card
           flex flex-col justify-center items-center 
-          cursor-pointer shadow transition-shadow hover:shadow-hover "
+          shadow transition-shadow hover:shadow-hover "
           >
             <img src={img.src} alt={img.title} className="w-28 h-28" />
 

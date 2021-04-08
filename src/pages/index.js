@@ -63,81 +63,71 @@ return(
     <h3 className="text-center font-black mt-5">Latest Posts </h3>
     {/* POSTS */}
     <section className="container mx-auto all-blog-content my-20 px-5">
-          <div className="flex">
+          
+    <div className="blog-cards">
+          <div className="masonry">
+          {data.allStrapiPost.edges.map(post =>{
+              return (
+                //   CARD ITEM
+            <div class="item rounded bg-gray-100  shadow-lg">
+              {/* Check if post has image, if we dont do the check netlify wont build */}
+              {post.node.featured_image && post.node.featured_image ? (
+                <Link to={`/blog/${post.node.slug}`}>
+                  <Img
+                    alt={post.node.title}
+                    key={post.node.featured_image.childImageSharp.fluid.src}
+                    imgStyle={{ objectFit: "contain" }}
+                    fluid={post.node.featured_image.childImageSharp.fluid}
+                    className="mb-2"
+                  />
+                </Link>
+              ) : (
+                ""
+              )}
 
-            {/* <BsShieldShaded/> */}
-          </div>
-          <div className="all-posts">
-            <div className="container mx-auto mt-5 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-              {/* single post card start here */}
-              {data?data.allStrapiPost.edges.map(post => {
-                return (
-                  <div key={post.node.id}>
-                    <div className="rounded-lg overflow-hidden">
-                      <div className="relative overflow-hidden pb-1">
-                        {post.node.featured_image &&
-                        post.node.featured_image ? (
-                          <Link to={`/blog/${post.node.slug}`}>
-                            <Img
-                              alt={post.node.title}
-                              key={
-                                post.node.featured_image.childImageSharp.fluid
-                                  .src
-                              }
-                              imgStyle={{ objectFit: "contain" }}
-                              fluid={
-                                post.node.featured_image.childImageSharp.fluid
-                              }
-                              className="mb-1"
-                            />
-                          </Link>
-                        ) : (
-                          ""
-                        )}
-                      </div>
-                      <div className="relative bg-gray-50">
-                        <div className="py-1 px-8">
-                          <h5 className="text-lg font-bold">
-                            <Link to={`/blog/${post.node.slug}`}>
-                              {" "}
-                              {post.node.title}
-                            </Link>
-                          </h5>
-                          {/* WRITEN BY */}
-                          <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
-                            <p className="text-xs mr-1">{`Writen by `} </p>
-                            {post.node.user.length === 1 ? (
-                              <Link
-                                className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
-                                to={"/"}
-                              >{` ${post.node.user[0].username}`}</Link>
-                            ) : post.node.user.length === 2 ? (
-                              authorsData.map((x, index) => (
-                                <Link
-                                  to={`/author/${x.id}`}
-                                  className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
-                                >
-                                  {x.username}{" "}
-                                  {index < authorsData.length - 1 ? " & " : ""}
-                                </Link>
-                              ))
-                            ) : null}
-                          </div>
-        
-
-                      
-                        </div>
-                      </div>
+              <h5 className="text-lg font-bold leading-5">
+                <Link to={`/blog/${post.node.slug}`}> {post.node.title}</Link>
+              </h5>
+              <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
+                <small className="text-xs mr-1">{`Writen by `} </small>
+                {post.node.user.length === 1 ? (
+                  <div
+                    className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
+                    to="/"
+                  >{` ${post.node.user[0].username}`}</div>
+                ) : post.node.user.length === 2 ? (
+                  authorsData.map((x, index) => (
+                    <div
+                      to={"/"}
+                      className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
+                    >
+                      {x.username} {index < authorsData.length - 1 ? " & " : ""}
                     </div>
-                  </div>
-                )
-                {
-                  /* single post card start here */
-                }
-              }):null}
+                  ))
+                ) : null}
+              </div>
+              <div>
+                {post.node.categories.map(cat => {
+                  return (
+                    <div key={post.node.id} className="">
+                      <button
+                        to={cat.name}
+                        className={`bg-${cat.name} py-1 px-2 rounded text-white small-text text-xs`}
+                      >
+                        {cat.name}
+                      </button>
+                    </div>
+                  )
+                })}
+              </div>
+            
             </div>
-          </div>{" "}
-          {/* end of all posts */}
+            )
+             })}
+          </div>
+        </div>
+
+
         </section>
 
     <PositionedSection/>
@@ -167,7 +157,7 @@ return(
       title="The future is open"
       iframeId=""
       iframeSrc={"https://landing.mailerlite.com/webforms/landing/b9q0r6"}
-      paragraph="We share monthly updates on the move to open ecosystems"
+      paragraph="We share monthly updates on the growth of open ecosystems"
       paragraphClass="mb-12"
     />
 

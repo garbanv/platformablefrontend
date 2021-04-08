@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import GridDisplay from "../components/shared-components/GridDisplay"
 /*specific-components*/
-import ProductStreamsCards from "./../components/product-streams/ProductStreamsCards"
+import ProductStreamsCards from "../components/product-streams/ProductStreamsCards"
 
 /*assets*/
 import sectionHeroImg from "../assets/product-streams/home_hero.svg"

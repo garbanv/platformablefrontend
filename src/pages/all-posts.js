@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import Layout from "../components/layout"
 import SEO from '../components/seo'
 
-const Posts = ({data}) => {
+const AllPosts = ({data}) => {
 
   const authorsData = data.allStrapiPost.edges[0].node.user;
 
@@ -102,7 +102,7 @@ const Posts = ({data}) => {
               </div>
             </div>
           </div> )
-          {/* single post card start here */}
+          {/* single post card ends here */}
           })}
 
         </div>
@@ -112,10 +112,10 @@ const Posts = ({data}) => {
   </Layout>
 )}
 
-export default Posts
+export default AllPosts
 
 export const blogQuery = graphql`
-query BlogPosts {
+query AllBloxPosts {
   allStrapiPost {
     edges {
       node {
