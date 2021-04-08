@@ -39,7 +39,7 @@ const BlogPost = ({ data }) => {
       setCategory(myStringReplaced)
     }
 
-    checkIfCategoryNameIncludesSymbol(postCategory)
+   
  
   
     
