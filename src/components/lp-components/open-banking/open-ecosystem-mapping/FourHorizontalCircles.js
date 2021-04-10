@@ -1,6 +1,6 @@
 import React from "react"
 /*assets*/
-import Stakeholders from '../../../../assets/ob-open-ecosystem-mapping/Stakeholders.png'
+import Stakeholders from '../../../../assets/ob-open-ecosystem-mapping/Sholders.png'
 import products from '../../../../assets/ob-open-ecosystem-mapping/products.png'
 import platforms from '../../../../assets/ob-open-ecosystem-mapping/Platforms.svg'
 import standards from '../../../../assets/ob-open-ecosystem-mapping/standards.png'
