@@ -392,7 +392,7 @@ export default function TrendsReport() {
           <div key=""> 
             <div className="rounded-xl overflow-hidden bg-gray-50">
               <div className="relative overflow-hidden pb-60">
-                <Link to="/landings/training">
+                <Link to="/open-banking/training">
                 <img
                   className="absolute h-full w-full object-contain object-center"
                   src={PlatformMindsetImg}
@@ -403,7 +403,7 @@ export default function TrendsReport() {
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8 text-center" >
                   <h3 className="text-2xl font-bold">
-                   <Link to="/landings/training"
+                   <Link to="/open-banking/training"
                     className="text-center">Q4</Link>
                   </h3>
                 </div>

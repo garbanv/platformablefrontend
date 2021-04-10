@@ -211,7 +211,7 @@ const getMembership = (subscription, isLoggedIn)=>{
               return (
                 <div
                   key={index}
-                  className="bg-purple-50 flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg"
+                  className="bg-purple-50 flex flex-col items-center justify-center p-4 shadow rounded-lg"
                 >
                   <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
                     {/* <img

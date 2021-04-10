@@ -38,7 +38,7 @@
         "title": "Analyst as a\n service",
         "paragraph": "Subscribe to a set range of hours and answer key questions to support your growth",
         "color": "#FBDACE40",
-        "url":""
+        "url":"/open-banking/analyst-as-service"
       },
       {
         "img": "/product-streams/blogs_and_articles.svg",
@@ -52,21 +52,21 @@
         "title": "Open Ecosystem\nMapping",
         "paragraph": "Analyse the open banking / open finance ecosystem from your perspective and gain actionable insights",
         "color": "#FBDACE40",
-        "url":""
+        "url":"/open-banking/open-ecosystem-mapping"
       },
       {
         "img": "/product-streams/platform_mindset_training_for_banks.svg",
         "title": "Platform Mindset Training\nfor Banks",
         "paragraph": "Support you business to understand the power and potential of platform business models and the open banking ecosystem",
         "color": "#FBDACE40",
-        "url":"/landings/training"
+        "url":"/open-banking/training"
       },
       {
         "img": "/product-streams/quarterly_trends_report.svg",
         "title": "Quarterly Trends\nReport",
         "paragraph": "Subscribe to the latest news analysis and updates analysing key trends on open banking and open finance",
         "color": "#FBDACE40",
-        "url":"/landings/trends"
+        "url":"/open-banking/trends"
       },
       {
         "img": "/product-streams/state_of_the_market_reports.svg",
@@ -82,38 +82,38 @@
       {
         "img": "/product-streams/analyst-as-a-service.svg",
         "title": "Analyst as a\n service",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#D8C1FB40"
       },
       {
         "img": "/product-streams/blogs_and_articles.svg",
         "title": "Blogs and \nArticles",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#D8C1FB40",
         "url":"/open-government-posts"
       },
       {
         "img": "/product-streams/open_ecosystem_mapping.svg",
         "title": "Open Ecosystem\nMapping",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#D8C1FB40"
       },
       {
         "img": "/product-streams/platform_mindset_training_for_banks.svg",
         "title": "Platform Mindset Training\nfor Banks",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#D8C1FB40"
       },
       {
         "img": "/product-streams/quarterly_trends_report.svg",
         "title": "Quarterly Trends\nReport",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#D8C1FB40"
       },
       {
         "img": "/product-streams/state_of_the_market_reports.svg",
         "title": "State of the Market\nReports",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#D8C1FB40"
       }
     ]
@@ -123,37 +123,38 @@
       {
         "img": "/product-streams/analyst-as-a-service.svg",
         "title": "Analyst as a\n service",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#87ACFC40"
       },
       {
         "img": "/product-streams/blogs_and_articles.svg",
         "title": "Blogs and \nArticles",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#87ACFC40"
       },
       {
         "img": "/product-streams/open_ecosystem_mapping.svg",
         "title": "Open Ecosystem\nMapping",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#87ACFC40"
       },
       {
         "img": "/product-streams/platform_mindset_training_for_banks.svg",
-        "title": "Platform Mindset Training\nfor Banks",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
-        "color": "#87ACFC40"
+        "title": "Data Stewardship Training and Mentoring",
+        "paragraph": "Learn how to collect, manage, analyse and reuse data in ways that are ethical, responsible and participatory.",
+        "color": "#87ACFC40",
+        "url":"/open-health/data-stewardship-training-and-mentoring"
       },
       {
         "img": "/product-streams/quarterly_trends_report.svg",
         "title": "Quarterly Trends\nReport",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#87ACFC40"
       },
       {
         "img": "/product-streams/state_of_the_market_reports.svg",
         "title": "State of the Market\nReports",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#87ACFC40"
       }
     ]
@@ -163,37 +164,37 @@
       {
         "img": "/product-streams/analyst-as-a-service.svg",
         "title": "Analyst as a\n service",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#C7F3E540"
       },
       {
         "img": "/product-streams/blogs_and_articles.svg",
         "title": "Blogs and \nArticles",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#C7F3E540"
       },
       {
         "img": "/product-streams/open_ecosystem_mapping.svg",
         "title": "Open Ecosystem\nMapping",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#C7F3E540"
       },
       {
         "img": "/product-streams/platform_mindset_training_for_banks.svg",
         "title": "Platform Mindset Training\nfor Banks",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#C7F3E540"
       },
       {
         "img": "/product-streams/quarterly_trends_report.svg",
         "title": "Quarterly Trends\nReport",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#C7F3E540"
       },
       {
         "img": "/product-streams/state_of_the_market_reports.svg",
         "title": "State of the Market\nReports",
-        "paragraph": "Short description of the field lorem ipsum dolor sit amet",
+        "paragraph": "Coming Soon",
         "color": "#C7F3E540"
       }
     ]

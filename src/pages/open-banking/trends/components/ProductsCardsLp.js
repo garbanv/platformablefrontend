@@ -52,7 +52,7 @@ const ProductsCardsLp = () => {
       </div>
     </section>
     <section className="flex justify-center py-5 -mt-20">
-      <Link to="/trends-report"className="btn bg-russian-violet-dark text-white px-5 rounded-xl py-2">See our latest Trends Reports!</Link>
+      <Link to="/open-banking/latest-trends"className="btn bg-russian-violet-dark text-white px-5 rounded-xl py-2">See our latest Trends Reports!</Link>
     </section>
     </>
   )

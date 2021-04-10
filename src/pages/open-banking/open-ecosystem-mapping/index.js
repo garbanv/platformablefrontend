@@ -1,68 +1,54 @@
-import React from "react"
-import {Link, graphql} from 'gatsby'
-import Img from "gatsby-image"
-/*shared-components*/
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import GridDisplay from "../components/shared-components/GridDisplay"
-import Form from "../components/shared-components/Form"
-/*specific-components*/
-import PositionedSection from '../components/home-components/PositionedSection';
-import PostsCards from "../components/home-components/PostsCards"
-// import ProductStreamsCards from './../components/home-components/ProductStreamsCards';
-import HowWeDoItCards from '../components/home-components/HowWeDoItCards';
-import WorkWithCards from '../components/home-components/WorkWithCards';
-
-/*assets*/
-import sectionOneImg from "../assets/home/hero_squares.png"
-import sectionTwoImg from "../assets/home/quarterly_trends.png"
-import sectionSixImg from '../assets/home/we_publish_analysis.png'
-
-const IndexPage = ({data}) => {
-  const authorsData = data?data.allStrapiPost.edges[0].node.user :null
-return(
-  <Layout>
-    <SEO title="Home" />
-
-    <GridDisplay
+import React from 'react'
+import {Link} from 'gatsby'
+import Img from 'gatsby-image'
+import Layout from '../../../components/Layout'
+import GridDisplay from '../../../components/shared-components/GridDisplay'
+import HowWeWork from '../../../components/lp-components/open-banking/open-ecosystem-mapping/howWeWork'
+import FourHorizontalCircles from '../../../components/lp-components/open-banking/open-ecosystem-mapping/FourHorizontalCircles'
+import OBOpenEcosystemTitle from '../../../assets/ob-open-ecosystem-mapping/OB - Open Ecosystem Title.png'
+import Form from '../../../components/shared-components/Form'
+export default function index({data}) {
+    const authorsData = data?data.allStrapiPost.edges[0].node.user :null
+    return (
+       <Layout>
+        <GridDisplay
       gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
       gridContentClass="md:w-2/5"
-      title="We support open ecosystems that build economic opportunities, solve complex problems, and enable everyone to participate and co-create their own value"
+      title="Open Ecosystem Mapping"
+      secondParagraph=""
+      secondParagraphClass="py-2"
       paragraphOne=""
       paragraphTwo=""
-      doNotDisplayAnchor="hidden"
-      url="/about"
-      type="button"
-      label={"Learn more about us"}
-      btnClass="outlinedBtn text-primary font-bold border-2 my-5 mx-0 py-2 px-10 rounded-full hover:bg-secondary cursor-pointer"
+      paragraphThree=""
       imgContentClass=""
       imgClass="object-cointain w-96 h-94"
-      backImgSrc={sectionOneImg}
+      backImgSrc={OBOpenEcosystemTitle}
       alt="Hero"
     ></GridDisplay>
 
-    <section className="bg-gray-100 py-5">
-    <GridDisplay
-      gridDisplayClass="bg-lightBlue flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
-      gridContentClass="md:w-2/5"
-      firstParagraph="Download our latest release"
-      title={`Open Banking/Open Finance Quarterly Trend Reports`}
-      quarter="Q1 2021"
-      doNotDisplayAnchor="hidden"
-      url={"/open-banking/trends"}
-      type="button"
-      label={"More info on our reports"}
-      btnClass="bg-secondary text-primary font-bold my-5 mx-0 py-2 px-10 rounded-full hover:bg-secondary cursor-pointer"
-      imgContentClass=""
-      imgClass="object-cointain w-96 h-94"
-      backImgSrc={sectionTwoImg}
-      alt="Hero"
-    ></GridDisplay>
+   <FourHorizontalCircles/>
+   <section className="bg-lightPink py-10 anOpenEcosystemIs">
+       <div className="container mx-auto md:w-2/5 ">
+           <h3 className="font-black text-center my-5">An open ecosystem is</h3>
+           <p className="italic">A network of equitable participation opportunities that <strong>allow
+stakeholders</strong> (including governments and regulators, associations,
+industry enterprises, small and medium enterprises, researchers,
+community groups and individuals) <strong>to co-create, collaborate, compete,
+complement, and/or coordinate</strong> with each other and by using common
+tools (APIs) and data infrastructures.</p>
+       </div>
+
    </section>
-    {/* <PostsCards/> */}
-    <h3 className="text-center font-black mt-5">Latest Posts </h3>
+
+    {/* AUDIENCE */}
+   <HowWeWork/>
+
+
+
+   {/* <PostsCards/> */}
+   <h3 className="text-center font-black mt-10">Our Latest Work </h3>
     {/* POSTS */}
-    <section className="container mx-auto all-blog-content my-20 px-5">
+    <section className="container mx-auto all-blog-content my-20 ">
           
     <div className="blog-cards">
           <div className="masonry">
@@ -126,51 +112,30 @@ return(
              }) : ''}
           </div>
         </div>
-
-
         </section>
 
-    <PositionedSection/>
 
-    <HowWeDoItCards/>
 
-    <WorkWithCards/>
 
-    <GridDisplay
-      gridDisplayClass="bg-purple flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
-      gridContentClass="md:w-2/5"
-      title="We publish analysis
-      and insights"
-      paragraphOne="We share data on the growth of open ecosystems, and track how value is being generated and distributed"
-      doNotDisplayAnchor="hidden"
-      doNotDisplay="hidden" 
 
-      imgContentClass="lg:w-2/5"
-      imgClass="object-cointain w-96 h-94"
-      backImgSrc={sectionSixImg}
-      alt="Hero"
-    ></GridDisplay>
-
-    <Form
-      formClass="text-center my-6 mx-auto"
-      titleClass="text-sm"
-      title="The future is open"
-      iframeId=""
+        <Form
+      formClass="text-center my-5 mx-auto overflow-hidden py-6"
+      formID="lp-training-form"
+      titleClass=""
+      title="Sign up now for pricing and calendar availability"
+      iframeId="submitMailerlite"
       iframeSrc={"https://landing.mailerlite.com/webforms/landing/b9q0r6"}
-      paragraph="We share monthly updates on the growth of open ecosystems"
-      paragraphClass="mb-12"
     />
+     
+    
+       </Layout>
+    )
+}
 
 
-  </Layout>
-)
-            }
 
-export default IndexPage
-
-
-export const blogQuery = graphql`
-query HomepagePosts {
+export const OBOpenEcosystemPagePosts = graphql`
+query OBOpenEcosystemPagePosts {
   allStrapiPost(limit: 3, sort: { fields: slug, order: ASC })  {
     edges {
       node {

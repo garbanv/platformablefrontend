@@ -36,7 +36,7 @@ const GridDisplay = ({
 
         <div>
           <p className={firstParagraphClass}>{firstParagraph}</p>
-          <h3 className="font-black text-xl mb-5">
+          <h3 className="font-black text-4xl mb-5">
             {title}
             <br></br>
             {quarter? quarter: ""}

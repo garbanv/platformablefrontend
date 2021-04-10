@@ -4083,6 +4083,54 @@ column-gap: 1em;
     color: #ccc;
   }
 
+  /*TESTIMONIALS COMPONENT*/
+  .yellowBkgTest blockquote:before {
+    /*box model*/
+    margin-right: 25%;
+    content: open-quote;
+    /*layout*/
+    vertical-align: -0.6em;
+    /*type*/
+    font-size: 6em;
+    line-height: 0;
+    color: #ccc;
+  }
+
+  .yellowBkgTest blockquote:after {
+    /*box model*/
+    margin-left: 15%;
+    content: close-quote;
+    /*layout*/
+    vertical-align: -0.6em;
+    /*type*/
+    font-size: 6em;
+    line-height: 0;
+    color: #ccc;
+  }
+  .blueBkgTest blockquote:before {
+    /*box model*/
+    margin-right:100%;
+    content: open-quote;
+    /*layout*/
+    vertical-align: -0.6em;
+    /*type*/
+    font-size: 6em;
+    line-height: 0;
+    color: #0956FC;
+  }
+
+  .blueBkgTest blockquote:after {
+    /*box model*/
+    margin-left: 100%;
+    content: close-quote;
+    /*layout*/
+    vertical-align: -0.6em;
+    /*type*/
+    font-size: 6em;
+    line-height: 0;
+    color: #0956FC;
+  }
+
   /* iframe {
   
     margin: 0 auto;
@@ -4170,3 +4218,34 @@ column-gap: 1em;
     ;
   }
 
+/* LANDINGS */
+
+.bg-lightPink {
+  background-color:#FEF6F3;
+}
+
+.bg-blueBtn {
+  background-color:#0956FC;
+}
+.bg-greyImg {
+  background-color:#F7F9FF;
+}
+.howToHire {
+  border:1px solid #333;
+  border-radius: 30px;
+}
+.blueBkgTest {
+  background-color:#87ACFC;
+}
+.howToHire-price-left {
+
+  border-right:3px solid var(--russian-violet-dark)
+}
+
+.bg-red-orange-light {
+  background-color: var(--red-orange-light);
+}
+
+.anOpenEcosystemIs h3 {
+  color:var(--red-orange-dark);
+}
