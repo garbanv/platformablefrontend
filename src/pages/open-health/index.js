@@ -3,7 +3,7 @@ import {Link} from 'gatsby'
 import data from "../../data/product-stream/data.json"
 import GridDisplay from "../../components/shared-components/GridDisplay"
 /*specific-components*/
-import SectorSubCards from "../../components/product-streams/SectorSubCards"
+import SectorSubCards from "../../components/product-streams/sectorSubCards"
 
 import Layout from "../../components/layout"
 /*assets*/

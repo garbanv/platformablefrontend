@@ -1,6 +1,6 @@
 import React from "react"
 /*shared-components*/
-import Layout from "../../../components/Layout"
+import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
 import GridDisplay from "../../../components/shared-components/GridDisplay"
 import CallToAction from "./../../../components/shared-components/CallToAction"
