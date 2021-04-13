@@ -31,6 +31,18 @@ const WorkWithCards = () => {
         "API providers and consultants",
       paragraph: "Communicate the value of APIs to build more business",
     },
+    {
+      src: industryImg,
+      title:
+        "Businesses",
+      paragraph: "Reorient towards a platform focus and understand how to connect with other stakeholders in broader open ecosystems",
+    },
+    {
+      src: industryImg,
+      title:
+        "Non-profits",
+      paragraph: "Build data governance processes, automate data systems, and connect with partners",
+    },
   ]
   return (
     <section className="cards-section my-6 mx-auto py-8">

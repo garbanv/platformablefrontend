@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import UserContext from "../context/UserContext"
 import Header from "./header"
 import "./layout.css"
+import Footer from './footer'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,11 +30,7 @@ const Layout = ({ children }) => {
         <>
           <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
           <main>{children}</main>
-          <footer>
-            <h3 className="font-black text-center mb-5 py-5">
-              Helping your users co-create the value they need
-            </h3>
-          </footer>
+         <Footer/>
         </>
       )}
     </UserContext.Consumer>

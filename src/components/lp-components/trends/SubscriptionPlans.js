@@ -29,9 +29,9 @@ const SubscriptionPlans = props => {
             <li className="mb-2">
               Quarterly Trends Report Access for a Single User
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               Analytics Dashboard Access for a Single User
-            </li>
+            </li> */}
             <li className="mb-2">
               Vote on a “Question of the Quarter” and receive answers from our
               analysts
@@ -74,22 +74,22 @@ const SubscriptionPlans = props => {
             <li className="mb-2">
               Quarterly Trends Report Access for your internal teams
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               Analytics Dashboard Access for your internal teams
-            </li>
+            </li> */}
             <li className="mb-2">
               Entry to quarterly webinar hosted by Platformable experts
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               Vote on a “Question of the Quarter” and receive answers from our
               analysts
-            </li>
+            </li> */}
           </ul>
           <div className="plans-price mx-3 h-48">
             <p className="font-bold">
               <span className="text-gray-400 text-base opacity-25">$ </span>
               <strong className="text-primary text-3xl leading-tight">
-                79
+                49
               </strong>
               <span className="text-gray-400 text-base opacity-25">
                 {" "}
@@ -129,16 +129,16 @@ const SubscriptionPlans = props => {
             <li className="mb-2">
               Quarterly Trends Report Access for your internal teams
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               Analytics Dashboard Access for your internal teams
-            </li>
+            </li> */}
             <li className="mb-2">
               Entry to quarterly webinar hosted by Platformable experts
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               Vote on a “Question of the Quarter” and receive answers from our
               analysts{" "}
-            </li>
+            </li> */}
           </ul>
           <div className="plans-price mx-3 h-48">
             <p className="font-bold">
@@ -167,7 +167,7 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-40 border-bottom sm:mb-0 mb-4">
+          <div className="h-48 border-bottom sm:mb-0 mb-4">
             <h3 className="text-primary mt-8">Leadership Pack</h3>
             <p className="my-2 text-sm mx-7 ">
               Become an ecosystem leader by leveraging data and insights to
@@ -185,9 +185,9 @@ const SubscriptionPlans = props => {
             <li className="mb-2">
               Quarterly Trends Report Access for unlimited members
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               Analytics Dashboard Access for up to 10 members
-            </li>
+            </li> */}
             <li className="mb-2">
               Quarterly webinar hosted for your community{" "}
             </li>

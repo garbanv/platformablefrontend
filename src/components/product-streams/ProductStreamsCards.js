@@ -36,17 +36,17 @@ const ProductStreamsCards = ({ data, className }) => {
         ))}
       </div>
 
-      <CallToAction
+      {/* <CallToAction
         callToActionClass="text-center my-8 mx-auto py-0 px-4 "
         contentClass="md:w-3/5 w-full text-center mx-auto"
-        paragraph="Not sure about the area or looking for a custom made product stream?"
+        paragraph=""
         doNotDisplayAnchor="hidden"
         url={"/about"}
-        linkTitle="Contact us"
+        linkTitle=""
         type="button"
         label={"Contact us"}
         btnClass="outlinedBtn text-primary font-bold border-2 my-5 mx-0 py-2 px-10 rounded-full "
-      />
+      /> */}
     </section>
   )
 }

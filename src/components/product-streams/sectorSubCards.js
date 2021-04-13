@@ -25,8 +25,8 @@ const SectorSubCards = ({ data, className }) => {
               />
 
               <div className="">
-                <h5 className="my-5 text-center h-14 px-3 text-primary font-black">{el.title}</h5>
-                <p className="text-grayed text-center font-normal my-5 h-24 border-t border-primary border-opacity-25 pt-3">
+                <h5 className="my-5 text-center h-18 md:h-14 px-3 text-primary font-black">{el.title}</h5>
+                <p className="hidden md:block text-grayed text-center font-normal my-5 h-24 border-t border-primary border-opacity-25 pt-3">
                   {el.paragraph}
                 </p>
               </div>
@@ -36,7 +36,7 @@ const SectorSubCards = ({ data, className }) => {
         ))}
       </div>
 
-      <CallToAction
+      {/* <CallToAction
         callToActionClass="text-center my-8 mx-auto py-0 px-4 "
         contentClass="md:w-3/5 w-full text-center mx-auto"
         paragraph="Not sure about the area or looking for a custom made product stream?"
@@ -46,7 +46,7 @@ const SectorSubCards = ({ data, className }) => {
         type="button"
         label={"Contact us"}
         btnClass="outlinedBtn text-primary font-bold border-2 my-5 mx-0 py-2 px-10 rounded-full "
-      />
+      /> */}
     </section>
   )
 }

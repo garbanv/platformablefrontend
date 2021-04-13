@@ -15,10 +15,12 @@ export default function index({data}) {
         <GridDisplay
       gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
       gridContentClass="md:w-2/5"
-      title="Analyst as service"
-      secondParagraph="Understand the market environment, what has worked for others and where tha gaps and opportunities are."
+      title="Data Governance"
+      secondParagraph=""
       secondParagraphClass="py-2"
-      paragraphOne="Understand the market environment, what has worked for others and where tha gaps and opportunities are."
+      paragraphOne="Create a data governance and data stewardship
+      system for your agency
+      "
       paragraphTwo=""
       paragraphThree=""
       imgContentClass=""
@@ -112,7 +114,7 @@ export default function index({data}) {
       formClass="text-center my-5 mx-auto overflow-hidden py-6"
       formID="lp-training-form"
       titleClass=""
-      title="Sign up now for pricing and calendar availability"
+      title="Sign up now to gain new insights into your open banking strategy"
       iframeId="submitMailerlite"
       iframeSrc={"https://landing.mailerlite.com/webforms/landing/b9q0r6"}
     />

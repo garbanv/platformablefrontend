@@ -122,15 +122,16 @@
     "elements": [
       {
         "img": "/product-streams/analyst-as-a-service.svg",
-        "title": "Analyst as a\n service",
-        "paragraph": "Coming Soon",
+        "title": "Data Governance",
+        "paragraph": "Coming Soon, Create a data governance and data stewardship system for your agency",
         "color": "#87ACFC40"
       },
       {
         "img": "/product-streams/blogs_and_articles.svg",
         "title": "Blogs and \nArticles",
         "paragraph": "Coming Soon",
-        "color": "#87ACFC40"
+        "color": "#87ACFC40",
+        "url":"/open-health-posts"
       },
       {
         "img": "/product-streams/open_ecosystem_mapping.svg",

@@ -103,14 +103,14 @@ const Header = ({ siteTitle }) => {
                 <div className="flex space-x-4">
                   <Link
                     to="/"
-                    className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="top-nav text-gray-400 hover:bg-yellow-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName="active-top-nav"
                   >
                     Home
                   </Link>
                   <Link
                     to="/about"
-                    className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="top-nav text-gray-400 hover:bg-yellow-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName="active-top-nav"
                   >
                     About
@@ -124,14 +124,14 @@ const Header = ({ siteTitle }) => {
                   </Link> */}
                   <Link
                     to="/sectors"
-                    className=" top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className=" top-nav text-gray-400 hover:bg-yellow-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName="active-top-nav"
                   >
                     Sectors
                   </Link>
                   <Link
                     to="/blogs"
-                    className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="top-nav text-gray-400 hover:bg-yellow-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName="active-top-nav"
                   >
                     Blog
@@ -139,7 +139,7 @@ const Header = ({ siteTitle }) => {
                   {user && user.isLoggedIn ? (
                     <Link
                       to="/app/dashboard"
-                      className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      className="top-nav text-gray-400 hover:bg-yellow-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                       activeClassName="active-top-nav"
                     >
                       Dashboard

@@ -24,7 +24,7 @@ const IndexPage = props => (
     <MeasuringBenefitsLP/>
     <SubscriptionPlans/>
     <TeamHours/>
-    <TestimonialsLp />
+    {/* <TestimonialsLp /> */}
     <CallToActionLp
       sectionClassName="flex sm:flex-row flex-col my-16 mx-auto py-0 sm:px-10 px-2 justify-center items-center"
       flexDisplay={"flexDisplay"}

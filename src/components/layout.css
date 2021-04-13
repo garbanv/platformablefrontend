@@ -55,6 +55,7 @@ p {
   line-height: 1.65;
 }
 
+
 .posts-content h3, .posts-content h2, .posts-content h4, .posts-content h2, .posts-content h6 {
   margin:10px 0;
   font-weight: bold;
@@ -671,6 +672,23 @@ MEDIA QUERIES */
     text-decoration: underline;
      text-decoration-color: blue;
    }
+
+   .posts-content p {
+    margin-bottom:20px;
+  }
+  
+   .image-style-align-center {
+  display:block;
+  margin-left: auto;
+  margin-right:auto;
+  }
+
+  .image-style-align-center figcaption {
+    font-size:12px;
+    text-align:center;
+    padding:10px 0;
+    font-style:italic;
+    }
 
 .bg-Open.Health {
   background-color:red;
@@ -4249,3 +4267,70 @@ column-gap: 1em;
 .anOpenEcosystemIs h3 {
   color:var(--red-orange-dark);
 }
+
+
+
+/* --------------------------------------------------------------------------
+     13.Footer
+     -------------------------------------------------------------------------- */
+
+
+
+
+     .footer-copyright {
+      font-size: 12px;
+      font-weight: var(--font-weight-primary-regular);
+      line-height: 1.3;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 25px 30px;
+      text-align: center;
+      letter-spacing: 0.7px;
+    }
+    
+    .footer-copyright {
+      color: var(--color-figcaption);
+    }
+    .footer-icons {
+      text-align: center;
+    }
+    
+    /* Icons
+         –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+    .footer-social-links {
+      padding-left: 20px;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: center;
+    }
+    
+    .footer-social-links a {
+      line-height: 0;
+      margin: 5px 12px;
+    }
+    
+    .footer-social-links svg {
+      width: 19px;
+      height: 19px;
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+      fill: var(--color-font);
+    }
+    
+    .footer-social-links svg:hover {
+      fill: var(--color-details);
+    }
+
+
+    .our-process-vertical-line {
+      width:1px;
+      background-color:#FBAC8F;
+      height:35px;
+      text-align:center;
+      margin-left:auto;
+      margin-right:auto;
+      }
+
+      .tools-card-item {
+        flex-basis:33%;
+        }

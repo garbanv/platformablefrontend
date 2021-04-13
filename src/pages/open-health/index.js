@@ -21,13 +21,15 @@ export default function openHealth() {
           gridContentClass="md:w-2/5"
           title="Open Health"
           titleClass="my-5 text-blue"
-          paragraphOne="Supporting community-based data governance and tracking health tech growth."
+          paragraphOne="Supporting community-based health organisations with data governance and data management."
+          paragraphTwo="Mapping the health data and emerging health tech open ecosystem."
           doNotDisplayLink="hidden"
           doNotDisplayAnchor="hidden"
           imgContentClass=""
           imgClass="object-cointain w-96 h-94"
           backImgSrc={openHealthImg}
           alt="Hero"
+          subtitle={true}
         ></GridDisplay>
         <SectorSubCards
           data={data["OpenHealth"]}

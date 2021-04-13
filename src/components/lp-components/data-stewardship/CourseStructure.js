@@ -33,6 +33,11 @@ const CourseStructure = () => {
       title:'Data for advocacy',
       paragraph:'Learn data visualization and storytelling techniques and share approaches in how to strengthen policy and community advocacy activities using data'
     },
+    {
+      src:dataStrategyImg,
+      title:'Automate systems',
+      paragraph:'Use available tools to automatically validate and clean data, integrate into processes and automate reporting'
+    },
   
   ];
   

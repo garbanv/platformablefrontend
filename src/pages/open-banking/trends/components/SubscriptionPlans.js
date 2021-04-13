@@ -17,7 +17,7 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-32 border-bottom">
+          <div className="h-44 border-bottom">
             <h3 className="text-primary mt-8 font-black">Knowledge Pack</h3>
             <p className="my-2 text-sm mx-7">
               Understand key trends in open banking and open finance
@@ -27,9 +27,9 @@ const SubscriptionPlans = props => {
             <li className="mb-2">
               Quarterly Trends Report Access for a Single User
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               Analytics Dashboard Access for a Single User
-            </li>
+            </li> */}
             <li className="mb-2">
               Vote on a “Question of the Quarter” and receive answers from our
               analysts
@@ -39,7 +39,7 @@ const SubscriptionPlans = props => {
             <p className="font-bold">
               <span className="text-gray-400 text-base opacity-25">$ </span>
               <strong className="text-primary text-3xl leading-tight">
-                49
+                19
               </strong>
               <span className="text-gray-400 text-base opacity-25">
                 {" "}
@@ -59,7 +59,7 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-32 border-bottom">
+          <div className="h-44 border-bottom">
             <h3 className="text-primary mt-8 font-black">Strategy Pack</h3>
             <p className="my-2 text-sm mx-7">
               Work with your team to share insights and plan ecosystem strategy
@@ -67,10 +67,10 @@ const SubscriptionPlans = props => {
           </div>
           <ul className="py-5 h-80">
             <li className="mb-2">
-              Quarterly Trends Report Access for up to 10 members
+              Quarterly Trends Report Access for your internal teams
             </li>
             <li className="mb-2">
-              Analytics Dashboard Access for up to 10 members
+            Entry to quarterly webinar hosted by Platformable experts
             </li>
             <li className="mb-2">
               Vote on a “Question of the Quarter” and receive answers from our
@@ -81,7 +81,7 @@ const SubscriptionPlans = props => {
             <p className="font-bold">
               <span className="text-gray-400 text-base opacity-25">$ </span>
               <strong className="text-primary text-3xl leading-tight">
-                159
+                49
               </strong>
               <span className="text-gray-400 text-base opacity-25">
                 {" "}
@@ -101,7 +101,7 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-32 border-bottom">
+          <div className="h-44 border-bottom">
             <h3 className="text-primary mt-8 font-black">Direction Pack</h3>
             <p className="my-2 text-sm mx-7">
               Steer your business towards embracing a platform mindset with data
@@ -110,27 +110,31 @@ const SubscriptionPlans = props => {
           </div>
           <ul className="py-5 h-80">
             <li className="mb-2">
-              Quarterly Trends Report Access for up to 10 members
+              Quarterly Trends Report Access for your internal teams
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               Analytics Dashboard Access for up to 10 members
-            </li>
-            <li className="mb-2">
-              Vote on a “Question of the Quarter” and receive answers from our
-              analysts{" "}
-            </li>
+            </li> */}
+           
             <li className="mb-2">
               Bespoke Analysis with Platformable Experts for 5 hours/monthly
             </li>
             <li className="mb-2">
               Your logo advertised in the Quarterly Trends Report
             </li>
+            <li className="mb-2">
+              Vote on a “Question of the Quarter” and receive answers from our
+              analysts{" "}
+            </li>
+            <li className="mb-2">
+            Quarterly webinar hosted by Platformable experts for your internal teams
+            </li>
           </ul>
           <div className="plans-price mx-3">
             <p className="font-bold">
               <span className="text-gray-400 text-base opacity-25">$ </span>
               <strong className="text-primary text-3xl leading-tight">
-                1k
+                750
               </strong>
               <span className="text-gray-400 text-base opacity-25">
                 {" "}
@@ -150,7 +154,7 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-32 border-bottom">
+          <div className="h-44 border-bottom">
             <h3 className="text-primary mt-8 font-black">Leadership Pack</h3>
             <p className="my-2 text-sm mx-7">
               Become an ecosystem leader by leveraging data and insights to drive
@@ -158,12 +162,10 @@ const SubscriptionPlans = props => {
             </p>
           </div>
           <ul className="py-5 h-80">
-            <li className="mb-2">
-              Quarterly Trends Report Access for unlimited members
-            </li>
-            <li className="mb-2">
+           
+            {/* <li className="mb-2">
               Analytics Dashboard Access for up to 10 members
-            </li>
+            </li> */}
             <li className="mb-2">
               Bespoke Analysis with Platformable Experts for 10 hours/monthly
             </li>
@@ -171,12 +173,18 @@ const SubscriptionPlans = props => {
               White label edition of reports to use as a lead generation tool
               for your company
             </li>
+            <li className="mb-2">
+              Quarterly Trends Report Access for unlimited members
+            </li>
+            <li className="mb-2">
+              Quarterly webinar hosted for your community as a lead generation tool
+            </li>
           </ul>
           <div className="plans-price h-32">
             <p className="font-bold">
               <span className="text-gray-400 text-base opacity-25">$ </span>
               <strong className="text-primary text-3xl leading-tight">
-                3k
+                2200
               </strong>
               <span className="text-gray-400 text-base opacity-25">
                 {" "}

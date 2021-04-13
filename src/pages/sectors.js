@@ -27,7 +27,7 @@ const ProductStreams = props => {
         gridContentClass="md:w-2/5"
         title="Sectors"
         titleClass="my-5"
-        paragraphOne="We track the growth and power of the open ecosystems that are essential to solve today’s most complex challenges."
+        paragraphOne="We track the growth and opportunities of open ecosystems in key sectors. Open ecosystems can help solve today’s complex challenges by building to open standards and using open data models, encouraging multi-stakeholder networks, and measuring value and impact."
         doNotDisplayLink="hidden"
         doNotDisplayAnchor="hidden"
         imgContentClass=""

@@ -14,14 +14,14 @@ import FormLp from './components/FormLp';
 
 const IndexPage = props => (
   <Layout>
-    <SEOLp title="Landing Page" />
+    <SEOLp title="Platform Mindset Training" />
     <HeroLp />
     <VideoBackgroundLp />
     <ProductBenefitsLp />
     <ProductsCardsLp />
     <FormLp/>
     <ProductOfferLp />
-    <TestimonialsLp />
+    {/* <TestimonialsLp /> */}
     <CallToActionLp
       flexDisplay={"flexDisplay"}
       doNotDisplay={"doNotDisplay"}

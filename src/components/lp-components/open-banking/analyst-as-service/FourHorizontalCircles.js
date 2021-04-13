@@ -31,7 +31,7 @@ const FourHorizontalCircles = () => {
   ]
   return (
     <section className="px-8 py-6 md:mx-12 mx-4">
-      <h3 className="my-5 font-black text-center">Crate an ecosystem mapping resource that describes</h3>
+      <h3 className="my-5 font-black text-center"></h3>
       <div className="my-0 md:mx-8 mx-2 py-0 px-3 flex flex-wrap flex-col sm:flex-row justify-center items-center">
         {images.map((img, i) => (
           <div key={i} className="md:w-1/5 w-full my-6 mx-1 text-center ">
@@ -43,7 +43,7 @@ const FourHorizontalCircles = () => {
 
             <div className="mx-auto">
               <h4 className="text-center font-black">{img.title}</h4>
-              <p className="text-xs text-center font-black">{img.paragraph}</p>
+              <p className="text-center">{img.paragraph}</p>
             </div>
           </div>
         ))}

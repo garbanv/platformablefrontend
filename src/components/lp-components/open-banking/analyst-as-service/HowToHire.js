@@ -6,7 +6,7 @@ export default function HowToHire() {
             <div className="">
                 <h3 className="font-black text-center">How to hire the service</h3>
                 <p className="text-center">
-                    Our analyst service is available to Trends Report subscribers of our Direction and leadership Packs, or discuss a bespoke project with us.
+                Our analyst service is available to subscribers of our Direction and Leadership Trends Report Packs.
                 </p>
             </div>
             <div className="howToHire-prices flex justify-center my-5">

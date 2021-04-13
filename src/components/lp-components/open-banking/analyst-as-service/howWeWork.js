@@ -24,7 +24,7 @@ const OBAnalystAsService = () => {
     {
       src:key,
       title:'Key Questions',
-      paragraph:'Our analyst team provides 1-5 keys question and scope parameters using or actionable insights templates.'
+      paragraph:'Our analyst team provides 1-5 key questions and scope parameters using our actionable insights templates'
     },
     {
       src:priorities,
@@ -34,12 +34,12 @@ const OBAnalystAsService = () => {
     {
       src:applied,
       title:'Applied Methodology',
-      paragraph:'We apply our rapid insight methodology to inmediately share data insisght based on our current open ecosystem data collection.'
+      paragraph:'We apply our rapid insights methodology to Immediately share data insisght based on our current open ecosystem data collection'
     },
     {
       src:monitoring,
-      title:'Monitoring stakeholders',
-      paragraph:'We identify and followup with relevant industry stakeholders and scan for examples from within and across industries.'
+      title:'Monitoring Stakeholders',
+      paragraph:'We identify and followup with relevant industry stakeholders and scan for examples from within and across industries'
     },
   ];
   

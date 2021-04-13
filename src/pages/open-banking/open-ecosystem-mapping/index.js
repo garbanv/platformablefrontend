@@ -7,6 +7,15 @@ import HowWeWork from '../../../components/lp-components/open-banking/open-ecosy
 import FourHorizontalCircles from '../../../components/lp-components/open-banking/open-ecosystem-mapping/FourHorizontalCircles'
 import OBOpenEcosystemTitle from '../../../assets/ob-open-ecosystem-mapping/OB - Open Ecosystem Title.png'
 import Form from '../../../components/shared-components/Form'
+import BuildADataImg from '../../../assets/ob-open-ecosystem-mapping/build-a-data.png'
+import UseOurExistingImg from '../../../assets/ob-open-ecosystem-mapping/use-our-existing.png'
+import CreateARangeImg from '../../../assets/ob-open-ecosystem-mapping/create-a-range.png'
+import OESMLine from '../../../assets/ob-open-ecosystem-mapping/oecmappingLines.png'
+import PanoramaImg from '../../../assets/ob-open-ecosystem-mapping/Panorama.png'
+import PolicyImg from '../../../assets/ob-open-ecosystem-mapping/Policy.png'
+import ProcessImg from '../../../assets/ob-open-ecosystem-mapping/Process.png'
+
+
 export default function index({data}) {
     const authorsData = data?data.allStrapiPost.edges[0].node.user :null
     return (
@@ -14,7 +23,8 @@ export default function index({data}) {
         <GridDisplay
       gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
       gridContentClass="md:w-2/5"
-      title="Open Ecosystem Mapping"
+      title="Open Banking / Open Finance"
+      subtitle="Open Ecosystem Mapping"
       secondParagraph=""
       secondParagraphClass="py-2"
       paragraphOne=""
@@ -30,12 +40,7 @@ export default function index({data}) {
    <section className="bg-lightPink py-10 anOpenEcosystemIs">
        <div className="container mx-auto md:w-2/5 ">
            <h3 className="font-black text-center my-5">An open ecosystem is</h3>
-           <p className="italic">A network of equitable participation opportunities that <strong>allow
-stakeholders</strong> (including governments and regulators, associations,
-industry enterprises, small and medium enterprises, researchers,
-community groups and individuals) <strong>to co-create, collaborate, compete,
-complement, and/or coordinate</strong> with each other and by using common
-tools (APIs) and data infrastructures.</p>
+           <p className="italic">A network of <strong>equitable participation opportunities</strong> that <strong>allow stakeholders</strong> (including governments and regulators, associations, industry enterprises, small and medium enterprises, researchers, community groups and individuals) <strong>to co-create, collaborate, compete, complement, and/or coordinate</strong> with each other, using open standards, common tools, APIs, and digital infrastructures.</p>
        </div>
 
    </section>
@@ -43,7 +48,82 @@ tools (APIs) and data infrastructures.</p>
     {/* AUDIENCE */}
    <HowWeWork/>
 
+   {/* OUR PROCESS */}
 
+   <section className="our-process my-10">
+     <div className="container mx-auto ">
+
+        <h3 className="font-black text-center">Our process</h3>
+
+        <div className="our-process-pill w-4/4 md:w-2/4 flex md:flex-nowrap flex-wrap justify-center items-center  py-5 px-10 shadow mx-auto md:rounded-full border-gray-100 shadow">
+          <div className="our-process-img">
+            <img src={BuildADataImg}/>
+          </div>
+          <div className="our-process-text">
+            <p className="text-sm md:text-md">Build a <strong>data model</strong> and taxonomies for each element of the ecosystem</p>
+          </div>
+        </div>
+
+      <div className="our-process-vertical-line"></div>
+
+        <div className="our-process-pill w-4/4 md:w-2/4 flex md:flex-nowrap flex-wrap justify-center items-center  py-5 px-10 shadow mx-auto md:rounded-full border-gray-100 shadow">
+          <div className="our-process-img">
+            <img src={UseOurExistingImg}/>
+          </div>
+          <div className="our-process-text">
+            <p className="text-sm md:text-md"> Use our existing <strong>data collection</strong> to enhance your mapping needs</p>
+          </div>
+        </div>
+
+        <div className="our-process-vertical-line"></div>
+
+        <div className="our-process-pill w-4/4 md:w-2/4 flex md:flex-nowrap flex-wrap justify-center items-center  py-5 px-10 shadow mx-auto md:rounded-full border-gray-100 shadow">
+          <div className="our-process-img">
+            <img src={CreateARangeImg}/>
+          </div>
+          <div className="our-process-text">
+            <p className="text-sm md:text-md">Create a range of <strong>tools</strong> to help you understand and strategise around your ecosystem</p>
+          </div>
+        </div>
+
+        <div className="mx-auto flex justify-center">
+          <img src={OESMLine}/>
+        </div>
+        
+     </div>
+   </section>
+
+
+{/* TOOLS */}
+   <section className="tools"> 
+   <div className="container mx-auto">
+     <div className="tools-cards-container flex flex-wrap md:flex-nowrap gap-4">
+
+       <div className="tools-card-item shadow p-5 rounded-2xl flex-grow md:flex-grow">
+         <img src={PanoramaImg} className="border-b border-gray-100 text-center "/>
+          <h3 className="font-black mt-5">Panorama</h3>
+          <p className="text-sm">A “State of the Market” report and dashboard outlining the ecosystem stakeholders and value being generated</p>
+       </div>
+
+       <div className="tools-card-item shadow p-5 rounded-2xl flex-grow md:flex-grow" >
+         <img src={PolicyImg} className="border-b border-gray-100"/>
+          <h3 className="font-black mt-5">Policy</h3>
+          <p className="text-sm">A series of insight tools to help you identify partnerships and opportunities to be part of the wider ecosystem </p>
+       </div>
+
+       <div className="tools-card-item shadow p-5 rounded-2xl flex-grow md:flex-grow">
+         <img src={ProcessImg} className="border-b border-gray-100"/>
+          <h3 className="font-black mt-5">Process</h3>
+          <p className="text-sm">Data model and guidelines to assist you to measure the value generated by stakeholders through a systematic, structured and regularly scheduled process </p>
+       </div>
+
+
+     </div>
+
+   </div>
+   </section>
+
+  
 
    {/* <PostsCards/> */}
    <h3 className="text-center font-black mt-10">Our Latest Work </h3>
@@ -122,7 +202,7 @@ tools (APIs) and data infrastructures.</p>
       formClass="text-center my-5 mx-auto overflow-hidden py-6"
       formID="lp-training-form"
       titleClass=""
-      title="Sign up now for pricing and calendar availability"
+      title="Contact us to discuss mapping your ecosystem"
       iframeId="submitMailerlite"
       iframeSrc={"https://landing.mailerlite.com/webforms/landing/b9q0r6"}
     />

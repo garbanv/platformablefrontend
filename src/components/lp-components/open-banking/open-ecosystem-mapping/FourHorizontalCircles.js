@@ -10,6 +10,11 @@ import value from '../../../../assets/ob-open-ecosystem-mapping/Value Flows.png'
 const FourHorizontalCircles = () => {
   const images = [
     {
+      src: value,
+      title: "Policy Context",
+      paragraph: "",
+    },
+    {
       src: Stakeholders,
       title: "Stakeholders",
       paragraph: "",

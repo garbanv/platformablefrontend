@@ -10,12 +10,12 @@ const TeamHours = () => {
       </p>
       <div className="flex justify-evenly tracking-normal ">
         <p className="font-bold text-2xl text-left">
-          <span className="text-gray-400 text-base">$ </span>400 
+          <span className="text-gray-400 text-base">$ </span>800 
           <span className="text-gray-400 text-base"> for </span>5 hours
         </p>
         <span className="sm:border-r-2"></span>
         <p className="font-bold text-2xl text-right">
-          <span className="text-gray-400 text-base">$ </span>750
+          <span className="text-gray-400 text-base">$ </span>1500
           <span className="text-gray-400 text-base"> for </span>10 hours
         </p>
       </div>

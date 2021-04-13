@@ -58,9 +58,7 @@ const LPDataStewardship = props => (
       gridContentClass="sm:py-0 py-5 lg:w-2/5"
       title="Build knowledge step by step 
       and at your own pace"
-      paragraphOne="You will need to understand skills and techniques about
-      platform business models, digital architecture and 
-      how to win over other business units."
+      paragraphOne="You will need to understand how to organize, systematize, and automate data with data models. Streamline collection, ensure storage, and encourage reuse within your agency and with partners."
       imgContentClass="lg:w-2/5"
       imgClass="object-cointain w-96 h-94"
       backImgSrc={buildImg}
@@ -80,7 +78,7 @@ const LPDataStewardship = props => (
     <section className="blueBkgTest bg-testimBkgBlue my-0 mx-auto py-6">
       <div className="text-center p-8">
         <h4 className="text-white font-black">
-          What our colleagues say about the program:
+          What our clients say about the program:
         </h4>
         <blockquote className="italic p-2 w-3/5 mx-auto">
           <p>

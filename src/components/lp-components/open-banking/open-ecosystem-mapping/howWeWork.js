@@ -24,13 +24,13 @@ const OBOpenEcosystemMapping = () => {
     {
       src:Regulators,
       title:'Regulators, government agencies or community advocacy organisations',
-      paragraph:'TWe look at whether open ecosystems are generating benefits for all stakeholders and what can be done to enable greater participation and value flow for everyone'
+      paragraph:'We look at whether open ecosystems are generating benefits for all stakeholders and what can be done to enable greater participation and value flow for everyone.'
     },
   ];
   
   return (
     <section className="bg-red-orange-light py-10 px-8 ">
-      <h2 className="my-10  md:mx-16 text-center font-black">Audience</h2>
+      <h2 className="my-10  md:mx-16 text-center font-black">We support:</h2>
       <div classname="container mx-auto ">
       <div className="my-0 md:mx-16  ">
         {images.map((img, i) =>(

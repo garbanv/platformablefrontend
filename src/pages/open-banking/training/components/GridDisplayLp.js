@@ -15,10 +15,10 @@ const GridDisplayLp = ({
     <section id="gridDisplay" className={gridDisplayOrder}>
       <div className="flex-1">
         <div>
-          <h2>
+          <h3 className="font-black">
             {title}&nbsp;
-            <span className="text-2xl bg-secondary">{span}</span>
-          </h2>
+            <span className="bg-secondary p-1">{span}</span>
+          </h3>
           <p>{paragraph}</p>
         </div>
 

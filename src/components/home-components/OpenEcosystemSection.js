@@ -33,10 +33,11 @@ const OpenEcosystemSection = () => {
       src: openSustainabilityImg,
       title:
         "Open Sustainability",
+        url:"/sectors"
     },
   ]
   return (
-    <section className="bg-card px-8 py-2 rounded-2xl md:mx-12 mx-4 lg:absolute -bottom-3/4 inset-x-0 ">
+    <section className="bg-card px-8 py-2 rounded-2xl md:mx-12 mx-4 lg:absolute -bottom-4/4 inset-x-0 ">
       <img src={sectionImg} alt="we measure the growth" className=" h-72 mx-auto"/>
       <h3 className="my-4 mx-auto text-center font-black text-3xl">We measure the growth of digital open ecosystems</h3>
       <p className="text-center">Across 4 sectors</p>

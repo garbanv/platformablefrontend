@@ -9,6 +9,7 @@ const GridDisplay = ({
   firstParagraph,
   firstParagraphClass,
   title,
+  subtitle,
   titleClass,
   span,
   paragraphOne,
@@ -42,6 +43,7 @@ const GridDisplay = ({
             {quarter? quarter: ""}
             <span className="text-2xl bg-secondary">{span}</span>
           </h3>
+          <h3>{subtitle ? subtitle: ''}</h3>
           <p className={paragraphOneClass}>{paragraphOne}</p>
           <p className={paragraphTwoClass}>{paragraphTwo}</p>
         </div>
