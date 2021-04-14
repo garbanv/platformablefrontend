@@ -51,11 +51,11 @@ export default function index({data}) {
     <section className="container mx-auto all-blog-content my-20 px-5">
           
     <div className="blog-cards">
-          <div className="masonry">
+          <div className="home-posts-container">
           {data?data.allStrapiPost.edges.map(post =>{
               return (
                 //   CARD ITEM
-            <div class="item rounded bg-gray-100  shadow-lg">
+            <div class="item rounded bg-gray-100  p-2  shadow-lg">
               {/* Check if post has image, if we dont do the check netlify wont build */}
               {post.node.featured_image && post.node.featured_image ? (
                 <Link to={`/blog/${post.node.slug}`}>
@@ -83,12 +83,12 @@ export default function index({data}) {
                   >{` ${post.node.user[0].username}`}</div>
                 ) : post.node.user.length === 2 ? (
                   authorsData.map((x, index) => (
-                    <div
+                    <Link
                       to={"/"}
                       className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
                     >
                       {x.username} {index < authorsData.length - 1 ? " & " : ""}
-                    </div>
+                    </Link>
                   ))
                 ) : null}
               </div>
@@ -138,7 +138,7 @@ export default function index({data}) {
 
 export const AnalystPagePosts = graphql`
 query AnalystPagePosts {
-  allStrapiPost(limit: 3, sort: { fields: slug, order: ASC })  {
+  allStrapiPost(limit:3, filter: {categories: {elemMatch: {name: {eq: "Open Banking / Open Finance"}}}, tags: {elemMatch: {name: {eq: "analysis"}}}}) {
     edges {
       node {
         categories {

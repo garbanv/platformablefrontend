@@ -722,8 +722,23 @@ MEDIA QUERIES */
 
 /* ////BLOG CARDS MASONRY */
 
+
+
+.home-posts-container {
+  display:flex;
+  gap:10px;
+  align-items: flex-start;
+  }
+  
+  .home-posts-container .item {
+  flex-basis: 100%;
+  
+  }
+
+
+
 .masonry { /* Masonry container */
-  -webkit-column-count: 4;
+  /* -webkit-column-count: 4;
 -moz-column-count:4;
 column-count: 4;
 -webkit-perspective:1;
@@ -733,15 +748,41 @@ column-gap: 1.5em;
   -moz-column-gap: 1;
   -webkit-column-gap: 1;
   column-gap: 1.5em;
-  font-size: .85em;
+  font-size: .85em; */
   /* display:flex;
   flex-wrap:wrap; */
+
+  column-count: 3;
+  gap: 4;
+
 }
 
+.masonry .item > img {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+
+
 .masonry .item {
+
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 10px;
+  break-inside: avoid-column;
+  background-color:#f4f4f4;
+  padding:10px;
+  border-radius:10px;
+
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+
+
+
   /* display: block; */
   
-  padding: 1em;
+  /* padding: 1em;
   margin: 0 0 1.5em;
   width: 100%;
 -webkit-transition:1s ease all;
@@ -754,7 +795,8 @@ column-gap: 1.5em;
   page-break-inside: avoid-column;
   -moz-page-break-inside: avoid-column;
   break-inside: avoid-column;
-  -moz-break-inside:avoid-column;
+  -moz-break-inside:avoid-column; */
+  
   /* position: relative;
   display: block;
   margin-top: 30px;
@@ -765,7 +807,7 @@ column-gap: 1.5em;
 .small-text {
   font-size:12px;
 }
-.masonry .item img{max-width:100%;}
+/* .masonry .item img{max-width:100%;} */
 
 @media only screen and (max-width: 320px) {
   .masonry {
@@ -773,14 +815,23 @@ column-gap: 1.5em;
       -webkit-column-count: 1;
       column-count: 1;
   }
+  .home-posts-container {
+    flex-wrap:wrap;
+       }
 }
 
-@media only screen and (min-width: 321px) and (max-width: 768px){
+@media only screen and (min-width: 360px) and (max-width: 600px){
   .masonry {
-      -moz-column-count: 1;
-      -webkit-column-count: 1;
-      column-count: 1;
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
   }
+
+  .home-posts-container {
+    flex-wrap:wrap;
+       }
+
+
 }
 @media only screen and (min-width: 769px) and (max-width: 1200px){
   .masonry {

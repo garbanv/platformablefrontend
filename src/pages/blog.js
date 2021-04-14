@@ -19,7 +19,7 @@ const authorsData = data.allStrapiPost.edges[0].node.user;
           {data.allStrapiPost.edges.map(post =>{
               return (
                 //   CARD ITEM
-            <div class="item rounded bg-gray-100 red shadow-lg">
+            <div class="item rounded bg-gray-100  shadow-lg mb-5">
               {/* Check if post has image, if we dont do the check netlify wont build */}
               {post.node.featured_image && post.node.featured_image ? (
                 <Link to={`/blog/${post.node.slug}`}>
