@@ -97,12 +97,12 @@ return(
                   >{` ${post.node.user[0].username}`}</div>
                 ) : post.node.user.length === 2 ? (
                   authorsData.map((x, index) => (
-                    <div
+                    <Link
                       to={"/"}
                       className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
                     >
                       {x.username} {index < authorsData.length - 1 ? " & " : ""}
-                    </div>
+                    </Link>
                   ))
                 ) : null}
               </div>

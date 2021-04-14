@@ -10,7 +10,7 @@ const FourHorizontalCircles = () => {
   const images = [
     {
       src: identify,
-      title: "Indetify",
+      title: "Identify",
       paragraph: "potential business models and partnerships",
     },
     {
