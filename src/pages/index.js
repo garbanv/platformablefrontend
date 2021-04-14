@@ -59,17 +59,20 @@ return(
       alt="Hero"
     ></GridDisplay>
    </section>
+
+
     {/* <PostsCards/> */}
-    <h3 className="text-center font-black mt-5">Latest Posts </h3>
+    <h3 className="text-center font-black mt-10">Latest Posts </h3>
     {/* POSTS */}
-    <section className="container mx-auto all-blog-content my-20 px-5">
-          
-    <div className="blog-cards">
-          <div className="masonry">
-          {data?data.allStrapiPost.edges.map(post =>{
+    <div className="container mx-auto all-blog-content my-5 px-5">
+ 
+          {/* blog CARD START HERE */}
+        <div class="blog-cards">
+          <div class="masonry">
+          {data.allStrapiPost.edges.map(post =>{
               return (
                 //   CARD ITEM
-            <div class="item rounded bg-gray-100  shadow-lg">
+            <div class="item rounded bg-gray-100 red shadow-lg">
               {/* Check if post has image, if we dont do the check netlify wont build */}
               {post.node.featured_image && post.node.featured_image ? (
                 <Link to={`/blog/${post.node.slug}`}>
@@ -120,15 +123,13 @@ return(
                   )
                 })}
               </div>
-            
+       
             </div>
             )
-             }) : ''}
+             })}
           </div>
         </div>
-
-
-        </section>
+      </div>
 
     <PositionedSection/>
 

@@ -12,15 +12,25 @@ export default function index({data}) {
     const authorsData = data?data.allStrapiPost.edges[0].node.user :null
     return (
        <Layout>
+         {/* <section className="mainHero py-20">
+           <div className="container mx-auto flex">
+          <div className="heroLeft">
+            <h3 className="font-black text-3xl">Analyst as a service</h3>
+          </div>
+          <div className="heroRight">
+            <img src={AnalistAsServiceTitle} />
+          </div>
+          </div>
+         </section> */}
+
         <GridDisplay
       gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
-      gridContentClass="md:w-2/5"
-      title="Data Governance"
+      gridContentClass="md:w-2/5 "
+      title="Open Banking / Open Finance"
+      subtitle="Analyst as a service"
       secondParagraph=""
-      secondParagraphClass="py-2"
-      paragraphOne="Create a data governance and data stewardship
-      system for your agency
-      "
+      secondParagraphClass=""
+      paragraphOne="Subscribe to a set range of hours and answer key questions to support your growth"
       paragraphTwo=""
       paragraphThree=""
       imgContentClass=""
@@ -114,7 +124,7 @@ export default function index({data}) {
       formClass="text-center my-5 mx-auto overflow-hidden py-6"
       formID="lp-training-form"
       titleClass=""
-      title="Sign up now to gain new insights into your open banking strategy"
+      title="Sign up now to gain new insights into your open banking / open finance strategy"
       iframeId="submitMailerlite"
       iframeSrc={"https://landing.mailerlite.com/webforms/landing/b9q0r6"}
     />

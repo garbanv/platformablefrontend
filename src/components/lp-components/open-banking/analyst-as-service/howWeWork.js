@@ -29,12 +29,12 @@ const OBAnalystAsService = () => {
     {
       src:priorities,
       title:'Priorities',
-      paragraph:'Together we set priorities and decide on output formats (deck, dashboard, briefing, webinar,etc)'
+      paragraph:'Together we set priorities and decide on output formats (deck, dashboard, briefing, webinar, etc)'
     },
     {
       src:applied,
       title:'Applied Methodology',
-      paragraph:'We apply our rapid insights methodology to Immediately share data insisght based on our current open ecosystem data collection'
+      paragraph:'We apply our rapid insights methodology to immediately share data insisght based on our current open ecosystem data collection'
     },
     {
       src:monitoring,
@@ -47,7 +47,7 @@ const OBAnalystAsService = () => {
     <section className="bg-lightPink py-3 px-8">
       <h2 className="my-10 md:mx-16 text-center font-black">How we work</h2>
       
-      <div className="my-0 md:mx-16">
+      <div className="my-0  md:w-3/5 mx-auto">
         {images.map((img, i) =>(
           <div key={i} className="mb-5 md:flex items-center"
             >

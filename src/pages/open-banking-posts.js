@@ -15,7 +15,7 @@ const OpenBankingPosts = ({data}) => {
       <h3 className="text-3xl font-black text-center">
         Open Banking / Open Finance 
       </h3>
-      <h3 className="text-1xl font-black text-center mb-5">Posts & Articles</h3>
+      <h3 className="text-1xl font-black text-center mb-5">Posts and Articles</h3>
      
       <div class="blog-cards">
           <div class="masonry">

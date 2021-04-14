@@ -41,14 +41,14 @@ export default function Footer() {
                 <div className="flex space-x-4">
                   <Link
                     to="/"
-                    className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="top-nav text-sm hover:bg-yellow-200  px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName=""
                   >
                     Home
                   </Link>
                   <Link
                     to="/about"
-                    className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="top-nav text-sm hover:bg-yellow-200 px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName=""
                   >
                     About
@@ -62,14 +62,14 @@ export default function Footer() {
                   </Link> */}
                   <Link
                     to="/sectors"
-                    className=" top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className=" top-nav text-sm hover:bg-yellow-200 px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName=""
                   >
                     Sectors
                   </Link>
                   <Link
                     to="/blogs"
-                    className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="top-nav text-sm px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName=""
                   >
                     Blog
@@ -77,7 +77,7 @@ export default function Footer() {
                   {user && user.isLoggedIn ? (
                     <Link
                       to="/app/dashboard"
-                      className="top-nav text-gray-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      className="top-nav text-sm hover:bg-yellow-200 px-3 py-2 rounded-md text-sm font-medium"
                       activeClassName="active-top-nav"
                     >
                       Dashboard
@@ -90,7 +90,7 @@ export default function Footer() {
                   ) : (
                     <Link
                       to="/login"
-                      className=" top-nav  text-gray-400  px-3 py-2 rounded-md text-sm font-medium "
+                      className=" top-nav px-3 py-2 hover:bg-yellow-200 rounded-md text-sm font-medium "
                       activeClassName=""
                       state={{previousPost:false}} 
                     >
@@ -99,7 +99,7 @@ export default function Footer() {
                   )}
                   {user && user.isLoggedIn ? (
                     <span
-                      className=" top-nav text-gray-400 hover:text-white px-3 py-2 rounded-md text-sm font-medium  cursor-pointer"
+                      className=" top-nav  px-3 py-2 hover:bg-yellow-200 rounded-md text-sm font-medium  cursor-pointer"
                       activeClassName=""
                       onClick={handleLogOut}
                     >
@@ -110,7 +110,7 @@ export default function Footer() {
                   )}
                   <Link
                     to="/sign-up"
-                    className="top-nav  text-gray-400  px-3 py-2 rounded-md text-sm font-medium"
+                    className="top-nav   px-3 py-2 hover:bg-yellow-200 rounded-md text-sm font-medium"
                     activeClassName=""
                   >
                     Sign Up

@@ -17,8 +17,8 @@ export default function openBanking() {
       <div id="openBanking">
         <GridDisplay
         
-          gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center "
-          gridContentClass="md:w-2/5"
+          gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-0 px-5 justify-center items-center "
+          gridContentClass="md:w-2/5 "
           title={`Open Banking / 
             Open Finance`}
           titleClass="my-5 text-orange"
@@ -26,7 +26,7 @@ export default function openBanking() {
           doNotDisplayLink="hidden"
           doNotDisplayAnchor="hidden"
           imgContentClass=""
-          imgClass="object-cointain w-96 h-94"
+          imgClass="object-cointain w-96 h-80"
           backImgSrc={openBankImg}
           alt="Hero"
         ></GridDisplay>

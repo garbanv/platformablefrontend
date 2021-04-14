@@ -18,7 +18,7 @@ const OBOpenEcosystemMapping = () => {
     },
     {
       src:Industry,
-      title:'Industry associations, standards bodies,membership associations',
+      title:'Industry associations, standards bodies, membership associations',
       paragraph:'We look at the overall ecosystem stakeholder and enabling environment and identify where the ecosystem is strongest, where opportunities could be generated, what business models are being used, what obstacles are facing stakeholders, and where gaps exist.'
     },
     {
@@ -32,7 +32,7 @@ const OBOpenEcosystemMapping = () => {
     <section className="bg-red-orange-light py-10 px-8 ">
       <h2 className="my-10  md:mx-16 text-center font-black">We support:</h2>
       <div classname="container mx-auto ">
-      <div className="my-0 md:mx-16  ">
+      <div className="md:w-4/5 mx-auto">
         {images.map((img, i) =>(
           <div key={i} className="mb-5 md:flex items-center"
             >

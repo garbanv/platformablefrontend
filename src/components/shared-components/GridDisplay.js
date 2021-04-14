@@ -37,13 +37,13 @@ const GridDisplay = ({
 
         <div>
           <p className={firstParagraphClass}>{firstParagraph}</p>
-          <h3 className="font-black text-4xl mb-5">
+          <h3 className="font-black text-3xl mb-5">
             {title}
-            <br></br>
+            <h4>{subtitle ? subtitle: ''}</h4>
             {quarter? quarter: ""}
             <span className="text-2xl bg-secondary">{span}</span>
           </h3>
-          <h3>{subtitle ? subtitle: ''}</h3>
+          
           <p className={paragraphOneClass}>{paragraphOne}</p>
           <p className={paragraphTwoClass}>{paragraphTwo}</p>
         </div>

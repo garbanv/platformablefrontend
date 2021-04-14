@@ -53,7 +53,7 @@ export default function index({data}) {
    <section className="our-process my-10">
      <div className="container mx-auto ">
 
-        <h3 className="font-black text-center">Our process</h3>
+        <h3 className="font-black text-center my-5">Our process</h3>
 
         <div className="our-process-pill w-4/4 md:w-2/4 flex md:flex-nowrap flex-wrap justify-center items-center  py-5 px-10 shadow mx-auto md:rounded-full border-gray-100 shadow">
           <div className="our-process-img">
@@ -97,7 +97,7 @@ export default function index({data}) {
 {/* TOOLS */}
    <section className="tools"> 
    <div className="container mx-auto">
-     <div className="tools-cards-container flex flex-wrap md:flex-nowrap gap-4">
+     <div className="tools-cards-container flex flex-wrap md:flex-nowrap gap-4 px-5">
 
        <div className="tools-card-item shadow p-5 rounded-2xl flex-grow md:flex-grow">
          <img src={PanoramaImg} className="border-b border-gray-100 text-center "/>

@@ -27,7 +27,7 @@
         "img": "/product-streams/open_sustainability.svg",
         "paragraph": "Coming soon: Monitoring the move to a circular economy and tracking renewable energy opportunities",
         "color": "#C7F3E540",
-        "anchorLink": ""
+        "anchorLink": null
       }
     ]
   },
@@ -73,7 +73,7 @@
         "title": "State of the Market\nReports",
         "paragraph": "Our annual summary of the open banking ecosystem, sponsored by Axway",
         "color": "#FBDACE40",
-        "url":""
+        "url":"/open-banking-open-finance-state-of-the-market-reports"
       }
     ]
   },
@@ -88,7 +88,7 @@
       {
         "img": "/product-streams/blogs_and_articles.svg",
         "title": "Blogs and \nArticles",
-        "paragraph": "Coming Soon",
+        "paragraph": "Read our latest news and articles",
         "color": "#D8C1FB40",
         "url":"/open-government-posts"
       },
@@ -100,7 +100,7 @@
       },
       {
         "img": "/product-streams/platform_mindset_training_for_banks.svg",
-        "title": "Platform Mindset Training\nfor Banks",
+        "title": "Platform Mindset Training\nfor Governments",
         "paragraph": "Coming Soon",
         "color": "#D8C1FB40"
       },
@@ -129,7 +129,7 @@
       {
         "img": "/product-streams/blogs_and_articles.svg",
         "title": "Blogs and \nArticles",
-        "paragraph": "Coming Soon",
+        "paragraph": "Read our latest news and articles",
         "color": "#87ACFC40",
         "url":"/open-health-posts"
       },

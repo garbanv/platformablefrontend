@@ -10,7 +10,7 @@ const FourHorizontalCircles = () => {
   const images = [
     {
       src: identify,
-      title: "Indentify",
+      title: "Indetify",
       paragraph: "potential business models and partnerships",
     },
     {
@@ -20,8 +20,8 @@ const FourHorizontalCircles = () => {
     },
     {
       src: define,
-      title: "Define market",
-      paragraph: "pricing strategies",
+      title: "Define",
+      paragraph: "market pricing strategies",
     },
     {
       src: track,

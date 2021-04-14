@@ -14,7 +14,7 @@ const TeamHours = () => {
           <span className="text-gray-400 text-base"> for </span>5 hours
         </p>
         <p className="font-bold text-2xl">
-          <span className="text-gray-400 text-base">$ </span>2200
+          <span className="text-gray-400 text-base">$ </span>1500
           <span className="text-gray-400 text-base"> for </span>10 hours
         </p>
       </div>
