@@ -59,7 +59,7 @@ const Header = ({ siteTitle }) => {
           </a>
           <Link to="/about">About</Link>
           <Link to="/sectors">Sectors</Link>
-          <Link to="/blogs">Blog</Link>
+          <Link to="/blog">Blog</Link>
           {user.isLoggedIn ? "" : <Link to="/login" state={{previousPost:false}} >Login</Link>}
           {user.isLoggedIn ? <Link to="/app/dashboard">Dashboard</Link> : ""}
           {user.isLoggedIn ? (
