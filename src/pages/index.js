@@ -69,7 +69,7 @@ return(
           {/* blog CARD START HERE */}
         <div class="blog-cards">
           <div class="masonry">
-          {data.allStrapiPost.edges.map(post =>{
+          {data?data.allStrapiPost.edges.map(post =>{
               return (
                 //   CARD ITEM
             <div class="item rounded bg-gray-100 red shadow-lg">
