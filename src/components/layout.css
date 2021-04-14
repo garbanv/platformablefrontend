@@ -734,9 +734,12 @@ column-gap: 1.5em;
   -webkit-column-gap: 1;
   column-gap: 1.5em;
   font-size: .85em;
+  /* display:flex;
+  flex-wrap:wrap; */
 }
+
 .masonry .item {
-  display: block;
+  /* display: block; */
   
   padding: 1em;
   margin: 0 0 1.5em;
@@ -748,7 +751,7 @@ column-gap: 1.5em;
 
   -moz-column-break-inside: avoid-column;
   -webkit-column-break-inside: avoid-column;
-  page-break-inside: avoid-column;
+  page-break-inside: avoid;
   break-inside: avoid-column;
   /* position: relative;
   display: block;

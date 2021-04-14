@@ -34,7 +34,7 @@ const OBAnalystAsService = () => {
     {
       src:applied,
       title:'Applied Methodology',
-      paragraph:'We apply our rapid insights methodology to immediately share data insisght based on our current open ecosystem data collection'
+      paragraph:'We apply our rapid insights methodology to immediately share data insights based on our current open ecosystem data collection'
     },
     {
       src:monitoring,

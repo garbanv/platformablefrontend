@@ -9,10 +9,10 @@ const authorsData = data.allStrapiPost.edges[0].node.user;
     <Layout>
         
       <div className="container mx-auto all-blog-content my-20 px-5">
-      <h3 className="text-3xl font-black text-center">
+      {/* <h3 className="text-3xl font-black text-center">
         Open Ecosytems
       </h3>
-      <h3 className="text-1xl font-black text-center mb-10">Posts and Articles</h3>
+      <h3 className="text-1xl font-black text-center mb-10">Posts and Articles</h3> */}
           {/* blog CARD START HERE */}
         <div class="blog-cards">
           <div class="masonry">
