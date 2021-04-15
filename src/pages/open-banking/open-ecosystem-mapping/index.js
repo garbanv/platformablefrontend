@@ -218,7 +218,7 @@ export default function index({data}) {
 
 export const OBOpenEcosystemPagePosts = graphql`
 query OBOpenEcosystemPagePosts {
-  allStrapiPost(limit: 3, sort: { fields: slug, order: ASC })  {
+  allStrapiPost(limit:3, filter: {categories: {elemMatch: {name: {eq: "Open Banking / Open Finance"}}}, tags: {elemMatch: {name: {eq: "mapping"}}}})  {
     edges {
       node {
         categories {
