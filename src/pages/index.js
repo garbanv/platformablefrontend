@@ -72,7 +72,7 @@ return(
             <div class="item rounded bg-gray-100  p-2  shadow-lg">
               {/* Check if post has image, if we dont do the check netlify wont build */}
               {post.node.featured_image && post.node.featured_image ? (
-                <Link to={`/blog/${post.node.slug}`}>
+                <Link to={`/${post.node.slug}`}>
                   <Img
                     alt={post.node.title}
                     key={post.node.featured_image.childImageSharp.fluid.src}
@@ -86,7 +86,7 @@ return(
               )}
 
               <h5 className="text-lg font-bold leading-5">
-                <Link to={`/blog/${post.node.slug}`}> {post.node.title}</Link>
+                <Link to={`/${post.node.slug}`}> {post.node.title}</Link>
               </h5>
               <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                 <small className="text-xs mr-1">{`Writen by `} </small>

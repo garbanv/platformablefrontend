@@ -32,7 +32,7 @@ const AllPosts = ({data}) => {
               <div className="relative overflow-hidden pb-1">
                 {/* Check if post has image, if we dont do the check netlify wont build */}
               {post.node.featured_image && post.node.featured_image ? 
-              <Link to={`/blog/${post.node.slug}`}>
+              <Link to={`/${post.node.slug}`}>
               <Img 
               alt={post.node.title}
               key={post.node.featured_image.childImageSharp.fluid.src}
@@ -46,7 +46,7 @@ const AllPosts = ({data}) => {
               <div className="relative bg-gray-50">
                 <div className="py-10 px-8">
                   <h3 className="text-lg font-bold">
-                   <Link to={`/blog/${post.node.slug}`}> {post.node.title}</Link>
+                   <Link to={`/${post.node.slug}`}> {post.node.title}</Link>
                   </h3>
                   <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                     <p className="text-xs mr-1">{`Writen by `} </p>
@@ -76,7 +76,7 @@ const AllPosts = ({data}) => {
                       
                     </div>
                     <Link
-                      to={`/blog/${post.node.slug}`}
+                      to={`/${post.node.slug}`}
                       className="flex items-center"
                     >
                       <p className="mr-4 text-lg">Read more</p>

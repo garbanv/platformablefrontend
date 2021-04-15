@@ -13,7 +13,7 @@ export default function BlogCards({data}) {
             <div class="item rounded bg-gray-100 red shadow-lg">
               {/* Check if post has image, if we dont do the check netlify wont build */}
               {post.node.featured_image && post.node.featured_image ? (
-                <Link to={`/blog/${post.node.slug}`}>
+                <Link to={`/${post.node.slug}`}>
                   <Img
                     alt={post.node.title}
                     key={post.node.featured_image.childImageSharp.fluid.src}
@@ -27,23 +27,23 @@ export default function BlogCards({data}) {
               )}
 
               <h5 className="text-lg font-bold leading-5">
-                <Link to={`/blog/${post.node.slug}`}> {post.node.title}</Link>
+                <Link to={`/${post.node.slug}`}> {post.node.title}</Link>
               </h5>
               <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                 <small className="text-xs mr-1">{`Writen by `} </small>
                 {post.node.user.length === 1 ? (
-                  <div
+                  <Link
                     className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
-                    to="/"
-                  >{` ${post.node.user[0].username}`}</div>
+                    to={`/author/${post.node.user[0].id}`}
+                  >{` ${post.node.user[0].username}`}</Link>
                 ) : post.node.user.length === 2 ? (
-                  authorsData.map((x, index) => (
-                    <div
-                      to={"/"}
+                  post.node.user.map((x, index) => (
+                    <Link
+                    to={`/author/${post.node.user[index].id}`}
                       className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
                     >
-                      {x.username} {index < authorsData.length - 1 ? " & " : ""}
-                    </div>
+                      {x.username} {index < post.node.user.length - 1 ? " & " : ""}
+                    </Link>
                   ))
                 ) : null}
               </div>

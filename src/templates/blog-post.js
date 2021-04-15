@@ -124,7 +124,9 @@ const getMembership = (subscription, isLoggedIn)=>{
                   By{" "}
                   {data.strapiPost.user.length === 1 ? (
                     <>
-                      <Link className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">
+                      <Link 
+                      to={`/author/${data.strapiPost.user[0].id}`}
+                      className="hover:text-black transition duration-300 ease-in-out text-xs mr-1">
                         {data.strapiPost.user[0].username}
                       </Link>{" "}
                     </>
@@ -132,7 +134,7 @@ const getMembership = (subscription, isLoggedIn)=>{
                     data.strapiPost.user.map((x, index) => (
                       <>
                         <Link
-                         
+                         to={`/author/${x.id}`}
                           className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
                         >
                           {x.name} {x.lastname}{" "}

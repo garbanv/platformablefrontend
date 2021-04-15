@@ -258,7 +258,7 @@ export default function Dashboard() {
                       <div className="relative overflow-hidden pb-1">
                         {post.node.featured_image &&
                         post.node.featured_image ? (
-                          <Link to={`/blog/${post.node.slug}`}>
+                          <Link to={`/${post.node.slug}`}>
                             <Img
                               alt={post.node.title}
                               key={
@@ -279,7 +279,7 @@ export default function Dashboard() {
                       <div className="relative bg-gray-50">
                         <div className="py-10 px-8">
                           <h5 className="text-lg font-bold">
-                            <Link to={`/blog/${post.node.slug}`}>
+                            <Link to={`/${post.node.slug}`}>
                               {" "}
                               {post.node.title}
                             </Link>
@@ -330,8 +330,8 @@ export default function Dashboard() {
                               })}
                             </div>
                             <Link
-                              to={"/"}
-                              href={`/blog/${post.node.slug}`}
+                              to={`/${post.node.slug}`}
+                             
                               className="flex items-center"
                             >
                               <p className="mr-4 text-lg">Read more</p>
