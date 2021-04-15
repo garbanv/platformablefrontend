@@ -15,7 +15,28 @@ const AuthorPage = ({ data }) => {
        
        <section className="grid md:grid-cols-2  grid-cols-1 py-10 justify-center  items-center bg-gray-50 my-5 rounded-xl">
          <div className="authors-page-left grid justify-center">
-          <img src={user.image.childImageSharp.fluid.src}/>
+
+         {user.featured_image && user.featured_image ? (
+                <Link to={`/${post.slug}`}>
+                  <Img
+                    alt={user.title}
+                    key={user.featured_image.childImageSharp.fluid.src}
+                    imgStyle={{ objectFit: "contain" }}
+                    fluid={user.featured_image.childImageSharp.fluid}
+                    className="w-full object-contain h-32 sm:h-48 md:h-64 my-0"
+                  />
+                </Link>
+              ) : (
+                ""
+              )}
+      
+          {/* <Img
+                    alt={post.title}
+                    key={user.image.childImageSharp.fluid.src}
+                    imgStyle={{ objectFit: "contain" }}
+                    fluid={image.childImageSharp.fluid}
+                    className="w-full object-contain h-32 sm:h-48 md:h-64 my-0"
+                  /> */}
          </div>
          <div className="right px-5">
            <h3 className="font-black">Bio</h3>
