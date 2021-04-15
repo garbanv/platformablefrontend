@@ -1,15 +1,10 @@
 import React, { useState } from "react"
-import Layout from "../components/layout"
+import Layout from '../../../../components/layout'
 import { Link, navigate } from "gatsby"
-import SEO from "../components/seo"
-import AnalystImg from '../images/Analyst-as-a-service.png'
-import BlogAsServiceImg from '../images/Blogs and articles.png'
-import OpenEcosystemImg from '../images/Open ecosystem mapping.png'
-import PlatformMindsetImg from '../images/Platform mindset training for banks.png'
-import QuarterlyImg from '../images/Quarterly Trends report.png'
-import StateOfMarketImg from '../images/State of the Market reports.png'
+import SEO from "../../../../components/seo"
 
-export default function TrendsReport() {
+
+export default function Q4TrendsReport2020() {
   const [selectedOption, setSelectedOption] = useState("")
 
   const handleRedirect = selectedOption => {
@@ -37,7 +32,10 @@ export default function TrendsReport() {
     
     
             <div> 
+                <div className="grid grid-cols-1 md:grid-cols-2">
             <a href="https://trends.platformable.com/open-banking" class="trendsCardLink-russian-violet-light" target="_blank">Click here to Subscribe</a>
+            <a href="https://trends.platformable.com/open-banking" class="trendsCardLink-red-orange-dark md:ml-5" target="_blank">Download Report</a>
+            </div>
             </div>
           </div>
         </div>

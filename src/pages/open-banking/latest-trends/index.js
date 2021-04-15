@@ -1,9 +1,10 @@
 import React from "react"
+import {Link} from 'gatsby'
 /*shared-components*/
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
 import GridDisplay from "../../../components/shared-components/GridDisplay"
-import Link from '../../../components/shared-components/Link';
+// import Link from '../../../components/shared-components/Link';
 /*assets*/
 import heroImg from "../../../assets/lp_latest_trend_report/see_latest_trend_report_title_graphic.svg"
 import q1RelImg from "../../../assets/lp_latest_trend_report/q1_released.svg"
@@ -89,7 +90,7 @@ const LPLatestTrend = props => (
           </Link>
         </div>
         <div className="text-center">
-          <Link url="https://platformablefrontend.netlify.app/trends-report/">
+          <Link to="/trends-reports/2020/q4">
             <img src={q4RelImg} alt="quarter image" className="mx-auto text-center" />
             <p className="text-xs font-normal pt-1">December</p>
           </Link>
