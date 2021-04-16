@@ -40,6 +40,9 @@ const OpenBankingPosts = ({data}) => {
               <h5 className="text-lg font-bold leading-5">
                 <Link to={`/${post.node.slug}`}> {post.node.title}</Link>
               </h5>
+              <span className="text-gray-600 mr-3 text-xs small-text mt-1">
+            Published {new Date(post.node.published_at).toDateString()}
+          </span>
               <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                 <small className="text-xs mr-1">{`Writen by `} </small>
                 {post.node.user.length === 1 ? (
@@ -72,8 +75,8 @@ const OpenBankingPosts = ({data}) => {
                   )
                 })}
               </div>
-              <p className="text-xs leading-5 my-5 ">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m
+              <p className="text-xs leading-5 my-5">
+             {post.node.excerpt ? post.node.excerpt : ""}
               </p>
             </div>)
              })}

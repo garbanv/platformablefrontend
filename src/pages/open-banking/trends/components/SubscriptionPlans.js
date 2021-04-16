@@ -163,11 +163,11 @@ const SubscriptionPlans = props => {
           </div>
           <ul className="py-5 h-80">
            
-            {/* <li className="mb-2">
-              Analytics Dashboard Access for up to 10 members
-            </li> */}
             <li className="mb-2">
-              Bespoke Analysis with Platformable Experts for 10 hours/monthly
+              Quarterly Trends Report Access first
+            </li> 
+            <li className="mb-2">
+              Bespokes Analysis with Platformable Experts for 10 hours/monthly
             </li>
             <li className="mb-2">
               White label edition of reports to use as a lead generation tool

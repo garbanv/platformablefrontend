@@ -11,7 +11,7 @@ const HowWeDoItCards = () => {
       src: buildImg,
       title:
         "Building Tools",
-      paragraph: "To build platforms and ecosystems",
+      paragraph: "To grow platforms and ecosystems",
     },
     {
       src: measureImg,

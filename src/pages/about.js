@@ -80,9 +80,9 @@ export default function about({data}) {
           <h3 className="font-semibold mb-2 text-center text-xl leading-tight sm:leading-normal">
             {`${x.name} ${x.lastname}`}
           </h3>
-          <p className="text-center text-xs">{x.position}</p>
+          <p className="text-center text-xs bg-red-orange-dark text-white rounded px-1 py-1 my-5">{x.position}</p>
           <div className="text-sm">
-            <p className="leading-none text-sm" dangerouslySetInnerHTML={{ __html: x.bio}}></p>
+            <p className="leading-none text-xs" dangerouslySetInnerHTML={{ __html: x.bio}}></p>
           </div>
         </div>
       </div>

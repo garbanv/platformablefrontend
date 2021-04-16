@@ -39,6 +39,7 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "gatsby-source-github": "^0.0.2",
     "markdown-to-jsx": "^7.1.1",
     "prettier": "2.2.1"
   },

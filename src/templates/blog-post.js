@@ -211,7 +211,8 @@ const getMembership = (subscription, isLoggedIn)=>{
           >
             {data.strapiPost.user.map((user, index) => {
               return (
-                <div
+                <Link
+                to= {`/author/${user.id}`}
                   key={index}
                   className="bg-purple-50 flex flex-col items-center justify-center p-4 shadow rounded-lg"
                 >
@@ -237,7 +238,7 @@ const getMembership = (subscription, isLoggedIn)=>{
                   <p className="text-xs text-gray-500 text-center mt-3">
                     {user.bio}
                   </p>
-                </div>
+                </Link>
               )
             })}
           </div>

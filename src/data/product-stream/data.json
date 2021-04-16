@@ -123,8 +123,9 @@
       {
         "img": "/product-streams/analyst-as-a-service.svg",
         "title": "Data Governance",
-        "paragraph": "Coming Soon, Create a data governance and data stewardship system for your agency",
-        "color": "#87ACFC40"
+        "paragraph": "Create a data governance and data stewardship system for your agency",
+        "color": "#87ACFC40",
+        "url":"/open-health/data-governance"
       },
       {
         "img": "/product-streams/blogs_and_articles.svg",
