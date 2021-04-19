@@ -33,7 +33,7 @@ export default function Q4TrendsReport2020() {
     
             <div> 
                 <div className="grid grid-cols-1 md:grid-cols-2">
-            <a href="https://trends.platformable.com/open-banking" class="trendsCardLink-russian-violet-light" target="_blank">Click here to Subscribe</a>
+            <Link to={`/open-banking/trends`} class="trendsCardLink-russian-violet-light" target="_blank">Click here to Subscribe</Link>
             <a href="https://trends.platformable.com/open-banking" class="trendsCardLink-red-orange-dark md:ml-5" target="_blank">Download Report</a>
             </div>
             </div>

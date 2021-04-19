@@ -130,7 +130,7 @@ const getMembership = (subscription, isLoggedIn)=>{
                         {data.strapiPost.user[0].username}
                       </Link>{" "}
                     </>
-                  ) : data.strapiPost.user.length === 2 ? (
+                  ) : data.strapiPost.user.length > 1 ? (
                     data.strapiPost.user.map((x, index) => (
                       <>
                         <Link

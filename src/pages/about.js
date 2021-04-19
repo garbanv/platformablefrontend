@@ -27,7 +27,7 @@ export default function about({data}) {
             </div>
           </div>
 
-          <div className="py-10">
+          {/* <div className="py-10">
             <h3 className="text-2xl md:text-4xl font-black text-center">{data.strapiAbout.key_work_title && data.strapiAbout.key_work_title ? data.strapiAbout.key_work_title : '' }</h3>
             <p className="text-center text-2xl font-black">{data.strapiAbout.key_work_subtitle ? data.strapiAbout.key_work_subtitle : ''}</p>
             <ul>
@@ -39,7 +39,7 @@ export default function about({data}) {
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
 
           </div>
-          </div>
+          </div> */}
         </section>
 
         
@@ -127,12 +127,6 @@ query MyAbout {
       }
     }
     teamTitle
-    key_work_areas_items {
-      key_item
-      id
-    }
-    key_work_subtitle
-    key_work_title
     content
   }
 }

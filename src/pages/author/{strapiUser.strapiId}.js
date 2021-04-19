@@ -47,7 +47,7 @@ const AuthorPage = ({ data }) => {
 
 
       <section className="blog-cards px-5 md:px-0">
-        <h3 className="text-center font-black mt-14">{`${user.name} ${user.lastname} Posts`}</h3>
+        <h3 className="text-center font-black mt-14">{`Posts`}</h3>
         <div className="bottom-line"></div>
         <div className="masonry">
           {user.posts.map(post=> {

@@ -36,6 +36,7 @@ query OpenHealthBlogPosts {
               name
             }
             id
+            published_at
             slug
             is_featured
             tags {

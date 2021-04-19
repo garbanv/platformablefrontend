@@ -99,6 +99,7 @@ query OpenGovernmentBlogPosts {
             }
             id
             slug
+            published_at
             is_featured
             tags {
               name

@@ -4315,3 +4315,7 @@ blockquote:after {
 .authors-page-left img {
   width: 300px;
 }
+
+.thumbnail img {
+width:125px !important;
+}

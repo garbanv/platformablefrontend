@@ -88,6 +88,9 @@ return(
               <h5 className="text-lg font-bold leading-5">
                 <Link to={`/${post.node.slug}`}> {post.node.title}</Link>
               </h5>
+              <span className="text-gray-600 mr-3 text-xs small-text mt-1">
+            Published {new Date(post.node.published_at).toDateString()}
+          </span>
               <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                 <small className="text-xs mr-1">{`Writen by `} </small>
                 {post.node.user.length === 1 ? (
@@ -171,7 +174,7 @@ export default IndexPage
 
 export const blogQuery = graphql`
 query HomepagePosts {
-  allStrapiPost(limit: 3, sort: { fields: slug, order: ASC })  {
+  allStrapiPost(sort: {fields: published_at, order: DESC}, filter: {is_featured: {eq: true}}, limit: 3)  {
     edges {
       node {
         categories {
@@ -179,6 +182,7 @@ query HomepagePosts {
         }
         id
         slug
+        published_at
         is_featured
         tags {
           name

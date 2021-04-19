@@ -5,12 +5,13 @@ import products from '../../../../assets/ob-open-ecosystem-mapping/products.png'
 import platforms from '../../../../assets/ob-open-ecosystem-mapping/Platforms.svg'
 import standards from '../../../../assets/ob-open-ecosystem-mapping/standards.png'
 import value from '../../../../assets/ob-open-ecosystem-mapping/Value Flows.png'
+import policy from '../../../../assets/ob-open-ecosystem-mapping/policyContext.png'
 
 
 const FourHorizontalCircles = () => {
   const images = [
     {
-      src: value,
+      src: policy,
       title: "Policy Context",
       paragraph: "",
     },

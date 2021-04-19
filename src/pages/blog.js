@@ -41,12 +41,9 @@ const authorsData = data.allStrapiPost.edges[0].node.user;
            
               <span className="text-gray-600 mr-3 text-xs small-text mt-1">
             Published {new Date(post.node.published_at).toDateString()}
-       
           </span>
                    {' '}
-          <span className="text-gray-600 mr-3 text-xs small-text mt-1">
-            Updated at {new Date(post.node.updated_at).toDateString()}
-          </span>
+        
               <div className="text-gray-600 text-sm font-medium flex mb-4 mt-2">
                 <small className="text-xs mr-1">{`Writen by `} </small>
                 {post.node.user.length === 1 ? (
@@ -95,7 +92,7 @@ const authorsData = data.allStrapiPost.edges[0].node.user;
 
 export const blogQuery = graphql`
 query AllBlogPosts {
-  allStrapiPost(sort: {fields: published_at, order: ASC}) {
+  allStrapiPost(sort: {fields: published_at, order: DESC}) {
     edges {
       node {
         categories {

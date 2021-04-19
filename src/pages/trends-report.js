@@ -37,7 +37,7 @@ export default function TrendsReport() {
     
     
             <div> 
-            <a href="https://trends.platformable.com/open-banking" class="trendsCardLink-russian-violet-light" target="_blank">Click here to Subscribe</a>
+            <Link to={'/open-banking/trends'} className="trendsCardLink-russian-violet-light" target="_blank">Click here to Subscribe</Link>
             </div>
           </div>
         </div>

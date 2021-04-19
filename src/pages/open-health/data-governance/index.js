@@ -15,6 +15,7 @@ import JobImg from "../../../assets/oh-data-governance/job.png"
 import KpiImg from "../../../assets/oh-data-governance/kpi.png"
 import AutomatedImg from "../../../assets/oh-data-governance/automated.png"
 import blackHealthImg from "../../../assets/lp-data_stewardship/black_health.svg"
+import SEO from "../../../components/seo"
 
 const datas = {
   "dataGovernance": {
@@ -66,7 +67,7 @@ const tools = [
         "img": DataDictionaryImg
     },
     {
-        "title":"Job description alignmentPolicy Templates",
+        "title":"Job description alignment",
         "img": JobImg
     },
     {
@@ -83,13 +84,14 @@ const tools = [
 export default function index() {
   return (
     <Layout>
+      <SEO title="Data Governance"/>
       <section className="hero-data-governance py-10">
         <div className="container mx-auto grid md:grid-cols-2 grid-cols-1 items-center px-5 ">
           <div className="hero-data-governance-left">
             <h3 className="font-black text-3xl ">Data Governance</h3>
             <p className="text-2xl">
-              Create a data governance and data stewarship system for your
-              agency.
+              Create a data governance and data stewardship system for your
+              agency
             </p>
           </div>
           <div className="hero-data-governance-right   grid justify-ends ">
@@ -215,7 +217,7 @@ export default function index() {
       titleClass=""
       title="Sign up now for pricing and calendar availability"
       iframeId="submitMailerlite"
-      iframeSrc={"https://landing.mailerlite.com/webforms/landing/b9q0r6"}
+      iframeSrc={"https://landing.mailerlite.com/webforms/landing/u7n7p9"}
     />
     </Layout>
   )

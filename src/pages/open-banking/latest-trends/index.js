@@ -42,7 +42,7 @@ const LPLatestTrend = props => (
       <h1 className="text-center my-5 font-black">2021</h1>
       <div className="my-0 md:mx-16 mx-2 py-0 px-3 md:flex justify-evenly items-center">
         <div className="text-center">
-          <Link url="https://platformablefrontend.netlify.app/trends-report/">
+          <Link to="/trends-reports/2021/q1">
             <img src={q1RelImg} alt="quarter image" className="mx-auto text-center" />
             <p className="text-xs font-normal pt-1">Released: April</p>
           </Link>
@@ -72,19 +72,19 @@ const LPLatestTrend = props => (
       <h1 className="text-center my-5 font-black">2020</h1>
       <div className="my-0 md:mx-16 mx-2 py-0 px-3 md:flex justify-evenly items-center">
         <div className="text-center">         
-          <Link url="https://platformablefrontend.netlify.app/trends-report/">
+          <Link to={'/q1-2020-open-banking-quarterly-trends-report'}>
             <img src={q1RelImg} alt="quarter image" className="mx-auto text-center" />
             <p className="text-xs font-normal pt-1">April</p>
           </Link>
         </div>
         <div className="text-center">
-          <Link url="https://platformablefrontend.netlify.app/trends-report/">
+          <Link to={'/q2-2020-open-banking-quarterly-trends'}>
             <img src={q2RelImg} alt="quarter image" className="mx-auto text-center" />
             <p className="text-xs font-normal pt-1">June</p>
           </Link>
         </div>
         <div className="text-center">
-          <Link url="https://platformablefrontend.netlify.app/trends-report/">
+          <Link to={'/q3-2020-open-banking-quarterly-trends'}>
             <img src={q3RelImg} alt="quarter image" className="mx-auto text-center" />
             <p className="text-xs font-normal pt-1">October</p>
           </Link>

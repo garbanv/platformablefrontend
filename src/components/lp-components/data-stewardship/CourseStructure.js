@@ -1,10 +1,11 @@
 import React from "react"
 /*assets*/
-import dataStewardshipImg from "../../../assets/lp-data_stewardship/data_stewardship.svg"
-import dataToolsImg from "../../../assets/lp-data_stewardship/data_tools.svg"
-import dataStrategyImg from "../../../assets/lp-data_stewardship/data_for_strategy.svg"
-import dataDesignImg from "../../../assets/lp-data_stewardship/data_design_thinking.svg"
-import dataAdvocacyImg from "../../../assets/lp-data_stewardship/data_for_advocacy.svg"
+import dataStewardshipImg from "../../../assets/lp-data_stewardship/dataStewardshipImg.png"
+import dataToolsImg from "../../../assets/lp-data_stewardship/data_tools.png"
+import dataStrategyImg from "../../../assets/lp-data_stewardship/data_for_strategy.png"
+import dataDesignImg from "../../../assets/lp-data_stewardship/data_design_thinking.png"
+import dataAdvocacyImg from "../../../assets/lp-data_stewardship/data_for_advocacy.png"
+import AutomateImg from "../../../assets/lp-data_stewardship/Automate.png"
 
 const CourseStructure = () => {
   const images = [
@@ -34,7 +35,7 @@ const CourseStructure = () => {
       paragraph:'Learn data visualization and storytelling techniques and share approaches in how to strengthen policy and community advocacy activities using data'
     },
     {
-      src:dataStrategyImg,
+      src:AutomateImg,
       title:'Automate systems',
       paragraph:'Use available tools to automatically validate and clean data, integrate into processes and automate reporting'
     },
@@ -42,14 +43,15 @@ const CourseStructure = () => {
   ];
   
   return (
-    <section className="bg-greyImg py-6 px-8">
-      <h3 className="my-8 md:mx-16 font-black">Course Structure</h3>
+    <section className="bg-greyImg py-6 px-8 ">
       
-      <div className="my-0 md:mx-16">
+      
+      <div className="my-0  container mx-auto">
+      <h3 className="my-8 md:mx-16 font-black">Course Structure</h3>
         {images.map((img, i) =>(
           <div key={i} className="mb-5 md:flex items-center"
             >
-            <img src={img.src} alt={img.title} className="mr-5" />
+            <img src={img.src} alt={img.title} className="mr-5 img-thumbnail" />
             
             <div className="">
               <h5 className="font-black">{img.title}</h5>

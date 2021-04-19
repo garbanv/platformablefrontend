@@ -82,26 +82,18 @@ const LPDataStewardship = props => (
         </h4>
         <blockquote className="italic p-2 w-3/5 mx-auto">
           <p>
-            Platformable has helped us improve our data management processes
-            across the organization. Platformable’s processes have reduced the
-            time we spend managing and preparing data and has increased our
-            opportunities to use data strategically.
-            <br />I have come across.
+          Mark has been an absolute joy to work with. As a young data professional, I really needed mentorship around data governance, and he provided me with that in a non-judgmental, supportive, and informed way. He's reliable and really knows what he's doing. I appreciated working with someone who was more than willing to provide me with any guidance I needed, but also reminded me of the strengths that I already had. Would recommend for anyone wanting to build their skill set around data governance and management.
           </p>
-          <br />
-          <p>
-            All staff and programs have learnt how to use data more effectively
-            and responsibly with this training and Platformable’s supports.
-          </p>
+         
         </blockquote>
         <p className="uppercase">
-          <span className="font-bold">Author Name</span>, At Black Health
+          <span className="font-bold">Brittany Dub</span>, MPH CHES
         </p>
       </div>
     
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
         <img src={blackHealthImg} alt="black health co" className="mx-auto text-center py-6"/>
-        </div>
+        </div> */}
         
       
     </section>

@@ -110,6 +110,7 @@ query OpenBankingBlogPosts {
                 }
               }
             }
+            published_at
             title
             updated_at
             user {
