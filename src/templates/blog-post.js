@@ -43,7 +43,7 @@ const BlogPost = ({ data }) => {
  
   
     
-  }, [category]);
+  }, [category, data]);
 
 const getMembership = (subscription, isLoggedIn)=>{
  if(subscription==="free") {
