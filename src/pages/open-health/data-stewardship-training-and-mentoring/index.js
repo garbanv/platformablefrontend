@@ -87,7 +87,7 @@ const LPDataStewardship = props => (
          
         </blockquote>
         <p className="uppercase">
-          <span className="font-bold">Brittany Dub</span>, MPH CHES
+          <span className="font-bold">Brittany Dube</span>, MPH CHES
         </p>
       </div>
     

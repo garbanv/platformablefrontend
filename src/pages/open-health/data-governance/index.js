@@ -179,7 +179,7 @@ export default function index() {
 
 
 
-      <section className="blueBkgTest bg-testimBkgBlue my-0 mx-auto py-6">
+      {/* <section className="blueBkgTest bg-testimBkgBlue my-0 mx-auto py-6">
       <div className="text-center p-8">
         <h4 className="text-white font-black">
           What our clients say about the program:
@@ -208,7 +208,7 @@ export default function index() {
         </div>
         
       
-    </section>
+    </section> */}
 
 
     <Form
