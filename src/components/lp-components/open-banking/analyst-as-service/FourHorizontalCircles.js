@@ -38,7 +38,7 @@ const FourHorizontalCircles = () => {
             <img
               src={img.src}
               alt={img.title}
-              className="w-30 h-30 mx-auto bg-lightPink mb-1 rounded-full p-3 cursor-pointer transition-shadow hover:shadow-hover"
+              className="w-30 h-30 mx-auto bg-lightPink mb-1 rounded-full p-3 cursor-pointer transition-shadow hover:shadow-hover img-thumbnail "
             />
 
             <div className="mx-auto">

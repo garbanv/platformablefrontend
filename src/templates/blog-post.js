@@ -30,7 +30,7 @@ const BlogPost = ({ data }) => {
       if (loggedInUser) {
       
         setUser(prevUser => ({ ...prevUser,loggedInUser }))} else {
-        console.log('not logged')
+        // console.log('not logged')
       }
     }
 
@@ -97,6 +97,7 @@ const getMembership = (subscription, isLoggedIn)=>{
       isInitialMount.current = false;
     } else {
       console.log("hey not initial mount")
+      getScripts()
     }
     // window.instgrm.Embeds.process()
     // window.twttr.widgets.load()
@@ -110,6 +111,7 @@ const getMembership = (subscription, isLoggedIn)=>{
           {scripts ? scripts.map((script)=> {
            return script  
           }): null}
+          <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js" integrity="sha256-lISRn4x2bHaafBiAb0H5C7mqJli7N0SH+vrapxjIz3k=" crossorigin="anonymous"></script>
         </Helmet>
         <SEO title={data.strapiPost.title}/>
         <section className="posts-container mx-auto all-blog-content my-5 sm:my-20 px-5">
