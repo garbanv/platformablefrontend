@@ -18,7 +18,9 @@ const addScript = url => {
 }
 
 export const onClientEntry = () => {
+
   window.onload = () => {
     addScript("https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js")
+    
   }
 }

@@ -4319,3 +4319,9 @@ blockquote:after {
 .thumbnail img {
 width:125px !important;
 }
+
+.charts-iframe-container {
+  max-width:1260px;
+  margin: 0 auto;
+
+}
