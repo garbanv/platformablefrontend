@@ -131,7 +131,7 @@ export default function index({data}) {
     <section className="container mx-auto all-blog-content my-20 px-5">
           
     <div className="blog-cards">
-          <div className="home-posts-container">
+          <div className="home-posts-container-index grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
           {data?data.allStrapiPost.edges.map(post =>{
               return (
                 //   CARD ITEM

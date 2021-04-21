@@ -42,7 +42,8 @@ const LPLatestTrend = props => (
       <h1 className="text-center my-5 font-black">2021</h1>
       <div className="my-0 md:mx-16 mx-2 py-0 px-3 md:flex justify-evenly items-center">
         <div className="text-center">
-          <Link to="/trends-reports/2021/q1">
+          {/* <Link to="/trends-reports/2021/q1"> */}
+          <Link>
             <img src={q1RelImg} alt="quarter image" className="mx-auto text-center" />
             <p className="text-xs font-normal pt-1">Released: April</p>
           </Link>

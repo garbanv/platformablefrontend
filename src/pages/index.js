@@ -65,7 +65,7 @@ return(
     <section className="container mx-auto all-blog-content my-20 px-5">
           
     <div className="blog-cards">
-          <div className="home-posts-container">
+          <div className="home-posts-container-index grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
           {data?data.allStrapiPost.edges.map(post =>{
               return (
                 //   CARD ITEM
@@ -98,13 +98,13 @@ return(
                     className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
                     to="/"
                   >{` ${post.node.user[0].username}`}</div>
-                ) : post.node.user.length === 2 ? (
-                  authorsData.map((x, index) => (
+                ) : post.node.user.length > 1 ? (
+                  post.node.user.map((x, index) => (
                     <Link
                       to={"/"}
                       className="hover:text-black transition duration-300 ease-in-out text-xs mr-1"
                     >
-                      {x.username} {index < authorsData.length - 1 ? " & " : ""}
+                      {x.username} {index < post.node.user.length - 1 ? " & " : ""}
                     </Link>
                   ))
                 ) : null}

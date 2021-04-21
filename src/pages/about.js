@@ -47,7 +47,7 @@ export default function about({data}) {
 
 
       <section className="content">
-        <div className="posts-container mx-auto my-10 px-5">
+        <div className="posts-container mx-auto my-10 px-5 about-page">
       { data.strapiAbout.content && 
         <EmbedContainer markup={data.strapiAbout.content}>
               <div

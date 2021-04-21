@@ -29,6 +29,7 @@ export default function openHealth() {
           imgClass="object-cointain w-96 h-94"
           backImgSrc={openHealthImg}
           alt="Hero"
+          paragraphOneClass="mb-5"
           subtitle={true}
         ></GridDisplay>
         <SectorSubCards

@@ -9,10 +9,7 @@ const AuthorPage = ({ data }) => {
   return (
     <Layout>
       <div className="container mx-auto">
-        <section>
-          <h3 className="font-black text-center">{user.name} {user.lastname}</h3>
-          <h5 className="text-center">{user.position}</h5>
-        </section>
+       
        
        <section className="grid md:grid-cols-2  grid-cols-1 py-10 justify-center  items-center bg-gray-50 my-5 rounded-xl">
          <div className="authors-page-left grid justify-center">
@@ -40,7 +37,9 @@ const AuthorPage = ({ data }) => {
                   /> */}
          </div>
          <div className="right px-5">
-           <h3 className="font-black">Bio</h3>
+           <h3 className="font-black">{user.name} {user.lastname}</h3>
+           <h5 className="font-black italic">{user.position}</h5>
+           <h6 className=""><strong>Email: </strong> {` ${user.email}`}</h6>
            <p dangerouslySetInnerHTML={{ __html: user.bio}}></p>
          </div>
        </section>
@@ -104,6 +103,7 @@ query strapiAuthorPage($strapiId: Int){
       }
     }
     name
+    email
     lastname
     position
     strapiId

@@ -28,7 +28,8 @@ export default function Q4TrendsReport2020() {
         <div class="q4HeroLeft">
           <div>
    
-            <h3>Trends Report</h3>
+            <h3>Open Banking / Open Finance</h3>
+            <h3>Q4 2020 Trends Report</h3>
     
     
             <div> 
@@ -165,7 +166,7 @@ export default function Q4TrendsReport2020() {
         </div>
       </div>
 
-      <div className="card__wrap--inner">
+      {/* <div className="card__wrap--inner">
         <div className="card">
           <div className="cardImage">
             <img src="https://platformable.com/content/images/size/w1600/2021/01/5-API-INDUSTRY.png"/>
@@ -185,7 +186,7 @@ export default function Q4TrendsReport2020() {
 
           </div>
         </div>
-      </div>
+      </div> */}
 
 
       <div className="card__wrap--inner">

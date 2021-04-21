@@ -4,17 +4,19 @@ import govImg from "../../assets/home/governments.png"
 import regulatoryImg from '../../assets/home/regulatory_authorities.png'
 import industryImg from '../../assets/home/industry_networks.png'
 import apiProvImg from '../../assets/home/api_providers.png'
+import BusinessImg from '../../assets/home/Business.png'
+import NonProfitImg from '../../assets/home/Non-Profits.png'
 
 const WorkWithCards = () => {
   const images = [
     {
-      src: industryImg,
+      src: BusinessImg,
       title:
         "Businesses",
       paragraph: "Reorient towards a platform focus and understand how to connect with other stakeholders in broader open ecosystems",
     },
     {
-      src: industryImg,
+      src: NonProfitImg,
       title:
         "Non-profits",
       paragraph: "Build data governance processes, automate data systems, and connect with partners",

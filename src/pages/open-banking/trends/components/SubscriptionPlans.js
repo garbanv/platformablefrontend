@@ -17,22 +17,22 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-44 border-bottom">
+          <div className="h-32 border-bottom">
             <h3 className="text-primary mt-8 font-black">Knowledge Pack</h3>
-            <p className="my-2 text-sm mx-7">
-              Understand key trends in open banking and open finance
+            <p className="mt-2 text-xs mx-7">
+            Understand key trends in open banking and open finance
             </p>
           </div>
-          <ul className="py-5 h-80">
-            <li className="mb-2">
-              Quarterly Trends Report Access for a Single User
+          <ul className="py-2 h-100">
+          <li className="mb-2 text-xs">
+          Quarterly Trends Data Report: Access for a Single User
             </li>
-            {/* <li className="mb-2">
-              Analytics Dashboard Access for a Single User
-            </li> */}
-            <li className="mb-2">
-              Vote on a “Question of the Quarter” and receive answers from our
-              analysts
+            <li className="mb-2 text-xs">
+            Monthly Deep Dive reports: Business models & use cases, Technical decisions
+            </li>
+          
+            <li className="mb-2 text-xs">
+            Vote on a “Question of the Quarter” and receive answers from our analysts
             </li>
           </ul>
           <div className="plans-price h-32">
@@ -59,23 +59,29 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-44 border-bottom">
+          <div className="h-32 border-bottom">
             <h3 className="text-primary mt-8 font-black">Strategy Pack</h3>
-            <p className="my-2 text-sm mx-7">
-              Work with your team to share insights and plan ecosystem strategy
+            <p className="mt-2 text-xs mx-7">
+            Work with your team to share insights and plan ecosystem strategy
             </p>
           </div>
-          <ul className="py-5 h-80">
-            <li className="mb-2">
+          <ul className="py-5 h-100">
+            <li className="mb-2 text-xs">
               Quarterly Trends Report Access for your internal teams
             </li>
-            <li className="mb-2">
+            <li className="mb-2 text-xs">
+            Monthly Deep Dive reports: Business models & use cases, Technical decisions
+            </li>
+            <li className="mb-2 text-xs">
             Entry to quarterly webinar hosted by Platformable experts
             </li>
-            <li className="mb-2">
-              Vote on a “Question of the Quarter” and receive answers from our
-              analysts
+            <li className="mb-2 text-xs">
+            Vote on a “Question of the Quarter” and receive answers from our analysts
             </li>
+            <li className="mb-2 text-xs">
+            Raffle to win 5 hours analyst team time to one subscriber each quarter
+            </li>
+            
           </ul>
           <div className="plans-price mx-3">
             <p className="font-bold">
@@ -101,33 +107,37 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-44 border-bottom">
+          <div className="h-32 border-bottom">
             <h3 className="text-primary mt-8 font-black">Direction Pack</h3>
-            <p className="my-2 text-sm mx-7">
-              Steer your business towards embracing a platform mindset with data
-              and evidence
+            <p className="mt-2 text-xs mx-7">
+            Steer your business towards embracing a platform mindset with data and evidence
             </p>
           </div>
-          <ul className="py-5 h-80">
-            <li className="mb-2">
-              Quarterly Trends Report Access for your internal teams
+          <ul className="py-5 h-100">
+            <li className="mb-2 text-xs">
+            Quarterly Trends Report: Access for your internal teams
             </li>
-            {/* <li className="mb-2">
-              Analytics Dashboard Access for up to 10 members
-            </li> */}
+            <li className="mb-2 text-xs">
+            Monthly Deep Dive reports: Business models & use cases, Technical decisions
+            </li>
+            <li className="mb-2 text-xs">
+            Bespoke Analysis with Platformable analyst team for 5 hours/monthly
+            </li>
            
-            <li className="mb-2">
-              Bespoke Analysis with Platformable Experts for 5 hours/monthly
+            <li className="mb-2 text-xs">
+            Access to the datasets created and maintained by Platformable and one-off training to support your own analysis and filtering of data
             </li>
-            <li className="mb-2">
-              Your logo advertised in the Quarterly Trends Report
+            <li className="mb-2 text-xs">
+            Influence on the direction of our data roadmap and opportunity to help prioritise new dataset collections
             </li>
-            <li className="mb-2">
-              Vote on a “Question of the Quarter” and receive answers from our
-              analysts{" "}
+            <li className="mb-2 text-xs">
+            Your logo advertised in the Quarterly Trends Report
             </li>
-            <li className="mb-2">
-            Quarterly webinar hosted by Platformable experts for your internal teams
+            <li className="mb-2 text-xs">
+            Vote on a “Question of the Quarter” and receive answers from our analysts
+            </li>
+            <li className="mb-2 text-xs">
+            Monthly webinar hosted by Platformable analyst team for your internal team
             </li>
           </ul>
           <div className="plans-price mx-3">
@@ -154,30 +164,38 @@ const SubscriptionPlans = props => {
             alt=""
             className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
           />
-          <div className="h-44 border-bottom">
+          <div className="h-32 border-bottom">
             <h3 className="text-primary mt-8 font-black">Leadership Pack</h3>
-            <p className="my-2 text-sm mx-7">
+            <p className="mt-2 text-xs mx-7 ">
               Become an ecosystem leader by leveraging data and insights to drive
               business strategy and action
             </p>
           </div>
-          <ul className="py-5 h-80">
+          <ul className="py-5 h-100">
            
-            <li className="mb-2">
-              Quarterly Trends Report Access first
+            <li className="mb-2 text-xs">
+            Quarterly Trends Report: Access for your internal teams and preferred customers
             </li> 
-            <li className="mb-2">
-              Bespokes Analysis with Platformable Experts for 10 hours/monthly
+            <li className="mb-2 text-xs">
+            Monthly Deep Dive reports: Business models & use cases, Technical decisions
             </li>
-            <li className="mb-2">
-              White label edition of reports to use as a lead generation tool
-              for your company
+            <li className="mb-2 text-xs">
+            Bespoke Analysis with Platformable analyst team for 10 hours/monthly
             </li>
-            <li className="mb-2">
-              Quarterly Trends Report Access for unlimited members
+            <li className="mb-2 text-xs">
+            Access to the datasets created and maintained by Platformable and ongoing training to support your own analysis and filtering of data
             </li>
-            <li className="mb-2">
-              Quarterly webinar hosted for your community as a lead generation tool
+            <li className="mb-2 text-xs">
+            Influence on the direction of our data roadmap and opportunity to help prioritise new dataset collections
+            </li>
+            <li className="mb-2 text-xs">
+            White label edition of reports to use as a lead generation tool for your company
+            </li>
+            <li className="mb-2 text-xs">
+            Monthly private webinar hosted by Platformable analyst team for your internal team
+            </li>
+            <li className="mb-2 text-xs">
+            Quarterly webinar hosted for your community as a lead generation tool
             </li>
           </ul>
           <div className="plans-price h-32">
