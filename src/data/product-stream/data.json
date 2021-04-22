@@ -81,9 +81,10 @@
     "elements": [
       {
         "img": "/product-streams/analyst-as-a-service.svg",
-        "title": "Analyst as a\n service",
-        "paragraph": "Coming Soon",
-        "color": "#D8C1FB40"
+        "title": "Policy Advocacy",
+        "paragraph": "Join us as we map and respond to emerging policy opportunities",
+        "color": "#D8C1FB40",
+        "url":"/open-government/policy-development"
       },
       {
         "img": "/product-streams/blogs_and_articles.svg",

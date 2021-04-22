@@ -12,9 +12,7 @@ import UserContext from "../context/UserContext"
 let stripePromise
 const getStripe = () => {
   if (!stripePromise) {
-    stripePromise = loadStripe(
-      "pk_test_51IVzE6Gte9n2W4JhTDonqrIGHMBOq4Ed7QVSy1rfAQjTYPJfrUt01uwgf3Q1g4EQ56i8ovDuCqDJ2zxpfeaFjOSf00ArDO4jZI"
-    )
+    stripePromise = loadStripe("pk_live_fkfCsk3NdJvy5ytDWlAW2ugB000R55tRk8")
   }
   return stripePromise
 }
@@ -26,13 +24,17 @@ export default function Dashboard() {
 
   const data = useStaticQuery(graphql`
     {
-      allStripePrice(sort: { fields: id, order: ASC }) {
+      allStripePrice(sort: {fields: unit_amount, order: ASC}, filter: {product: {metadata: {Category: {eq: "Website Plan"}}}}) {
         edges {
           node {
             product {
               id
               description
               name
+              metadata {
+                Category
+                Payment
+              }
             }
             recurring {
               interval
@@ -126,8 +128,8 @@ export default function Dashboard() {
     const { error } = await stripe.redirectToCheckout({
       mode: "subscription",
       lineItems: [{ price: plan, quantity: 1 }],
-      successUrl: "https://your-website.com/success",
-      cancelUrl: "https://your-website.com/canceled",
+      successUrl: "https://www.platformable.com/payment-success",
+      cancelUrl: "https://www.platformable.com/cancel-payment",
     })
     if (error) {
       console.warn("Error:", error)
@@ -216,30 +218,34 @@ export default function Dashboard() {
           <h6 className=" py-5 text-gray-300">
             Select a subscription Pack
           </h6>
-          <div className="plans-group flex flex-wrap flex-col md:flex-row justify-between text-center text-sm my-5">
-            {data.allStripePrice.edges.map(plan => {
+          {/* <div className="plans-group flex flex-wrap flex-col md:flex-row  text-center text-sm my-5 gap-4"> */}
+          <div className="plans-group grid grid-cols-1 md:grid-cols-4 gap-4">
+           {data.allStripePrice.edges.map(plan => {
               return (
                 <React.Fragment key={plan.node.product.id}>
-                  <div className="plans-item lg:w-1/5 md:w-2/5 w-4/6 px-3 md:px-0 bg-gray-100 shadow-lg rounded-3xl sm:mx-1 md:mx-0 my-4 relative mx-auto">
-                    <img
+                  {/* <div className="plans-item lg:w-1/5 md:w-2/5 w-4/6 px-3 md:px-0 bg-gray-100 shadow-lg rounded-3xl sm:mx-1 md:mx-0 my-4 relative mx-auto "> */}
+                    <div className="bg-gray-50 shadow-md rounded-lg text-center" >
+                    {/* <img
                       src=""
                       alt=""
                       className="w-14 self-center mx-auto absolute -top-7 inset-x-0"
-                    />
-                    <div className="h-10 border-bottom">
-                      <h5 className="text-primary mt-8 font-black">
-                        {" "}
+                    /> */}
+                    <div className="h-14 border-bottom px-1">
+                      <h5 className="text-primary my-8 font-black">
+                        
                         {plan.node.product.name}
                       </h5>
                     </div>
                     <div className="plans-price ">
                       <div className="font-bold">
                         <h2 className="text-primary font-black text-3xl leading-tight">
-                          {(plan.node.unit_amount / 100).toFixed(2)}€
+                          {(plan.node.unit_amount / 100).toFixed(2)}$
                         </h2>
                         <span className="text-gray-400 text-base opacity-25">
                           {" "}
-                          /month{" "}
+                          /{plan.node.product.metadata.Payment}
+                          {console.log(plan.node.product)}
+                          
                         </span>
                       </div>
                       <button

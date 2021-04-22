@@ -3,8 +3,8 @@ import {Link} from 'gatsby'
 import data from "../data/product-stream/data.json"
 import GridDisplay from "../components/shared-components/GridDisplay"
 /*specific-components*/
-import ProductStreamsCards from "./../components/product-streams/ProductStreamsCards"
-import SectorSubCards from "./../components/product-streams/sectorSubCards"
+import ProductStreamsCards from "../components/product-streams/ProductStreamsCards"
+import SectorSubCards from "../components/product-streams/sectorSubCards"
 import AnalystImg from '../images/Analyst-as-a-service.png'
 import BlogAsServiceImg from '../images/Blogs and articles.png'
 import OpenEcosystemImg from '../images/Open ecosystem mapping.png'

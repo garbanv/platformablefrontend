@@ -166,7 +166,7 @@ export default function Q4TrendsReport2020() {
         </div>
       </div>
 
-      {/* <div className="card__wrap--inner">
+      <div className="card__wrap--inner">
         <div className="card">
           <div className="cardImage">
             <img src="https://platformable.com/content/images/size/w1600/2021/01/5-API-INDUSTRY.png"/>
@@ -180,13 +180,13 @@ export default function Q4TrendsReport2020() {
           </div>
 
           <div className="card__footer">
-            <div className="cardImage">
+            {/* <div className="cardImage">
               <a className="pull bg-russian-violet-dark" href="https://platformable.com/blog/q4-2020-open-banking-api-trends-api-industry/"><small>Read more</small></a>
-            </div>
+            </div> */}
 
           </div>
         </div>
-      </div> */}
+      </div>
 
 
       <div className="card__wrap--inner">

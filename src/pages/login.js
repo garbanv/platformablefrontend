@@ -38,7 +38,7 @@ export default function Login({data,location}) {
       // Handle success.
       if (typeof window !== `undefined`) {
         // code that references a browser global
-        console.log(response.data.user)
+        
         localStorage.setItem("isLoggedIn",true)
         // setUser({...user,
         //   name:response.data.user.name,

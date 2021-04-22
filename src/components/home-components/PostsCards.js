@@ -21,8 +21,8 @@ const PostsCards = () => {
   ];
   
   return (
-    <section className="cards-section my-6 mx-auto py-8">
-      <h2 className="text-center my-5">Latest blog posts</h2>
+    <section className="cards-section my-6 mx-auto py-8 bg-lightPurple">
+      <h2 className="text-center my-5 font-black">Latest blog posts</h2>
       
       <div className="my-0 md:mx-16 mx-2 py-0 px-3 md:flex justify-evenly items-center">
         {images.map((img, i) =>(

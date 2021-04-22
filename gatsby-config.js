@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, 
+        icon: `src/images/favincon.png`, 
       },
     },
     'gatsby-plugin-postcss',
@@ -76,7 +76,7 @@ module.exports = {
       resolve: `gatsby-source-stripe`,
       options: {
         objects: ['Product','Sku','Subscription', 'Price', 'Customer'],
-        secretKey: 'sk_test_51IVzE6Gte9n2W4Jh46D22VTerG8Vr7Ko236oe5wEOk2ekE8AWMhjKtV37rO1co1QHauoeFfAjwOu2wbDdFoXVRtI00H4EHtpxC',
+        secretKey: "sk_live_0Oaf35zuWPQWmy9MOpkvchNQ00rAUpMTmZ",
         downloadFiles: true,
       }
     },
