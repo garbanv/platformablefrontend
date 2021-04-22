@@ -1,11 +1,18 @@
-import React from "react"
+import React,{useContext} from "react"
 import ButtonLp from "./ButtonLp"
 import knowledgeImg from "../assets/subscription_knowledge.svg"
 import strategyImg from "../assets/subscription_strategy.svg"
 import directionImg from "../assets/subscription_direction.svg"
 import leadershipImg from "../assets/subscription_leadership.svg"
+import UserContext from '../../../../context/UserContext';
+import { navigate } from "gatsby"
 
 const SubscriptionPlans = props => {
+  const [user,setUser]=useContext(UserContext)
+
+  const handleIsLoggedIn = () => {
+   user.isLoggedIn ? navigate('/app/dashboard') : navigate('/login')
+  }
   return (
     <section className="subscription-section text-grayed my-8 mx-auto px-2">
       <h2 className="text-primary text-center py-5 font-black">Subscription Plans</h2>
@@ -47,8 +54,10 @@ const SubscriptionPlans = props => {
               </span>
             </p>
             <ButtonLp
+           handleIsLoggedIn={handleIsLoggedIn}
               label="Subscribe"
               className="btn--purple font-bold text-primary my-5 mx-0 py-2 px-10 rounded-full hover:bg-primary hover:text-white  cursor-pointer "
+            
             />
           </div>
         </div>
@@ -95,6 +104,7 @@ const SubscriptionPlans = props => {
               </span>
             </p>
             <ButtonLp
+            handleIsLoggedIn={handleIsLoggedIn}
               label="Subscribe"
               className="btn--pink font-bold text-primary my-5 mx-0 py-2 px-10 rounded-full hover:bg-primary hover:text-white cursor-pointer "
             />
@@ -152,6 +162,7 @@ const SubscriptionPlans = props => {
               </span>
             </p>
             <ButtonLp
+            handleIsLoggedIn={handleIsLoggedIn}
               label="Subscribe"
               className="btn--silver font-bold text-primary my-5 mx-0 py-2 px-10 rounded-full hover:bg-primary hover:text-white cursor-pointer "
             />
@@ -210,6 +221,7 @@ const SubscriptionPlans = props => {
               </span>
             </p>
             <ButtonLp
+            handleIsLoggedIn={handleIsLoggedIn}
               label="Subscribe"
               className="btn--gold font-bold text-primary my-5 mx-0 py-2 px-10 rounded-full hover:bg-primary hover:text-white cursor-pointer "
             />

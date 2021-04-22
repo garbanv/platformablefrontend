@@ -5,7 +5,7 @@ import ActionableInfo from './ActionableInfo';
 /*assets*/
 
 
-const PositionedSection = props => {
+const PositionedSection = ({ handleIsLoggedIn}) => {
   return (
     <section className="bg-primary relative sm:mb-72 mb-8 w-auto lg:h-96">
       <div className="mb-36 text-white text-center py-4 mx-auto py-6 self-center">
@@ -16,6 +16,7 @@ const PositionedSection = props => {
               type="button"
               label={"Subscribe now"}
               btnClass="uppercase bg-secondary font-bold my-5 mx-0 py-2 px-10 rounded-full hover:bg-pink hover:text-primary cursor-pointer h-34 w-80"
+              onClick={handleIsLoggedIn}
             />
           </Link>
         <p className="text-center">

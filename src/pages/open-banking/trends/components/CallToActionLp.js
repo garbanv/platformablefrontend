@@ -11,13 +11,14 @@ const CallToActionLp = ({
   paragraphTwo,
   label,
   doNotDisplay,
+  handleIsLoggedIn
 }) => {
   return (
     <section id="cta" className={sectionClassName}>
       <h3 className="my-3 font-black">{title}</h3>
       <h3 className="my-3 font-black">{secondTitle}</h3>
       <p className={paragraphClassName}>{paragraphOne}<br/>{paragraphTwo}</p>
-      <ButtonLp label={label} doNotDisplay={doNotDisplay} className={btnClassName}/>
+      <button onClick={handleIsLoggedIn} label={label} doNotDisplay={doNotDisplay} className={btnClassName}>{label}</button>
     </section>
   )
 }

@@ -1,13 +1,22 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import FormLp from './FormLp';
+import {navigate} from 'gatsby'
+import UserContext from '../../../../context/UserContext'
 
 import CallToActionLp from './CallToActionLp';
 import ActionableInfoLp from './ActionableInfoLp';
 
+
 const PositionedSection = () => {
+const [user,setUser]=useContext(UserContext)
+  const handleIsLoggedIn = ()=> {
+    user.isLoggedIn ? navigate('app/dashboard') : navigate("/login")
+  }
+
   return (
     <section className="positionedSection bg-primary relative sm:mb-72 mb-8 w-auto lg:h-96">
       <CallToActionLp
+      handleIsLoggedIn={handleIsLoggedIn}
       sectionClassName="mb-36 text-white text-center py-4 mx-auto py-6 self-center"
       title="Subscribe to the Platformable"
       secondTitle="Open Banking and Open Finance Quarterly Trends Report"

@@ -1,12 +1,10 @@
 import React from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import {Link} from 'gatsby'
 
-const ButtonLp = ({ label, className }) => (
-  <AnchorLink to="/#submitMailerlite">
-    <button className={className} type="submit">
+const ButtonLp = ({ label, className, handleIsLoggedIn }) => (
+  <button onClick={handleIsLoggedIn} className={className}>
       {label}
-    </button>
-  </AnchorLink>
+  </button>
 )
 
 export default ButtonLp

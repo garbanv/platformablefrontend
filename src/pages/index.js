@@ -155,6 +155,7 @@ return(
     ></GridDisplay>
 
     <Form
+    id="submitMailerlite"
       formClass="text-center my-6 mx-auto"
       titleClass="text-sm"
       title="The future is open"

@@ -20,18 +20,22 @@ import sectionOneImg from "../../../assets/lp-policy_development/policy_developm
 const LPPolicyDevelopment = ({data}) => (
   <Layout>
     <SEO title="Policy Development" />
+    <section className="hero-data-governance py-10">
+        <div className="container mx-auto grid md:grid-cols-2 grid-cols-1 items-center px-5 ">
+          <div className="hero-data-governance-left">
+            <h3 className="font-black text-3xl ">Policy development
+      and advocacy services</h3>
+            <p className="text-2xl">
+            Join us as we map and respond
+      to emerging policy opportunities
+            </p>
+          </div>
+          <div className="hero-data-governance-right   grid justify-ends ">
+            <img src={sectionOneImg}></img>
+          </div>
+        </div>
+      </section>
 
-    <GridDisplay
-      gridDisplayClass="hero-section flex flex-col sm:flex-row flex-wrap my-6 mx-auto py-6 px-5 justify-center items-center"
-      gridContentClass="md:w-2/5 w-full mx-auto "
-      title="Policy development
-      and advocacy services"
-      paragraphOne="Join us as we map and respond
-      to emerging policy opportunities"
-      imgClass="object-cointain w-96 h-94 "
-      backImgSrc={sectionOneImg}
-      alt="Hero"
-    ></GridDisplay>
 
     <Potential />
 
