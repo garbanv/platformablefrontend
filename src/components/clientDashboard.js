@@ -12,7 +12,7 @@ import UserContext from "../context/UserContext"
 let stripePromise
 const getStripe = () => {
   if (!stripePromise) {
-    stripePromise = loadStripe(`${process.env.GATSBY_STRIPE_CHEKOUT_KEY}`)
+    stripePromise = loadStripe(`${process.env.GATSBY_STRIPE_CHECKOUT_KEY}`)
   }
   return stripePromise
 }
