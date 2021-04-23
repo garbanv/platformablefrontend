@@ -1,7 +1,17 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const ProductsCardsLp = () => {
+  const data = useStaticQuery(graphql`
+  query MyFileQuery {
+    file(ext: {eq: ".pdf"}) {
+      id
+      name
+      publicURL
+    }
+  }
+`)
+  
   return (<>
     <section className="w-screen my-16 mx-auto py-8 ">
       <div className="product-group my-0 md:mx-16 mx-2 py-0 px-3 flex md:flex-row flex-col justify-evenly items-center">
@@ -52,7 +62,7 @@ const ProductsCardsLp = () => {
       </div>
     </section>
     <section className="flex justify-center py-5 -mt-20">
-      <a href={`Platformable-Q1-2021-Open-Banking-Open-Finance-Trends-Report.pdf`} className="btn bg-russian-violet-dark text-white px-5 rounded-xl py-2" download>See our latest Trends Reports</a>
+      <a href={`${data.file.publicURL}`} className="btn bg-russian-violet-dark text-white px-5 rounded-xl py-2" download>See our latest Trends Reports</a>
     </section>
     </>
   )
