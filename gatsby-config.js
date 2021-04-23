@@ -2,7 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-
 module.exports = {
   siteMetadata: {
     title: `Platformable`,
@@ -81,11 +80,12 @@ module.exports = {
       resolve: `gatsby-source-stripe`,
       options: {
         objects: ['Product','Sku','Subscription', 'Price', 'Customer'],
-        secretKey: process.env.GATSBY_STRIPE_SECRET_KEY,
+        secretKey: process.env.STRIPE_SECRET_KEY,
         downloadFiles: true,
       }
     },
     // {
+
     //   resolve: `gatsby-plugin-create-client-paths`,
     //   options: { prefixes: [`/app/*`] },
     // },

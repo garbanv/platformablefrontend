@@ -19,6 +19,7 @@ import sectionTwoImg from "../assets/home/quarterly_trends.png"
 import sectionSixImg from '../assets/home/we_publish_analysis.png'
 
 const IndexPage = ({data}) => {
+
   const authorsData = data?data.allStrapiPost.edges[0].node.user :null
 return(
   <Layout>

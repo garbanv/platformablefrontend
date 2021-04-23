@@ -1,4 +1,7 @@
 const path = require(`path`);
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
   // Query for nodes to use in creating pages.
@@ -7,7 +10,6 @@ const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
       if (result.errors) {
         reject(result.errors)
       }
-      
       return result;
     })
   )
