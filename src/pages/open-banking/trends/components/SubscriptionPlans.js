@@ -44,11 +44,11 @@ const SubscriptionPlans = props => {
           </ul>
           <div className="plans-price h-32">
             <p className="font-bold">
-              <span className="text-gray-400 text-base opacity-25">$ </span>
+              <span className="text-black text-base opacity-50">$ </span>
               <strong className="text-primary text-3xl leading-tight">
                 19
               </strong>
-              <span className="text-gray-400 text-base opacity-25">
+              <span className="text-black text-base opacity-50">
                 {" "}
                 /month{" "}
               </span>
@@ -94,11 +94,11 @@ const SubscriptionPlans = props => {
           </ul>
           <div className="plans-price mx-3">
             <p className="font-bold">
-              <span className="text-gray-400 text-base opacity-25">$ </span>
+              <span className="text-black text-base opacity-50">$ </span>
               <strong className="text-primary text-3xl leading-tight">
                 49
               </strong>
-              <span className="text-gray-400 text-base opacity-25">
+              <span className="text-black text-base opacity-50">
                 {" "}
                 /month{" "}
               </span>
@@ -152,11 +152,11 @@ const SubscriptionPlans = props => {
           </ul>
           <div className="plans-price mx-3">
             <p className="font-bold">
-              <span className="text-gray-400 text-base opacity-25">$ </span>
+              <span className="text-black text-base opacity-50">$ </span>
               <strong className="text-primary text-3xl leading-tight">
                 750
               </strong>
-              <span className="text-gray-400 text-base opacity-25">
+              <span className="text-black text-base opacity-50">
                 {" "}
                 /month{" "}
               </span>
@@ -211,11 +211,11 @@ const SubscriptionPlans = props => {
           </ul>
           <div className="plans-price h-32">
             <p className="font-bold">
-              <span className="text-gray-400 text-base opacity-25">$ </span>
+              <span className="text-black text-base opacity-50">$ </span>
               <strong className="text-primary text-3xl leading-tight">
                 2200
               </strong>
-              <span className="text-gray-400 text-base opacity-25">
+              <span className="text-black text-base opacity-50">
                 {" "}
                 /month{" "}
               </span>

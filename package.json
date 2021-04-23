@@ -12,6 +12,7 @@
     "axios": "^0.21.1",
     "chart.js": "^3.1.1",
     "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.5.0",
     "gatsby-plugin-anchor-links": "^1.2.1",

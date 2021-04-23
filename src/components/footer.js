@@ -68,7 +68,7 @@ export default function Footer() {
                     Sectors
                   </Link>
                   <Link
-                    to="/blogs"
+                    to="/blog"
                     className="top-nav text-sm px-3 py-2 rounded-md text-sm font-medium"
                     activeClassName=""
                   >

@@ -12,7 +12,7 @@ import UserContext from "../context/UserContext"
 let stripePromise
 const getStripe = () => {
   if (!stripePromise) {
-    stripePromise = loadStripe("pk_live_fkfCsk3NdJvy5ytDWlAW2ugB000R55tRk8")
+    stripePromise = loadStripe(`${process.env.GATSBY_STRIPE_CHEKOUT_KEY}`)
   }
   return stripePromise
 }
@@ -139,7 +139,7 @@ export default function Dashboard() {
 
   return (
     <Layout>
-      <SEO title="Dahsboard" />
+      <SEO title="Dashboard" />
       <div className="container mx-auto">
         {/* SECTION profile */}
         <section className="dashboard-profile my-10 px-5">
@@ -216,7 +216,7 @@ export default function Dashboard() {
         {/* PLANS */}
         <section className="">
           <h6 className=" py-5 text-gray-300">
-            Select a subscription Pack
+            Select a Subscription Pack
           </h6>
           {/* <div className="plans-group flex flex-wrap flex-col md:flex-row  text-center text-sm my-5 gap-4"> */}
           <div className="plans-group grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -239,12 +239,12 @@ export default function Dashboard() {
                     <div className="plans-price ">
                       <div className="font-bold">
                         <h2 className="text-primary font-black text-3xl leading-tight">
-                          {(plan.node.unit_amount / 100).toFixed(2)}$
+                        ${(plan.node.unit_amount / 100).toFixed(2)}
                         </h2>
-                        <span className="text-gray-400 text-base opacity-25">
+                        <span className="text-black">
                           {" "}
-                          /{plan.node.product.metadata.Payment}
-                          {console.log(plan.node.product)}
+                          / {plan.node.product.metadata.Payment}
+          
                           
                         </span>
                       </div>
@@ -253,7 +253,7 @@ export default function Dashboard() {
                         className="btn bg-russian-violet-dark font-bold text-white my-5 mx-0 py-2 px-10 rounded-full hover:bg-primary hover:text-white  cursor-pointer "
                         onClick={() => redirectToCheckout(plan.node.id)}
                       >
-                        Get Plan!
+                        Buy Now
                       </button>
                     </div>
                   </div>

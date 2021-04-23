@@ -1,3 +1,8 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+
 module.exports = {
   siteMetadata: {
     title: `Platformable`,
@@ -76,7 +81,7 @@ module.exports = {
       resolve: `gatsby-source-stripe`,
       options: {
         objects: ['Product','Sku','Subscription', 'Price', 'Customer'],
-        secretKey: "sk_live_0Oaf35zuWPQWmy9MOpkvchNQ00rAUpMTmZ",
+        secretKey: process.env.GATSBY_STRIPE_SECRET_KEY,
         downloadFiles: true,
       }
     },

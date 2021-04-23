@@ -18,7 +18,7 @@ const OpenHealthPosts = ({data}) => {
       </h3>
       <h3 className="text-1xl font-black text-center mb-5">Posts and Articles</h3>
      
-     {data.allStrapiPost.edges.length===0 ? "<h3>Sorry there is no post yet!</<h3>" : <BlogCards data={data}/>}
+     {data.allStrapiPost.edges.length===0 ? "<h3>Sorry there is no post yet</<h3>" : <BlogCards data={data}/>}
       
       {/* end of all posts */}
     </section>
